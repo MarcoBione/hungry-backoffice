@@ -48,120 +48,120 @@ return [
             'description' => 'Pomodoro, mozzarella, basilico',
             'price' => 7.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'pizza, pizza rossa'
+            'image' => '',
+            'tipologies' => 'pizza, pizza rossa'
         ],
         [
             'name' => 'Ravioli al vapore',
             'description' => '',
             'price' => 5.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'primi piatti'
+            'image' => '',
+            'tipologies' => 'primi piatti'
         ],
         [
             'name' => 'Branzino all\'isolana',
             'description' => 'pesce al forno con pomodorini e olive',
             'price' => 17.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'secondi, secondi di pesce'
+            'image' => '',
+            'tipologies' => 'secondi, secondi di pesce'
         ],
         [
             'name' => 'Hamburger Classico',
             'description' => 'Hamburger di chianina con pomodoro a fette, lattuga, maionese',
             'price' => 13.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'hamburger'
+            'image' => '',
+            'tipologies' => 'hamburger'
         ],
         [
             'name' => 'Involtini primavera',
             'description' => 'verza, carote, zucchine',
             'price' => 5.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'antipasti, vegetariano'
+            'image' => '',
+            'tipologies' => 'antipasti, vegetariano'
         ],
         [
             'name' => 'Tiramisu',
             'description' => '',
             'price' => 6.00,
             'visible' => false,
-            'image'=> '',
-            'tipologies'=> 'dolci e dessert'
+            'image' => '',
+            'tipologies' => 'dolci e dessert'
         ],
         [
             'name' => 'Cheung Fun con Manzo',
             'description' => 'rotolo di vermicelli al vapore cantonese',
             'price' => 8.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'secondi, secondi di carne'
+            'image' => '',
+            'tipologies' => 'secondi, secondi di carne'
         ],
         [
             'name' => 'Patatine fritte',
             'description' => '',
             'price' => 5.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'snack, contorni, prodotto surgelato'
+            'image' => '',
+            'tipologies' => 'snack, contorni, prodotto surgelato'
         ],
         [
             'name' => 'Capricciosa',
             'description' => 'pomodoro, mozzarella di Bufala, carciofi, funghi, cotto e olive',
             'price' => 13.50,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'pizza, pizza rossa'
+            'image' => '',
+            'tipologies' => 'pizza, pizza rossa'
         ],
         [
             'name' => 'Pancit Bihon',
             'description' => 'tipico piatto della cucina filippina con spaghetit di riso, maiale e gamberi',
             'price' => 7.50,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'primi piatti'
+            'image' => '',
+            'tipologies' => 'primi piatti'
         ],
         [
             'name' => 'Pork Bicol',
             'description' => 'pancetta di maiale con latte di cocco',
             'price' => 13.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'antipasto, piccante'
+            'image' => '',
+            'tipologies' => 'antipasto, piccante'
         ],
         [
             'name' => 'Birra Heineken',
             'description' => '33cl',
             'price' => 4.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'bevande'
+            'image' => '',
+            'tipologies' => 'bevande'
         ],
         [
             'name' => 'Coca cola',
             'description' => 'lattina',
             'price' => 2.50,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'bevande'
+            'image' => '',
+            'tipologies' => 'bevande'
         ],
         [
             'name' => 'Grigliata mista',
             'description' => '',
             'price' => 18.00,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'secondi, secondi di carne, grill'
+            'image' => '',
+            'tipologies' => 'secondi, secondi di carne, grill'
         ],
         [
             'name' => 'Spaghetti alla carbonara',
             'description' => '',
             'price' => 6.90,
             'visible' => true,
-            'image'=> '',
-            'tipologies'=> 'primi piatti'
+            'image' => '',
+            'tipologies' => 'primi piatti'
         ],
     ],
 
@@ -196,5 +196,58 @@ return [
             'image' => 'https://i.pinimg.com/564x/86/bd/3c/86bd3c1bf93620167ab1485be959d3f2.jpg',
             'phone_number' => '02 4768 1121'
         ]
+    ],
+
+    'categories' => [
+        [
+            'name' => 'Pizzeria',
+            'description' => 'Le migliori pizze genuine come quelle fatte in casa.',
+            'image' => 'https://esempio.com/immagini/pizza.jpg',
+        ],
+        [
+            'name' => 'Hamburgeria',
+            'description' => 'Gustosi hamburger con ingredienti freschi.',
+            'image' => 'https://esempio.com/immagini/hamburger.jpg',
+        ],
+        [
+            'name' => 'kebab',
+            'description' => 'Ottimo kebab di qualitá garatita',
+            'image' => 'https://esempio.com/immagini/kebab.jpg',
+        ],
+        [
+            'name' => 'Sushi',
+            'description' => 'Sushi fresco e autentico.',
+            'image' => 'https://esempio.com/immagini/sushi.jpg',
+        ],
+        [
+            'name' => 'Thailandese',
+            'description' => '',
+            'image' => 'https://esempio.com/immagini/thai.jpg',
+        ],
+        [
+            'name' => 'Cinese',
+            'description' => 'Sapori orientali decisi dagli aromi vari e intriganti.',
+            'image' => 'https://esempio.com/immagini/cinese.jpg',
+        ],
+        [
+            'name' => 'Italiano',
+            'description' => 'Piatti italiani pieni di tradizione e gusto',
+            'image' => 'https://esempio.com/immagini/italiano.jpg',
+        ],
+        [
+            'name' => 'Piadineria',
+            'description' => 'Piadine di tutti i tipi e condimenti a scelta.',
+            'image' => 'https://esempio.com/immagini/piadineria.jpg',
+        ],
+        [
+            'name' => 'Messicano',
+            'description' => 'Prelibatezze dai sapori forti e speziati.',
+            'image' => 'https://esempio.com/immagini/messican.jpg',
+        ],
+        [
+            'name' => 'Gelateria',
+            'description' => 'Gelato artigianale in una varietà di gusti.',
+            'image' => 'https://esempio.com/immagini/gelato.jpg',
+        ],
     ]
 ];
