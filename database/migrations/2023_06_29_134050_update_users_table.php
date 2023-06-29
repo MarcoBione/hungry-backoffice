@@ -25,8 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('vat_number')->after('password');
-        });
+        Schema::dropColumns('users',["vat_number"]);
     }
 };
