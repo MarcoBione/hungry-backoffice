@@ -24,6 +24,7 @@ class CategorySeeder extends Seeder
             $newCategory->name = $category['name'];
             $newCategory->description = $category['description'];
             $newCategory->image = $category['image'];
+            $newCategory->class = " ";
             $newCategory->save();
         }
     }
