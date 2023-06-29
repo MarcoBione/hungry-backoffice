@@ -22,7 +22,8 @@ return new class extends Migration
             $table->boolean('visible');
             $table->string('image')->nullable();
             $table->text('tipologies');
-            // $table->foreign('caterer_id')->references('id')->on('caterers')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('caterer_id')->nullable();
+            $table->foreign('caterer_id')->references('id')->on('caterers')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
