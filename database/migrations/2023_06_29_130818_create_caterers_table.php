@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('caterers', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100);
+            $table->string('address', 255);
+            $table->string('image', 255);
+            $table->string('phone_number', 15);
+            $table->string('slug', 255)->unique();
             $table->timestamps();
         });
     }
