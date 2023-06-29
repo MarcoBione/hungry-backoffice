@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('partitaiva')->after('password');
+            $table->string('vat_number')->after('password');
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('partitaiva')->after('password');
+            $table->string('vat_number')->after('password');
         });
     }
 };
