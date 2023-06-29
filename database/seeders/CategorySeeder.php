@@ -18,19 +18,19 @@ class CategorySeeder extends Seeder
 
         $categories = [
             [
-                'name' => 'Pizza',
-                'description' => 'Le migliori pizze fatte in casa.',
+                'name' => 'Pizzeria',
+                'description' => 'Le migliori pizze genuine come quelle fatte in casa.',
                 'image' => 'https://esempio.com/immagini/pizza.jpg',
             ],
             [
-                'name' => 'Hamburger',
+                'name' => 'Hamburgeria',
                 'description' => 'Gustosi hamburger con ingredienti freschi.',
                 'image' => 'https://esempio.com/immagini/hamburger.jpg',
             ],
             [
-                'name' => 'Pasta',
-                'description' => 'Deliziose paste fatte a mano.',
-                'image' => 'https://esempio.com/immagini/pasta.jpg',
+                'name' => 'kebab',
+                'description' => 'Ottimo kebab di qualitá garatita',
+                'image' => 'https://esempio.com/immagini/kebab.jpg',
             ],
             [
                 'name' => 'Sushi',
@@ -38,34 +38,34 @@ class CategorySeeder extends Seeder
                 'image' => 'https://esempio.com/immagini/sushi.jpg',
             ],
             [
-                'name' => 'Gelato',
+                'name' => 'Thailandese',
+                'description' => '',
+                'image' => 'https://esempio.com/immagini/thai.jpg',
+            ],
+            [
+                'name' => 'Cinese',
+                'description' => 'Sapori orientali decisi dagli aromi vari e intriganti.',
+                'image' => 'https://esempio.com/immagini/cinese.jpg',
+            ],
+            [
+                'name' => 'Italiano',
+                'description' => 'Piatti italiani pieni di tradizione e gusto',
+                'image' => 'https://esempio.com/immagini/italiano.jpg',
+            ],
+            [
+                'name' => 'Piadineria',
+                'description' => 'Piadine di tutti i tipi e condimenti a scelta.',
+                'image' => 'https://esempio.com/immagini/piadineria.jpg',
+            ],
+            [
+                'name' => 'Messicano',
+                'description' => 'Prelibatezze dai sapori forti e speziati.',
+                'image' => 'https://esempio.com/immagini/messican.jpg',
+            ],
+            [
+                'name' => 'Gelateria',
                 'description' => 'Gelato artigianale in una varietà di gusti.',
                 'image' => 'https://esempio.com/immagini/gelato.jpg',
-            ],
-            [
-                'name' => 'Barbecue',
-                'description' => 'Carne alla griglia succulenta e marinata.',
-                'image' => 'https://esempio.com/immagini/barbecue.jpg',
-            ],
-            [
-                'name' => 'Caffè',
-                'description' => 'Aromi intensi e prelibati di caffè.',
-                'image' => 'https://esempio.com/immagini/caffe.jpg',
-            ],
-            [
-                'name' => 'Vegetariano',
-                'description' => 'Piatti vegetariani gustosi e salutari.',
-                'image' => 'https://esempio.com/immagini/vegetariano.jpg',
-            ],
-            [
-                'name' => 'Pesce',
-                'description' => 'Pesce fresco e delizioso.',
-                'image' => 'https://esempio.com/immagini/frutti_di_mare.jpg',
-            ],
-            [
-                'name' => 'Dolci',
-                'description' => 'Dolci deliziosi e irresistibili.',
-                'image' => 'https://esempio.com/immagini/dolci.jpg',
             ],
         ];
 
