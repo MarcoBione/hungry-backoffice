@@ -164,7 +164,6 @@ return [
             'tipologies' => 'primi piatti'
         ],
     ],
-
     'caterers' => [
         [
             'name' => 'Pizzeria Roma',
@@ -197,7 +196,6 @@ return [
             'phone_number' => '02 4768 1121'
         ]
     ],
-
     'categories' => [
         [
             'name' => 'Pizzeria',
