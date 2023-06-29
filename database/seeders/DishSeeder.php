@@ -26,6 +26,7 @@ class DishSeeder extends Seeder
             $new_dish->visible = $dish['visible'];
             $new_dish->image = $dish['image'];
             $new_dish->tipologies = $dish['tipologies'];
+            $new_dish->caterer_id = $dish['caterer_id'];
             $new_dish->save();
         }
     }
