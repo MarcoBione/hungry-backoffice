@@ -19,12 +19,12 @@ class OrderSeeder extends Seeder
         $ordersData = config('dataseeder.orders');
         foreach ($ordersData as $orderData) {
             $order = new Order();
-            $order->receiver = $orderData->receiver;
-            $order->phone_number = $orderData->phone_number;
-            $order->status = $orderData->status;
-            $order->notes = $orderData->notes;
-            $order->total_price = $orderData->total_price;
-            $order->address = $orderData->address;
+            $order->receiver = $orderData["receiver"];
+            $order->phone_number = $orderData["phone_number"];
+            $order->status = $orderData["status"];
+            $order->notes = $orderData["notes"];
+            $order->total_price = $orderData["total_price"];
+            $order->address = $orderData["address"];
             $order->save();
         }
     }
