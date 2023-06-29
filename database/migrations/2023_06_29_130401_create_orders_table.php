@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("phone_number", 15);
             $table->string("status", 150);
             $table->text("notes");
-            $table->decimal("total_price",2);
+            $table->decimal("total_price",5,2);
             $table->string("address");
             $table->timestamps();
         });
