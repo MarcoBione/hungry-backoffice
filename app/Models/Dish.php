@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Dish extends Model
 {
     use HasFactory;
-    //protected $fillable = ['slug', 'name', 'description', 'price', 'visible', 'image', 'tipologies', 'caterer_id'];
+    protected $fillable = ['slug', 'name', 'description', 'price', 'visible', 'image', 'tipologies'];
 
     // public function caterer(){
     //     return $this->belongsTo(Caterer::class);
