@@ -45,24 +45,24 @@
                                 </div>
                             </div>
 
-                            {{-- aggiungo campo per partitaiva --}}
+                            {{-- aggiungo campo per vat_number --}}
                             <div class="mb-4 row">
-                                <label for="partitaiva"
+                                <label for="vat_number"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Partiva Iva') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="partitaiva" type="text"
-                                        class="form-control @error('partitaiva') is-invalid @enderror" name="partitaiva"
-                                        value="{{ old('partitaiva') }}" required autocomplete="partitaiva">
+                                    <input id="vat_number" type="text"
+                                        class="form-control @error('vat_number') is-invalid @enderror" name="vat_number"
+                                        value="{{ old('vat_number') }}" required autocomplete="vat_number">
 
-                                    @error('partitaiva')
+                                    @error('vat_number')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                             </div>
-                            {{-- end campo partita iva --}}
+                            {{-- end campo vat_number --}}
 
                             <div class="mb-4 row">
                                 <label for="password"
