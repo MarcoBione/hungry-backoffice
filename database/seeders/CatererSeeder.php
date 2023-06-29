@@ -17,7 +17,7 @@ class CatererSeeder extends Seeder
     public function run()
     {
 
-        $ristoranti = [
+        $caterers = [
             [
                 'name' => 'Pizzeria Roma',
                 'address' => 'Via Roma, 1',
@@ -50,13 +50,13 @@ class CatererSeeder extends Seeder
             ]
         ];
 
-        foreach ($ristoranti as $ristorante) {
+        foreach ($caterers as $caterer) {
             $newCaterer = new Caterer();
-            $newCaterer->name = $ristorante['name'];
-            $newCaterer->address = $ristorante['address'];
-            $newCaterer->image = $ristorante['image'];
-            $newCaterer->phone_number = $ristorante['phone_number'];
-            $newCaterer->slug = Str::slug($ristorante['name'], '-');
+            $newCaterer->name = $caterer['name'];
+            $newCaterer->address = $caterer['address'];
+            $newCaterer->image = $caterer['image'];
+            $newCaterer->phone_number = $caterer['phone_number'];
+            $newCaterer->slug = Str::slug($caterer['name'], '-');
         }
 
 
