@@ -49,7 +49,8 @@ return [
             'price' => 7.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'pizza, pizza rossa'
+            'tipologies' => 'pizza, pizza rossa',
+            'caterer_id' => 1
         ],
         [
             'name' => 'Ravioli al vapore',
@@ -57,7 +58,8 @@ return [
             'price' => 5.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'primi piatti'
+            'tipologies' => 'primi piatti',
+            'caterer_id' => 2
         ],
         [
             'name' => 'Branzino all\'isolana',
@@ -65,7 +67,8 @@ return [
             'price' => 17.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'secondi, secondi di pesce'
+            'tipologies' => 'secondi, secondi di pesce',
+            'caterer_id' => 3
         ],
         [
             'name' => 'Hamburger Classico',
@@ -73,7 +76,8 @@ return [
             'price' => 13.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'hamburger'
+            'tipologies' => 'hamburger',
+            'caterer_id' => 4
         ],
         [
             'name' => 'Involtini primavera',
@@ -81,7 +85,8 @@ return [
             'price' => 5.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'antipasti, vegetariano'
+            'tipologies' => 'antipasti, vegetariano',
+            'caterer_id' => 5
         ],
         [
             'name' => 'Tiramisu',
@@ -89,7 +94,8 @@ return [
             'price' => 6.00,
             'visible' => false,
             'image' => '',
-            'tipologies' => 'dolci e dessert'
+            'tipologies' => 'dolci e dessert',
+            'caterer_id' => 1
         ],
         [
             'name' => 'Cheung Fun con Manzo',
@@ -97,7 +103,8 @@ return [
             'price' => 8.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'secondi, secondi di carne'
+            'tipologies' => 'secondi, secondi di carne',
+            'caterer_id' => 2
         ],
         [
             'name' => 'Patatine fritte',
@@ -105,7 +112,8 @@ return [
             'price' => 5.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'snack, contorni, prodotto surgelato'
+            'tipologies' => 'snack, contorni, prodotto surgelato',
+            'caterer_id' => 3
         ],
         [
             'name' => 'Capricciosa',
@@ -113,7 +121,8 @@ return [
             'price' => 13.50,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'pizza, pizza rossa'
+            'tipologies' => 'pizza, pizza rossa',
+            'caterer_id' => 4
         ],
         [
             'name' => 'Pancit Bihon',
@@ -121,7 +130,8 @@ return [
             'price' => 7.50,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'primi piatti'
+            'tipologies' => 'primi piatti',
+            'caterer_id' => 5
         ],
         [
             'name' => 'Pork Bicol',
@@ -129,7 +139,8 @@ return [
             'price' => 13.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'antipasto, piccante'
+            'tipologies' => 'antipasto, piccante',
+            'caterer_id' => 1
         ],
         [
             'name' => 'Birra Heineken',
@@ -137,7 +148,8 @@ return [
             'price' => 4.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'bevande'
+            'tipologies' => 'bevande',
+            'caterer_id' => 2
         ],
         [
             'name' => 'Coca cola',
@@ -145,7 +157,8 @@ return [
             'price' => 2.50,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'bevande'
+            'tipologies' => 'bevande',
+            'caterer_id' => 3
         ],
         [
             'name' => 'Grigliata mista',
@@ -153,7 +166,8 @@ return [
             'price' => 18.00,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'secondi, secondi di carne, grill'
+            'tipologies' => 'secondi, secondi di carne, grill',
+            'caterer_id' => 4
         ],
         [
             'name' => 'Spaghetti alla carbonara',
@@ -161,35 +175,41 @@ return [
             'price' => 6.90,
             'visible' => true,
             'image' => '',
-            'tipologies' => 'primi piatti'
+            'tipologies' => 'primi piatti',
+            'caterer_id' => 5
         ],
     ],
     'caterers' => [
         [
+            'user_id' => 1,
             'name' => 'Pizzeria Roma',
             'address' => 'Via Roma, 1',
             'image' => 'https://i.pinimg.com/564x/ae/5e/24/ae5e2403c0396bb3c16539f3879be22d.jpg',
             'phone_number' => '02 7056 9901'
         ],
         [
+            'user_id' => 1,
             'name' => 'Sushi Lab',
             'address' => 'Via Milano, 2',
             'image' => 'https://i.pinimg.com/564x/cc/8c/82/cc8c82057916ac5cb8ee7122e021e266.jpg',
             'phone_number' => '02 2193 0011'
         ],
         [
+            'user_id' => 1,
             'name' => 'Hong Kong',
             'address' => 'Via Venezia, 3',
             'image' => 'https://i.pinimg.com/564x/6d/be/82/6dbe82e9682e415915a5d9e7fb0e1c7b.jpg',
             'phone_number' => '02 9821 6634'
         ],
         [
+            'user_id' => 1,
             'name' => 'La Brace Food Experience',
             'address' => 'Via Firenze, 4',
             'image' => 'https://i.pinimg.com/564x/63/5e/3d/635e3d0fbec3931fba332535a6671a6a.jpg',
             'phone_number' => '02 0034 5671 '
         ],
         [
+            'user_id' => 1,
             'name' => 'Chiquito',
             'address' => 'Via Napoli, 5',
             'image' => 'https://i.pinimg.com/564x/86/bd/3c/86bd3c1bf93620167ab1485be959d3f2.jpg',
