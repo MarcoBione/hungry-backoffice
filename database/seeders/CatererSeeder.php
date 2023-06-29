@@ -21,11 +21,13 @@ class CatererSeeder extends Seeder
 
         foreach ($caterers as $caterer) {
             $newCaterer = new Caterer();
+            $newCaterer->user_id = $caterer['user_id'];
             $newCaterer->name = $caterer['name'];
             $newCaterer->address = $caterer['address'];
             $newCaterer->image = $caterer['image'];
             $newCaterer->phone_number = $caterer['phone_number'];
             $newCaterer->slug = Str::slug($caterer['name'], '-');
+            $newCaterer->save();
         }
 
 
