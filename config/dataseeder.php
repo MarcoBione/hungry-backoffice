@@ -360,35 +360,40 @@ return [
             'name' => 'Pizzium',
             'address' => 'Via Augusto Anfossi 1',
             'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/27/1d/6d/84/pizza-salsiccia-e-friarielli.jpg',
-            'phone_number' => '+39 0254050232'
+            'phone_number' => '+39 0254050232',
+            "categories" => [3,4]
         ],
         [
             'user_id' => 1,
             'name' => 'Yokohama Flavour Journey Cuisine',
             'address' => 'Via Pantano 8',
             'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/18/90/d2/2a/sunset.jpg',
-            'phone_number' => '+39 02874291'
+            'phone_number' => '+39 02874291',
+            "categories" => [5,6,7,8]
         ],
         [
             'user_id' => 1,
             'name' => 'Fei Yun Ge',
             'address' => 'Via Melchiorre Gioia 141',
             'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/1d/5b/88/9a/ravioli-di-carne.jpg',
-            'phone_number' => '+39 0266985374'
+            'phone_number' => '+39 0266985374',
+            "categories" => [9,5,6]
         ],
         [
             'user_id' => 1,
             'name' => 'Viaggi Nel Gusto',
             'address' => 'Via Edmondo De Amicis 24',
             'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/1d/57/c7/70/caption.jpg',
-            'phone_number' => '+39 0247755531'
+            'phone_number' => '+39 0247755531',
+            "categories" => [3]
         ],
         [
             'user_id' => 1,
             'name' => 'Ristorante Himalaya',
             'address' => 'Via Marcantonio dal Re 10',
             'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/22/12/10/78/nostri-piatti-tipici.jpg',
-            'phone_number' => '+39 0283541759'
+            'phone_number' => '+39 0283541759',
+            "categories" => [1,2]
         ]
     ],
     'categories' => [
