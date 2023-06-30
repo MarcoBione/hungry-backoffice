@@ -64,7 +64,7 @@ class DishController extends Controller
         if ($request->has('orders')) {
             $dish->orders()->attach($request->orders);
         }
-        return redirect()->route('admin.dish.show', $dish->slug);
+        return redirect()->route('admin.dishes.show', $dish->slug);
     }
 
     /**
