@@ -59,6 +59,20 @@
             @endif
         </div>
 
+        {{-- aggiungo campo di aggiornamento partitaiva vat_number --}}
+
+        <div class="mb-2">
+            <label for="vat_number">{{__('Partita Iva')}}</label>
+            <input class="form-control" type="text" name="vat_number" id="vat_number" autocomplete="vat_number" value="{{old('vat_number', $user->vat_number)}}" required autofocus>
+            @error('vat_number')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->get('vat_number')}}</strong>
+            </span>
+            @enderror
+        </div>
+
+        {{-- aggiungo campo di aggiornamento partitaiva vat_number --}}
+
         <div class="d-flex align-items-center gap-4">
             <button class="btn btn-primary" type="submit">{{ __('Save') }}</button>
 
