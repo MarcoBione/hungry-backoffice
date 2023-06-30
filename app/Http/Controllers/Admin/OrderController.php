@@ -65,11 +65,13 @@ class OrderController extends Controller
      *
      * @param  \App\Http\Requests\UpdateOrderRequest  $request
      * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
-        //
+        $data = $request->validated();
+        $order->update($data);
+
+        return redirect()->route('admin.orders.show', $order->id)->with('message', "L'ordine $order->id realizzato da $order->receiver il $order->created_at è stato modificato correttamente");
     }
 
     /**
