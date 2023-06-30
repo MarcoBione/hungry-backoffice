@@ -89,16 +89,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- Container with the phone number of the caterer --}}
-                <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
-                    <i class="fa-regular fa-circle-question fs-3"></i>
-                    <div class="d-flex flex-column align-items-start justify-content-start">
-                        <span class="fs-5 fw-bold mb-2">Possiamo aiutarti in qualche modo?</span>
-                        <div class="d-flex flex-column align-items-start">
-                            <span>Chiama il ristorante al {{ $order->dishes[0]->caterer->phone_number }}</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
