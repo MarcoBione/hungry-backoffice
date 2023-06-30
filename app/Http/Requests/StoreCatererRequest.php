@@ -27,7 +27,8 @@ class StoreCatererRequest extends FormRequest
             'name' => 'required',
             'address' => 'required',
             'image' => 'required',
-            'phone_number' => 'required'
+            'phone_number' => 'required',
+            'category' => 'required'
         ];
     }
 
@@ -37,7 +38,8 @@ class StoreCatererRequest extends FormRequest
             'name.required' => 'Il campo è obbligatorio',
             'address.required' => 'Il campo è obbligatorio',
             'image.required' => 'Il campo è obbligatorio',
-            'phone_number' => 'Il campo è obbligatorio'
+            'phone_number' => 'Il campo è obbligatorio',
+            'category' => 'Il campo è obbligatorio'
         ];
     }
 }
