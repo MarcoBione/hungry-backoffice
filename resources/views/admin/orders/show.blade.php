@@ -39,10 +39,12 @@
             </div>
         </div>
     </div>
-    {{-- <th scope="col">Id</th>
-    <th scope="col">Destinatario</th>
-    <th scope="col">Numero di telefono</th>
-    <th scope="col">Note</th>
-    <th scope="col">Prezzo totale</th>
-    <th scope="col">Indirizzo</th>
+    {{--
+        <th scope="col">Id</th>
+        <th scope="col">Destinatario</th>
+        <th scope="col">Numero di telefono</th>
+        <th scope="col">Note</th>
+        <th scope="col">Prezzo totale</th>
+        <th scope="col">Indirizzo</th>
+    --}}
 @endsection
