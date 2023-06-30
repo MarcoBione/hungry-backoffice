@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Caterer;
 use App\Models\Category;
+use App\Models\Dish;
 use Illuminate\Support\Str;
 use App\Http\Requests\StoreCatererRequest;
 use App\Http\Requests\UpdateCatererRequest;
@@ -30,7 +31,7 @@ class CatererController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.caterers.create', compact('categories'));
+        return view('admin.caterers.create', compact('categories', 'dishes'));
     }
 
     /**
@@ -67,8 +68,8 @@ class CatererController extends Controller
      */
     public function show(Caterer $caterer)
     {
-
-        return view('admin.caterers.show', compact('caterer'));
+        $dishes = Dish::all()->where('caterer_id', $caterer->id);
+        return view('admin.caterers.show', compact('caterer', 'dishes'));
     }
 
     /**
