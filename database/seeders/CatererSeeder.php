@@ -16,9 +16,7 @@ class CatererSeeder extends Seeder
      */
     public function run()
     {
-
         $caterers = config('dataseeder.caterers');
-
         foreach ($caterers as $caterer) {
             $newCaterer = new Caterer();
             $newCaterer->user_id = $caterer['user_id'];
@@ -28,8 +26,10 @@ class CatererSeeder extends Seeder
             $newCaterer->phone_number = $caterer['phone_number'];
             $newCaterer->slug = Str::slug($caterer['name'], '-');
             $newCaterer->save();
+
+            $categories = $caterer["categories"];
+            foreach($categories as $category)
+                $newCaterer->categories()->attach($category);
         }
-
-
     }
 }
