@@ -19,7 +19,7 @@ class CatererController extends Controller
     public function index()
     {
         $caterers = Caterer::all();
-        return view('caterers.index', compact('caterers'));
+        return view('admin.caterers.index', compact('caterers'));
     }
 
     /**
@@ -30,7 +30,7 @@ class CatererController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('caterers.create', compact('categories'));
+        return view('admin.caterers.create', compact('categories'));
     }
 
     /**
@@ -41,17 +41,22 @@ class CatererController extends Controller
      */
     public function store(StoreCatererRequest $request)
     {
-        $data = $request->all();
-
-        $newCaterer = new Caterer();
-        $newCaterer->name = $data['name'];
-        $newCaterer->address = $data['address'];
-        $newCaterer->image = $data['image'];
-        $newCaterer->phone_number = $data['phone_number'];
-        $newCaterer->slug = Str::slug($data['name'], '-');
-        $newCaterer->save();
-
-        redirect()->route('caterers.show', $newCaterer->slug);
+        $data = $request->validated();
+        $slug = Str::slug($request->name, '-');
+        $data['slug'] = $slug;
+        $caterer = Caterer::create($data);
+        if($request->has('categories')) {
+            $caterer->categories()->attach($request->categories);
+        }
+        // $newCaterer = new Caterer();
+        // $newCaterer->name = $data['name'];
+        // $newCaterer->address = $data['address'];
+        // $newCaterer->image = $data['image'];
+        // $newCaterer->phone_number = $data['phone_number'];
+        // $newCaterer->slug = Str::slug($data['name'], '-');
+        // $newCaterer->category()->attach($request->category);
+        // $newCaterer->save();
+        return redirect()->route('admin.caterers.show', $caterer->slug);
     }
 
     /**
@@ -62,7 +67,8 @@ class CatererController extends Controller
      */
     public function show(Caterer $caterer)
     {
-        return view('caterers.show', compact('caterer'));
+
+        return view('admin.caterers.show', compact('caterer'));
     }
 
     /**

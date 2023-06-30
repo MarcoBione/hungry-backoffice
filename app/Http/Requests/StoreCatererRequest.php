@@ -13,7 +13,7 @@ class StoreCatererRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class StoreCatererRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'address' => 'required',
+            'image' => 'required',
+            'phone_number' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Il campo è obbligatorio',
+            'address.required' => 'Il campo è obbligatorio',
+            'image.required' => 'Il campo è obbligatorio',
+            'phone_number' => 'Il campo è obbligatorio'
         ];
     }
 }
