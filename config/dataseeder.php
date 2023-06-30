@@ -129,140 +129,230 @@ return [
     ],
     "dishes" => [
         [
-            'name' => 'Margherita',
-            'description' => 'Pomodoro, mozzarella, basilico',
-            'price' => 7.00,
+            'name' => 'Carbonara',
+            'description' => "Fior di latte d'Agerola, guanciale, pecorino romano DOP, tuorlo d'uovo e pepe nero",
+            'price' => 11.00,
             'visible' => true,
-            'image' => '',
-            'tipologies' => 'pizza, pizza rossa',
+            'image' => 'https://ordina.pizzium.com/assets/img/items/16838188643MlRecZbf5.jpg',
+            'tipologies' => 'pizze classiche',
             'caterer_id' => 1
         ],
         [
-            'name' => 'Ravioli al vapore',
-            'description' => '',
-            'price' => 5.00,
+            'name' => 'Napoli',
+            'description' => "Pomodori pelati, fior di latte d'Agerola e filetti di alici",
+            'price' => 9.00,
             'visible' => true,
-            'image' => '',
-            'tipologies' => 'primi piatti',
-            'caterer_id' => 2
-        ],
-        [
-            'name' => 'Branzino all\'isolana',
-            'description' => 'pesce al forno con pomodorini e olive',
-            'price' => 17.00,
-            'visible' => true,
-            'image' => '',
-            'tipologies' => 'secondi, secondi di pesce',
-            'caterer_id' => 3
-        ],
-        [
-            'name' => 'Hamburger Classico',
-            'description' => 'Hamburger di chianina con pomodoro a fette, lattuga, maionese',
-            'price' => 13.00,
-            'visible' => true,
-            'image' => '',
-            'tipologies' => 'hamburger',
-            'caterer_id' => 4
-        ],
-        [
-            'name' => 'Involtini primavera',
-            'description' => 'verza, carote, zucchine',
-            'price' => 5.00,
-            'visible' => true,
-            'image' => '',
-            'tipologies' => 'antipasti, vegetariano',
-            'caterer_id' => 5
-        ],
-        [
-            'name' => 'Tiramisu',
-            'description' => '',
-            'price' => 6.00,
-            'visible' => false,
-            'image' => '',
-            'tipologies' => 'dolci e dessert',
+            'image' => 'https://ordina.pizzium.com/assets/img/items/1602500013AbEO2QcWz6.jpg',
+            'tipologies' => 'pizze classiche',
             'caterer_id' => 1
         ],
         [
-            'name' => 'Cheung Fun con Manzo',
-            'description' => 'rotolo di vermicelli al vapore cantonese',
+            'name' => 'Parmigiana di melanzane',
+            'description' => '',
             'price' => 8.00,
             'visible' => true,
-            'image' => '',
-            'tipologies' => 'secondi, secondi di carne',
-            'caterer_id' => 2
+            'image' => 'https://ordina.pizzium.com/assets/img/items/1654869162PfJARJKlZl.jpg',
+            'tipologies' => 'piatti semplici e buoni;panuozzum',
+            'caterer_id' => 1
         ],
         [
-            'name' => 'Patatine fritte',
+            'name' => 'Caesar Salad',
+            'description' => 'Misticanza, pollo croccante, datterini rossi freschi, scaglie di Grana Padano DOP e salsa Caesar',
+            'price' => 10.00,
+            'visible' => true,
+            'image' => 'https://ordina.pizzium.com/assets/img/items/1684140020nO3Zfvf6Ev.jpg',
+            'tipologies' => 'insalate',
+            'caterer_id' => 1
+        ],
+        [
+            'name' => 'Cheesecake alla Nutella',
             'description' => '',
-            'price' => 5.00,
+            'price' => 6.00,
             'visible' => true,
-            'image' => '',
-            'tipologies' => 'snack, contorni, prodotto surgelato',
+            'image' => 'https://ordina.pizzium.com/assets/img/items/1655109663BOXFQDGTwu.jpg',
+            'tipologies' => 'dolci',
             'caterer_id' => 1
         ],
         [
-            'name' => 'Capricciosa',
-            'description' => 'pomodoro, mozzarella di Bufala, carciofi, funghi, cotto e olive',
-            'price' => 13.50,
+            'name' => 'Akiko',
+            'description' => 'Carpaccio di Wagyu, olio evo, sale maldon, pepe dello Sichuan, servito su crema di senape e miele',
+            'price' => 26.00,
             'visible' => true,
-            'image' => '',
-            'tipologies' => 'pizza, pizza rossa',
-            'caterer_id' => 1
-        ],
-        [
-            'name' => 'Pancit Bihon',
-            'description' => 'tipico piatto della cucina filippina con spaghetit di riso, maiale e gamberi',
-            'price' => 7.50,
-            'visible' => true,
-            'image' => '',
-            'tipologies' => 'primi piatti',
-            'caterer_id' => 5
-        ],
-        [
-            'name' => 'Pork Bicol',
-            'description' => 'pancetta di maiale con latte di cocco',
-            'price' => 13.00,
-            'visible' => true,
-            'image' => '',
-            'tipologies' => 'antipasto, piccante',
-            'caterer_id' => 1
-        ],
-        [
-            'name' => 'Birra Heineken',
-            'description' => '33cl',
-            'price' => 4.00,
-            'visible' => true,
-            'image' => '',
-            'tipologies' => 'bevande',
+            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/Akiko.jpg',
+            'tipologies' => 'carpacci',
             'caterer_id' => 2
         ],
         [
-            'name' => 'Coca cola',
-            'description' => 'lattina',
-            'price' => 2.50,
+            'name' => 'Eden',
+            'description' => 'Tartare di tonno, con rucola e stracciatella di burrata, emulsione di pomodorino pachino, avocado, sale maldon e pepe',
+            'price' => 22.00,
             'visible' => true,
-            'image' => '',
-            'tipologies' => 'bevande',
+            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/Edentartare.jpg',
+            'tipologies' => 'tartare',
+            'caterer_id' => 2
+        ],
+        [
+            'name' => 'Tataki pistacchio',
+            'description' => 'Tonno scottato con granella di pistacchio, servito su rucola, stracciatella di burrata e pipetta con salsa Senape-Maio-Miele.',
+            'price' => 20.00,
+            'visible' => true,
+            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/TatakiPistacchio.jpg',
+            'tipologies' => 'tataki',
+            'caterer_id' => 2
+        ],
+        [
+            'name' => 'Salmon paradise',
+            'description' => 'Salmone, philadelphia, lime, menta, avocado e mandorle',
+            'price' => 16.00,
+            'visible' => true,
+            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/SalmonParadisev2-min.jpg',
+            'tipologies' => 'uramaki',
+            'caterer_id' => 2
+        ],
+        [
+            'name' => 'BBQ Lotus',
+            'description' => 'Filetto di manzo ai cinque aromi e salsa teriyaki',
+            'price' => 35.00,
+            'visible' => true,
+            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/BbqLotusTartufo-min.jpg',
+            'tipologies' => 'fusion food',
+            'caterer_id' => 2
+        ],
+        [
+            'name' => 'Ravioli di carne al vapore (4 pz)',
+            'description' => 'Steamed pork dumplings',
+            'price' => 5.50,
+            'visible' => true,
+            'image' => 'https://www.giallozafferano.it/images/230-23062/Ravioli-cinesi-al-vapore_650x433_wm.jpg',
+            'tipologies' => 'ravioli',
             'caterer_id' => 3
         ],
         [
-            'name' => 'Grigliata mista',
-            'description' => '',
-            'price' => 18.00,
+            'name' => 'Spaghetti di soia con gamberi e verdure',
+            'description' => 'Soy noodles with shrimps and vegetables',
+            'price' => 6.50,
             'visible' => true,
-            'image' => '',
-            'tipologies' => 'secondi, secondi di carne, grill',
+            'image' => 'https://blog.giallozafferano.it/trasentieriefornelli/wp-content/uploads/2022/02/IMG_0028-960x640.jpg',
+            'tipologies' => 'primi',
+            'caterer_id' => 3
+        ],
+        [
+            'name' => 'Pollo con le mandorle e bambù',
+            'description' => 'Chicken with almonds and bamboo shoots',
+            'price' => 7.00,
+            'visible' => true,
+            'image' => 'https://www.buttalapasta.it/wp-content/uploads/2008/02/petto-di-pollo-alle-mandorle.jpg',
+            'tipologies' => 'carne',
+            'caterer_id' => 3
+        ],
+        [
+            'name' => 'Gamberetti fritti in pastella',
+            'description' => 'Batter fried shrimps',
+            'price' => 8.00,
+            'visible' => true,
+            'image' => 'https://www.ricettasprint.it/wp-content/uploads/2021/02/Code-di-gamberi-fritti-ricettasprint.jpg',
+            'tipologies' => 'pesce',
+            'caterer_id' => 3
+        ],
+        [
+            'name' => 'Cavolo cinese saltato',
+            'description' => 'Pakchoi (available with additional garlic and chilli)',
+            'price' => 6.00,
+            'visible' => true,
+            'image' => 'https://www.buttalapasta.it/wp-content/uploads/2022/12/ricette-con-cavolo-cinese.jpg',
+            'tipologies' => 'verdure',
+            'caterer_id' => 3
+        ],
+        [
+            'name' => 'Freselle alla mediterranea',
+            'description' => '',
+            'price' => 8.00,
+            'visible' => true,
+            'image' => 'https://www.kettycucinooggi.com/wp-content/uploads/2020/07/FRISELLE-INTEGRALI-ALLA-MEDITERRANEA-4-scaled.jpeg',
+            'tipologies' => 'antipasti',
             'caterer_id' => 4
         ],
         [
-            'name' => 'Spaghetti alla carbonara',
+            'name' => 'Tagliatelle alla bolognese',
             'description' => '',
-            'price' => 6.90,
+            'price' => 14.00,
             'visible' => true,
-            'image' => '',
-            'tipologies' => 'primi piatti',
+            'image' => 'https://www.cucchiaio.it/content/dam/cucchiaio/it/ricette/2009/11/ricetta-tagliatelle-bolognese/tagliatelle-alla-bolognese-ante.jpg',
+            'tipologies' => 'primi',
+            'caterer_id' => 4
+        ],
+        [
+            'name' => "Linguine all'astice",
+            'description' => '',
+            'price' => 22.00,
+            'visible' => true,
+            'image' => 'https://www.animaincucina.it/wp-content/uploads/2022/09/IMG_4416-320x427.jpg',
+            'tipologies' => 'primi',
+            'caterer_id' => 4
+        ],
+        [
+            'name' => 'Filetto al pepe verde',
+            'description' => '',
+            'price' => 24.00,
+            'visible' => true,
+            'image' => 'https://www.giallozafferano.it/images/184-18454/Filetto-al-pepe-verde_650x433_wm.jpg',
+            'tipologies' => 'secondi',
+            'caterer_id' => 4
+        ],
+        [
+            'name' => 'Spinaci finocchi e arancia',
+            'description' => '',
+            'price' => 10.00,
+            'visible' => true,
+            'image' => 'https://blog.giallozafferano.it/incucinaconmara/wp-content/uploads/2018/03/Insalata.jpg',
+            'tipologies' => 'insalate',
+            'caterer_id' => 4
+        ],
+        [
+            'name' => 'Samosa (2pz)',
+            'description' => 'Sfoglia ripiena di patate e piselli accompagnata da masala',
+            'price' => 5.00,
+            'visible' => true,
+            'image' => 'https://cdn.ilclubdellericette.it/wp-content/uploads/2021/02/samosa-1280x720.jpg',
+            'tipologies' => 'antipasti',
             'caterer_id' => 5
         ],
+        [
+            'name' => 'Menù carne',
+            'description' => 'Tandori mix, Cheese naan, Chikken tikka masala, Riso basmati e dolce a scelta',
+            'price' => 25.00,
+            'visible' => true,
+            'image' => 'https://mangiarebene.s3.amazonaws.com/uploads/blog_item/image/1285/mb_asset.jpg',
+            'tipologies' => 'menù fisso',
+            'caterer_id' => 5
+        ],
+        [
+            'name' => 'Chicken Himali',
+            'description' => 'Bocconcini di pollo cucinati con coriandolo e menta freschi con salsa tipiaca nepalese',
+            'price' => 13.00,
+            'visible' => true,
+            'image' => 'https://live.staticflickr.com/2886/11915592956_48ffeb3255_b.jpg',
+            'tipologies' => 'tipico nepalese',
+            'caterer_id' => 5
+        ],
+        [
+            'name' => 'Hariyali Tikka',
+            'description' => 'Bocconcini di pollo marinati in spinaci e menta cotti nel forno Tandoori',
+            'price' => 12.00,
+            'visible' => true,
+            'image' => 'https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2017/10-oct/Hariyali_Chicken_Tikka_Recipe-9373.jpg',
+            'tipologies' => 'tandoori',
+            'caterer_id' => 5
+        ],
+        [
+            'name' => 'Chicken Madras',
+            'description' => 'Bocconcini di pollo in pomodoro, semi di mostarda e foglie di curry',
+            'price' => 12.00,
+            'visible' => true,
+            'image' => 'https://www.kitchensanctuary.com/wp-content/uploads/2020/02/Chicken-Madras-square-FS-35.jpg',
+            'tipologies' => 'curry pollo',
+            'caterer_id' => 5
+        ]
     ],
     'caterers' => [
         [
