@@ -79,7 +79,8 @@ class CatererController extends Controller
      */
     public function edit(Caterer $caterer)
     {
-        //
+        $categories = Category::all();
+        return view('admin.caterers.edit', compact('categories', 'caterer'));
     }
 
     /**
@@ -91,7 +92,15 @@ class CatererController extends Controller
      */
     public function update(UpdateCatererRequest $request, Caterer $caterer)
     {
-        //
+        $data = $request->validated();
+        $caterer->update($data);
+        if($request->has('categories')) {
+            $caterer->categories()->sync($request->categories);
+        } else {
+            $caterer->categories()->sync([]);
+        }
+
+        return redirect()->route('admin.caterers.show', $caterer->slug)->with('message', 'I dati del ristorante sono stati aggiornati');
     }
 
     /**

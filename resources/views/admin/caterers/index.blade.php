@@ -16,8 +16,8 @@
                      <div class="card-body d-flex flex-column align-items-center gap-2 ">
                          <a href="{{ route('admin.caterers.show', $caterer->slug) }}"
                              class="btn btn-success text-white">Vedi in dettaglio</a>
-                         {{-- <a href="{{ route('admin.caterers.edit', $caterer->slug) }}"
-                             class="btn btn-warning text-white">Modifica</a> --}}
+                         <a href="{{ route('admin.caterers.edit', $caterer->slug) }}"
+                             class="btn btn-warning text-white">Modifica</a>
                      </div>
                  </div>
              @endforeach
