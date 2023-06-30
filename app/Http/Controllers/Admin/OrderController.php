@@ -76,10 +76,10 @@ class OrderController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
      */
     public function destroy(Order $order)
     {
-        //
+        $order->delete();
+        return redirect()->route('admin.orders.index')->with('message', "L'ordine $order->id realizzato da $order->receiver il $order->created_at è stato eliminato correttamente");
     }
 }
