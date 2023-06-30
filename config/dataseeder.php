@@ -198,7 +198,7 @@ return [
             'visible' => true,
             'image' => '',
             'tipologies' => 'snack, contorni, prodotto surgelato',
-            'caterer_id' => 3
+            'caterer_id' => 1
         ],
         [
             'name' => 'Capricciosa',
@@ -207,7 +207,7 @@ return [
             'visible' => true,
             'image' => '',
             'tipologies' => 'pizza, pizza rossa',
-            'caterer_id' => 4
+            'caterer_id' => 1
         ],
         [
             'name' => 'Pancit Bihon',
@@ -267,38 +267,38 @@ return [
     'caterers' => [
         [
             'user_id' => 1,
-            'name' => 'Pizzeria Roma',
-            'address' => 'Via Roma, 1',
-            'image' => 'https://i.pinimg.com/564x/ae/5e/24/ae5e2403c0396bb3c16539f3879be22d.jpg',
-            'phone_number' => '02 7056 9901'
+            'name' => 'Pizzium',
+            'address' => 'Via Augusto Anfossi 1',
+            'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/27/1d/6d/84/pizza-salsiccia-e-friarielli.jpg',
+            'phone_number' => '+39 0254050232'
         ],
         [
             'user_id' => 1,
-            'name' => 'Sushi Lab',
-            'address' => 'Via Milano, 2',
-            'image' => 'https://i.pinimg.com/564x/cc/8c/82/cc8c82057916ac5cb8ee7122e021e266.jpg',
-            'phone_number' => '02 2193 0011'
+            'name' => 'Yokohama Flavour Journey Cuisine',
+            'address' => 'Via Pantano 8',
+            'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/18/90/d2/2a/sunset.jpg',
+            'phone_number' => '+39 02874291'
         ],
         [
             'user_id' => 1,
-            'name' => 'Hong Kong',
-            'address' => 'Via Venezia, 3',
-            'image' => 'https://i.pinimg.com/564x/6d/be/82/6dbe82e9682e415915a5d9e7fb0e1c7b.jpg',
-            'phone_number' => '02 9821 6634'
+            'name' => 'Fei Yun Ge',
+            'address' => 'Via Melchiorre Gioia 141',
+            'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/1d/5b/88/9a/ravioli-di-carne.jpg',
+            'phone_number' => '+39 0266985374'
         ],
         [
             'user_id' => 1,
-            'name' => 'La Brace Food Experience',
-            'address' => 'Via Firenze, 4',
-            'image' => 'https://i.pinimg.com/564x/63/5e/3d/635e3d0fbec3931fba332535a6671a6a.jpg',
-            'phone_number' => '02 0034 5671 '
+            'name' => 'Viaggi Nel Gusto',
+            'address' => 'Via Edmondo De Amicis 24',
+            'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/1d/57/c7/70/caption.jpg',
+            'phone_number' => '+39 0247755531'
         ],
         [
             'user_id' => 1,
-            'name' => 'Chiquito',
-            'address' => 'Via Napoli, 5',
-            'image' => 'https://i.pinimg.com/564x/86/bd/3c/86bd3c1bf93620167ab1485be959d3f2.jpg',
-            'phone_number' => '02 4768 1121'
+            'name' => 'Ristorante Himalaya',
+            'address' => 'Via Marcantonio dal Re 10',
+            'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/22/12/10/78/nostri-piatti-tipici.jpg',
+            'phone_number' => '+39 0283541759'
         ]
     ],
     'categories' => [
