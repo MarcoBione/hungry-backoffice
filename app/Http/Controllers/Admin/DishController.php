@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Dish;
+use App\Models\Caterer;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
 use Illuminate\Support\Str;
@@ -16,9 +17,6 @@ class DishController extends Controller
     {
         $slug = Str::of($title)->slug("-");
         $count = 1;
-
-        // Prendi il primo post il cui slug è uguale a $slug
-        // se è presente allora genero un nuovo slug aggiungendo -$count
         while( Dish::where("slug", $slug)->first() ) {
             $slug = Str::of($title)->slug("-") . "-{$count}";
             $count++;
@@ -32,8 +30,10 @@ class DishController extends Controller
      */
     public function index()
     {
+        $id = Auth::id();
+        $caterer = Caterer::where('id', $id)->first();
         $dishes=Dish::paginate(10);
-        return view('admin.dishes.index', compact('dishes'));
+        return view('admin.dishes.index', compact('dishes', 'caterer'));
     }
 
     /**
@@ -52,13 +52,17 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
+        // dd($request);
         $data = $request->validated();
         $slug = $this->getSlug($request->name);
         //$slug = Str::slug($request->name, '-');
         $data['slug'] = $slug;
         $data['caterer_id'] = Auth::id();
         $dish = Dish::create($data);
-        return redirect()->route('admin.dish.show', $dish->slug);
+        if ($request->has('orders')) {
+            $dish->orders()->attach($request->orders);
+        }
+        return redirect()->route('admin.dishes.show', $dish->slug);
     }
 
     /**
@@ -101,6 +105,11 @@ class DishController extends Controller
         // $slug = Str::slug($request->name, '-');
         $data['slug'] = $slug;
         $dish->update($data);
+        if ($request->has('orders')) {
+            $dish->orders()->sync($request->orders);
+        } else {
+            $dish->orders()->sync([]);
+        }
         return redirect()->route('admin.dishes.show', $dish->slug)->with('message', 'Il piatto è stato modificato');
     }
 
