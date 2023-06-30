@@ -53,10 +53,10 @@
                         {{ $order->address }}
                     </td>
                     <td>
-                        {{ $product->created_at }}
+                        {{ $order->created_at }}
                     </td>
                     <td>
-                        {{ $product->updated_at }}
+                        {{ $order->updated_at }}
                     </td>
                     <td>
                         <div class="d-flex justify-content-between align-items-center">
