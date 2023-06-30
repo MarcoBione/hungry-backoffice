@@ -40,7 +40,7 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         $data = $request->validated();
-        $data['user_id'] = Auth::id();
+        /* $data['user_id'] = Auth::id(); */
         $category = Category::create($data);
 
         return redirect()->route('admin.categories.show', $category->id)->with('message', "Category {$category->name} successfully created");
@@ -73,10 +73,10 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        if ($category->user_id !== Auth::id()) {
+        /* if ($category->user_id !== Auth::id()) {
             abort(403);
         }
-
+ */
         return view('admin.categories.edit', compact('category'));
     }
 
@@ -104,5 +104,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('message', "$category->name deleted successfully!");
     }
 }
