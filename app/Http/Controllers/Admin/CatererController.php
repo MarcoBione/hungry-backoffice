@@ -19,7 +19,7 @@ class CatererController extends Controller
     public function index()
     {
         $caterers = Caterer::all();
-        return view('caterers.index', compact('caterers'));
+        return view('admin.caterers.index', compact('caterers'));
     }
 
     /**
@@ -30,7 +30,7 @@ class CatererController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('caterers.create', compact('categories'));
+        return view('admin.caterers.create', compact('categories'));
     }
 
     /**
@@ -52,7 +52,7 @@ class CatererController extends Controller
         // $newCaterer->category()->attach($request->category);
         $newCaterer->save();
 
-        redirect()->route('caterers.show', $newCaterer->slug);
+        redirect()->route('admin.caterers.show', $newCaterer->slug);
     }
 
     /**
@@ -63,7 +63,7 @@ class CatererController extends Controller
      */
     public function show(Caterer $caterer)
     {
-        return view('caterers.show', compact('caterer'));
+        return view('admin.caterers.show', compact('caterer'));
     }
 
     /**
