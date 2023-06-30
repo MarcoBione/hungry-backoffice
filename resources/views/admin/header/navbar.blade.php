@@ -8,22 +8,20 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
 
-        <ul class="navbar-nav">
+        <ul class="navbar-nav w-100 d-flex justify-content-between">
 
           <li class="nav-item">
-            <a class="nav-link text-primary fw-semibold" href="#">Aggiungi attività</a>
+            <a class="nav-link text-primary fw-semibold" href="#"><i class="fa-solid fa-house-user"></i> | Gestisci attività</a>
           </li>
 
+          {{-- da vedersi solo con profilo di tipo admin --}}
           <li class="nav-item">
-            <a class="nav-link text-primary fw-semibold" href="#">Aggiungi piatti</a>
+            <a class="nav-link text-primary fw-semibold" href="#"><i class="fa-solid fa-screwdriver-wrench"></i> | Gestisci categorie</a>
           </li>
+          {{-- da vedersi solo con profilo di tipo admin --}}
 
           <li class="nav-item">
-            <a class="nav-link text-primary fw-semibold" href="#">Aggiungi categorie</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-primary fw-semibold" href="#">Controlla ordini</a>
+            <a class="nav-link text-primary fw-semibold" href="#"><i class="fa-solid fa-money-bill-wave"></i> | Controlla ordini</a>
           </li>
 
         </ul>
