@@ -31,7 +31,17 @@
         <div class="d-flex p-4 justify-content-center align-items-start">
             {{-- Container on the left side of the screen with the dishes info --}}
             <div class="d-flex flex-column align-items-center">
-
+                {{-- Container with the caterer data, the summary about the dishes and the total price --}}
+                {{-- <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-solid fa-location-dot fs-3"></i>
+                    <div class="d-flex flex-column align-items-start justify-content-start">
+                        <span class="fs-5 fw-bold mb-2">Indirizzo di consegna</span>
+                        <div class="d-flex flex-column align-items-start">
+                            <span>{{ $order->receiver }}</span>
+                            <span>{{ $order->address }}</span>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
             {{-- Container on the right side of the screen with the info about the user --}}
             <div class="d-flex flex-column align-items-center">
