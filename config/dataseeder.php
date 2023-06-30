@@ -2,127 +2,117 @@
 return [
     "orders" => [
         [
-            "receiver" => "Francesco",
-            "phone_number" => "5163497403",
-            "status" => "Confermato",
-            "notes" => "Il campanello è rotto, urlare quando si è dal cancello",
+            "receiver" => "Andrea Collura",
+            "phone_number" => "+39 1234567890",
+            "status" => "In preparazione",
+            "notes" => "",
             "total_price" => 20.5,
             "address" => "Giuseppe Sacconi, 5",
             "dishes" => [
                 [
                     "dish_id" => 1,
-                    "quantity" => 2,
-                    "notes" => "Test"
-                ],
-                [
-                    "dish_id" => 2,
                     "quantity" => 1,
-                    "notes" => "Test"
-                ],
-                [
-                    "dish_id" => 11,
-                    "quantity" => 1,
-                    "notes" => "Test"
-                ]
-            ]
-        ],
-        [
-            "receiver" => "Luca",
-            "phone_number" => "3448496195",
-            "status" => "Confermato",
-            "notes" => "Bussare 3 volte di fila per favore",
-            "total_price" => 18.2,
-            "address" => "Via Veronese Guarino, 10",
-            "dishes" => [
-                [
-                    "dish_id" => 3,
-                    "quantity" => 2,
-                    "notes" => "Test"
+                    "notes" => "Senza guanciale"
                 ],
                 [
                     "dish_id" => 4,
                     "quantity" => 1,
-                    "notes" => "Test"
+                    "notes" => ""
                 ],
-                [
-                    "dish_id" => 12,
-                    "quantity" => 1,
-                    "notes" => "Test"
-                ]
-            ]
-        ],
-        [
-            "receiver" => "Marta",
-            "phone_number" => "8987089354",
-            "status" => "Confermato",
-            "notes" => "Pulitevi le scarpe prima di entrare",
-            "total_price" => 15,
-            "address" => "Via Tito Livio, 3",
-            "dishes" => [
                 [
                     "dish_id" => 5,
                     "quantity" => 2,
-                    "notes" => "Test"
-                ],
-                [
-                    "dish_id" => 6,
-                    "quantity" => 1,
-                    "notes" => "Test"
-                ],
-                [
-                    "dish_id" => 13,
-                    "quantity" => 1,
-                    "notes" => "Test"
+                    "notes" => ""
                 ]
             ]
         ],
         [
-            "receiver" => "Erika",
-            "phone_number" => "1881621025",
-            "status" => "Confermato",
-            "notes" => "Non mandate Filiberto a fare la consegna, è un maleducato",
-            "total_price" => 6.9,
-            "address" => "Via Cadore, 10",
+            "receiver" => "Chiara Sucato",
+            "phone_number" => "+39 9876543210",
+            "status" => "In consegna",
+            "notes" => "",
+            "total_price" => 18.2,
+            "address" => "Via Veronese Guarino, 10",
             "dishes" => [
                 [
                     "dish_id" => 7,
                     "quantity" => 2,
-                    "notes" => "Test"
+                    "notes" => ""
                 ],
                 [
-                    "dish_id" => 8,
+                    "dish_id" => 10,
+                    "quantity" => 1,
+                    "notes" => ""
+                ]
+            ]
+        ],
+        [
+            "receiver" => "Christian Totaro",
+            "phone_number" => "+39 5555555555",
+            "status" => "Confermato",
+            "notes" => "",
+            "total_price" => 15,
+            "address" => "Via Tito Livio, 3",
+            "dishes" => [
+                [
+                    "dish_id" => 12,
+                    "quantity" => 1,
+                    "notes" => ""
+                ],
+                [
+                    "dish_id" => 13,
+                    "quantity" => 1,
+                    "notes" => ""
+                ],
+                [
+                    "dish_id" => 15,
+                    "quantity" => 2,
+                    "notes" => ""
+                ]
+            ]
+        ],
+        [
+            "receiver" => "Marco Bione",
+            "phone_number" => "+39 9999999999",
+            "status" => "Pagato",
+            "notes" => "",
+            "total_price" => 6.9,
+            "address" => "Via Cadore, 10",
+            "dishes" => [
+                [
+                    "dish_id" => 17,
                     "quantity" => 1,
                     "notes" => "Test"
                 ],
                 [
-                    "dish_id" => 14,
+                    "dish_id" => 20,
                     "quantity" => 1,
                     "notes" => "Test"
                 ]
             ]
         ],
         [
-            "receiver" => "Luana",
-            "phone_number" => "7387907535",
-            "status" => "Confermato",
-            "notes" => "Ho fame, muovetevi",
+            "receiver" => "Marika Di Blasio",
+            "phone_number" => "+39 2468135790",
+            "status" => "Consegnato",
+            "notes" => "",
             "total_price" => 17.5,
             "address" => "Via K.Adenauer, 3",
             "dishes" => [
                 [
-                    "dish_id" => 9,
-                    "quantity" => 2,
-                    "notes" => "Test"
+                    "dish_id" => 21,
+                    "quantity" => 1,
+                    "notes" => ""
                 ],
                 [
-                    "dish_id" => 10,
+                    "dish_id" => 23,
                     "quantity" => 1,
-                    "notes" => "Test"
+                    "notes" => ""
                 ],
                 [
-                    "dish_id" => 15,
+                    "dish_id" => 25,
                     "quantity" => 1,
-                    "notes" => "Test"
+                    "notes" => ""
                 ]
             ]
         ]
