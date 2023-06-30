@@ -48,11 +48,13 @@
                     {{-- Container with the dishes included in the order --}}
                     <div class="d-flex flex-column gap-2">
                         <span class="fs-5 fw-bold">Riepilogo dell'ordine</span>
-                        <div class="d-flex gap-2 flex-column align-items-start">
+                        <div class="d-flex gap-4 flex-column align-items-start">
                             @foreach ($order->dishes as $dish)
-                            <div class="d-flex justify-content-between align-items-center gap-4">
-                                <span>{{ $dish->name }} x {{ $dish->pivot->quantity }}</span>
-                                <span>{{ $dish->price * $dish->pivot->quantity }}&euro;</span>
+                            <div class="w-100 d-flex flex-column gap-1 flex-wrap">
+                                <div class="w-100 d-flex fw-bold justify-content-between align-items-center gap-4 ">
+                                    <span>{{ $dish->name }} x {{ $dish->pivot->quantity }}</span>
+                                    <span>{{ $dish->price * $dish->pivot->quantity }}&euro;</span>
+                                </div>
                                 @if ($dish->pivot->notes)
                                     <span>Note: {{ $dish->pivot->notes }}</span>
                                 @endif
