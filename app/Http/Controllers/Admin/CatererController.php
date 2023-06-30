@@ -49,6 +49,7 @@ class CatererController extends Controller
         $newCaterer->image = $data['image'];
         $newCaterer->phone_number = $data['phone_number'];
         $newCaterer->slug = Str::slug($data['name'], '-');
+        // $newCaterer->category()->attach($request->category);
         $newCaterer->save();
 
         redirect()->route('caterers.show', $newCaterer->slug);
