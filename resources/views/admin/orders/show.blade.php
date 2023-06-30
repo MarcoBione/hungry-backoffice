@@ -12,6 +12,21 @@
             <i class="fa-solid fa-basket-shopping"></i>
             <span>Ordine {{ $order->id }}</span>
         </h1>
+        {{-- Section with the info about the creation time, last update time and the current status --}}
+        <div class="d-flex gap-4 bg-dark text-light p-4 rounded-4 text-center align-items-start">
+            <div class="d-flex flex-column align-items-center">
+                <p class="fw-bold fs-5">Creazione</p>
+                <p>{{ $order->created_at }}</p>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <p class="fw-bold fs-5">Ultimo aggiornamento</p>
+                <p>{{ $order->updated_at }}</p>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <p class="fw-bold fs-5">Stato</p>
+                <p>{{ $order->status }}</p>
+            </div>
+        </div>
     </div>
     {{-- <th scope="col">Id</th>
     <th scope="col">Destinatario</th>
