@@ -89,6 +89,16 @@
                         </div>
                     </div>
                 </div>
+                {{-- Container with the phone number of the receiver --}}
+                <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-solid fa-phone fs-3"></i>
+                    <div class="d-flex flex-column align-items-start justify-content-start">
+                        <span class="fs-5 fw-bold mb-2">Numero di telefono</span>
+                        <div class="d-flex flex-column align-items-start">
+                            <span>{{ $order->phone_number }}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
