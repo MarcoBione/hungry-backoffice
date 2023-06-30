@@ -35,12 +35,16 @@
             </div>
             {{-- Container on the right side of the screen with the info about the user --}}
             <div class="d-flex flex-column align-items-center">
-
+                <div class="d-flex gap-4 align-items-start">
+                    <i class="fa-solid fa-location-dot fs-5"></i>
+                    <div class="d-flex flex-column align-items-start justify-content-start">
+                        <p class="fs-5 fw-bold">Indirizzo di consegna</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     {{--
-        <th scope="col">Id</th>
         <th scope="col">Destinatario</th>
         <th scope="col">Numero di telefono</th>
         <th scope="col">Note</th>
