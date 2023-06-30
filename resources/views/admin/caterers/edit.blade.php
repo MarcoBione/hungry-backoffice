@@ -2,12 +2,13 @@
 
 @section('content')
     <div class="container mt-3">
-        <form action="{{ route('admin.caterers.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.caterers.update', $caterer->slug) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label for="name">Nome Ristorante</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
-                    required maxlength="150" minlength="3">
+                    required maxlength="150" minlength="3" value="{{ old('name', $caterer->name) }}">
                 @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -15,7 +16,7 @@
             <div class="mb-3">
                 <label for="address">Indirizzo</label>
                 <input type="text" class="form-control @error('address') is-invalid @enderror" name="address"
-                    id="address">
+                    id="address" value="{{ old('name', $caterer->address) }}">
                 @error('address')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -23,7 +24,7 @@
             <div class="mb-3">
                 <label for="image">Immagine</label>
                 <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
-                    id="image">
+                    id="image" value="{{ old('name', $caterer->image) }}">
                 @error('image')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -31,7 +32,7 @@
             <div class="mb-3">
                 <label for="phone_number">Numero Telefonico</label>
                 <input type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
-                    id="phone_number">
+                    id="phone_number" value="{{ old('name', $caterer->phone_number) }}">
                 @error('speed')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -52,5 +53,9 @@
             <button type="submit" class="btn btn-success">Save</button>
             <button type="reset" class="btn btn-primary">Reset</button>
         </form>
+        <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            bkLib.onDomLoaded(nicEditors.allTextAreas);
+        </script>
     </div>
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Caterer;
 use App\Models\Category;
+use App\Models\Dish;
 use Illuminate\Support\Str;
 use App\Http\Requests\StoreCatererRequest;
 use App\Http\Requests\UpdateCatererRequest;
@@ -30,7 +31,7 @@ class CatererController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.caterers.create', compact('categories'));
+        return view('admin.caterers.create', compact('categories', 'dishes'));
     }
 
     /**
@@ -67,8 +68,8 @@ class CatererController extends Controller
      */
     public function show(Caterer $caterer)
     {
-
-        return view('admin.caterers.show', compact('caterer'));
+        $dishes = Dish::all()->where('caterer_id', $caterer->id);
+        return view('admin.caterers.show', compact('caterer', 'dishes'));
     }
 
     /**
@@ -79,7 +80,8 @@ class CatererController extends Controller
      */
     public function edit(Caterer $caterer)
     {
-        //
+        $categories = Category::all();
+        return view('admin.caterers.edit', compact('categories', 'caterer'));
     }
 
     /**
@@ -91,7 +93,15 @@ class CatererController extends Controller
      */
     public function update(UpdateCatererRequest $request, Caterer $caterer)
     {
-        //
+        $data = $request->validated();
+        $caterer->update($data);
+        if($request->has('categories')) {
+            $caterer->categories()->sync($request->categories);
+        } else {
+            $caterer->categories()->sync([]);
+        }
+
+        return redirect()->route('admin.caterers.show', $caterer->slug)->with('message', 'I dati del ristorante sono stati aggiornati');
     }
 
     /**
@@ -102,6 +112,8 @@ class CatererController extends Controller
      */
     public function destroy(Caterer $caterer)
     {
-        //
+        $caterer->delete();
+
+        return redirect()->route('admin.caterers.index')->with('message', "$caterer->name eliminato con successo");
     }
 }
