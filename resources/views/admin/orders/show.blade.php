@@ -28,27 +28,90 @@
             </div>
         </div>
         {{-- Container of the info about the order and the user that maded the order --}}
-        <div class="d-flex p-4 justify-content-center align-items-start">
+        <div class="d-flex p-4 justify-content-center align-items-start gap-4 flex-wrap">
             {{-- Container on the left side of the screen with the dishes info --}}
             <div class="d-flex flex-column align-items-center">
-
+                {{-- Container with the caterer data, the summary about the dishes and the total price --}}
+                <div class="d-flex flex-column gap-3 justify-content-start border rounded-4 p-4">
+                    {{-- Container with the data about the restaurant --}}
+                    <div class="d-flex gap-4">
+                        <img src="{{ $order->dishes[0]->caterer->image }}" alt="{{ $order->dishes[0]->caterer->name }}" class="img-thumbnail col-3">
+                        <div class="d-flex flex-column align-items-start justify-content-start">
+                            <span class="fs-5 fw-bold mb-2">{{ $order->dishes[0]->caterer->name }}</span>
+                            <div class="d-flex flex-column align-items-start">
+                                <span>{{ $order->dishes[0]->caterer->address }}</span>
+                                <span>{{ $order->dishes[0]->caterer->phone_number }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    {{-- Container with the dishes included in the order --}}
+                    <div class="d-flex flex-column gap-2">
+                        <span class="fs-5 fw-bold">Riepilogo dell'ordine</span>
+                        <div class="d-flex gap-4 flex-column align-items-start">
+                            @foreach ($order->dishes as $dish)
+                            <div class="w-100 d-flex flex-column gap-1 flex-wrap">
+                                <div class="w-100 d-flex fw-bold justify-content-between align-items-center gap-4 ">
+                                    <span>{{ $dish->name }} x {{ $dish->pivot->quantity }}</span>
+                                    <span>{{ $dish->price * $dish->pivot->quantity }}&euro;</span>
+                                </div>
+                                @if ($dish->pivot->notes)
+                                    <span>Note: {{ $dish->pivot->notes }}</span>
+                                @endif
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <hr>
+                    {{-- Container with the total price --}}
+                    <div class="d-flex justify-content-between align-items-center gap-4 fs-5 fw-bold">
+                        <span>Totale pagato con PayPal</span>
+                        <span>{{ $order->total_price }}&euro;</span>
+                    </div>
+                </div>
             </div>
             {{-- Container on the right side of the screen with the info about the user --}}
-            <div class="d-flex flex-column align-items-center">
-                <div class="d-flex gap-4 align-items-start">
-                    <i class="fa-solid fa-location-dot fs-5"></i>
+            <div class="d-flex flex-column gap-4">
+                {{-- Container with the address --}}
+                <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-solid fa-location-dot fs-3"></i>
                     <div class="d-flex flex-column align-items-start justify-content-start">
-                        <p class="fs-5 fw-bold">Indirizzo di consegna</p>
+                        <span class="fs-5 fw-bold mb-2">Indirizzo di consegna</span>
+                        <div class="d-flex flex-column align-items-start">
+                            <span>{{ $order->receiver }}</span>
+                            <span>{{ $order->address }}</span>
+                        </div>
+                    </div>
+                </div>
+                {{-- Container with the notes --}}
+                <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-regular fa-message fs-3"></i>
+                    <div class="d-flex flex-column align-items-start justify-content-start">
+                        <span class="fs-5 fw-bold mb-2">Le note di {{ $order->receiver }}</span>
+                        <div class="d-flex flex-column align-items-start">
+                            @if ($order->notes)
+                                <span>{{ $order->notes }}</span>
+                            @else
+                                <span>Non ha lasciato nessuna nota</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                {{-- Container with the phone number of the receiver --}}
+                <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-solid fa-phone fs-3"></i>
+                    <div class="d-flex flex-column align-items-start justify-content-start">
+                        <span class="fs-5 fw-bold mb-2">Numero di telefono</span>
+                        <div class="d-flex flex-column align-items-start">
+                            <span>{{ $order->phone_number }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     {{--
-        <th scope="col">Destinatario</th>
         <th scope="col">Numero di telefono</th>
-        <th scope="col">Note</th>
         <th scope="col">Prezzo totale</th>
-        <th scope="col">Indirizzo</th>
     --}}
 @endsection
