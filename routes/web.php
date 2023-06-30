@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\DishController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\CatererController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +29,10 @@ Route::get('/admin', function () {
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::resource('dishes', DishController::class)->parameters(['dishes' => 'dish:slug']);
+    Route::resource('orders', OrderController::class);
+    Route::resource('caterers', CatererController::class)->parameters(['caterers' => 'dish:slug']);
+    Route::resource('categories', CategoryController::class);
+
 });
 
 Route::middleware('auth')->group(function () {
