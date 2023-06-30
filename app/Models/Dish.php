@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Dish extends Model
 {
     use HasFactory;
-    protected $fillable = ['slug', 'name', 'description', 'price', 'visible', 'image', 'tipologies'];
+    protected $fillable = ['slug', 'name', 'description', 'price', 'visible', 'image', 'tipologies', 'caterer_id'];
 
-    // public function caterer(){
-    //     return $this->belongsTo(Caterer::class);
-    // }
-    // public function orders(){
-    //     return $this->belongsToMany(Order::class);
-    // }
+     public function caterer(){
+         return $this->belongsTo(Caterer::class);
+     }
+     public function orders(){
+         return $this->belongsToMany(Order::class)->withPivot(["quantity","notes"]);;
+     }
 }

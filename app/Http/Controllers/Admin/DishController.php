@@ -12,11 +12,11 @@ class DishController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $dishes=Dish::all();
+        return view('admin.dishes.index', compact('dishes'));
     }
 
     /**
@@ -44,11 +44,11 @@ class DishController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Dish  $dish
-     * @return \Illuminate\Http\Response
+     *
      */
     public function show(Dish $dish)
     {
-        //
+        return view('admin.dishes.show', compact('dish'));
     }
 
     /**
