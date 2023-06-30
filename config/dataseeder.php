@@ -393,54 +393,49 @@ return [
     ],
     'categories' => [
         [
-            'name' => 'Pizzeria',
-            'description' => 'Le migliori pizze genuine come quelle fatte in casa.',
-            'image' => 'https://esempio.com/immagini/pizza.jpg',
+            'name' => 'Indiano',
+            'description' => "La cucina indiana è ricca di aromi e spezie, con una varietà di piatti vegetariani e non. Curry, naan, samosa e biryani sono solo alcune delle prelibatezze che deliziano il palato con esplosioni di sapori unici. Una combinazione di ingredienti freschi, erbe aromatiche e una vasta gamma di spezie rende la cucina indiana un'esperienza culinaria vibrante e indimenticabile.",
+            'image' => 'https://d2sj0xby2hzqoy.cloudfront.net/kenwood_italy/attachments/data/000/011/430/original/cucina-indiana-da-nord-a-sud-8-piatti-tradizionali-header.jpg',
         ],
         [
-            'name' => 'Hamburgeria',
-            'description' => 'Gustosi hamburger con ingredienti freschi.',
-            'image' => 'https://esempio.com/immagini/hamburger.jpg',
-        ],
-        [
-            'name' => 'kebab',
-            'description' => 'Ottimo kebab di qualitá garatita',
-            'image' => 'https://esempio.com/immagini/kebab.jpg',
-        ],
-        [
-            'name' => 'Sushi',
-            'description' => 'Sushi fresco e autentico.',
-            'image' => 'https://esempio.com/immagini/sushi.jpg',
-        ],
-        [
-            'name' => 'Thailandese',
-            'description' => '',
-            'image' => 'https://esempio.com/immagini/thai.jpg',
-        ],
-        [
-            'name' => 'Cinese',
-            'description' => 'Sapori orientali decisi dagli aromi vari e intriganti.',
-            'image' => 'https://esempio.com/immagini/cinese.jpg',
+            'name' => 'Nepalese',
+            'description' => "La cucina nepalese è una fusione di sapori e influenze culturali uniche. Piatti come dal bhat (lenticchie e riso), momo (ravioli al vapore) e thukpa (zuppa di noodle) sono molto popolari. Gli ingredienti locali come lo yak, il riso basmati e le spezie aromatiche aggiungono un sapore distintivo ai piatti. La cucina nepalese è caratterizzata da una combinazione di dolce, piccante e saporito, che si riflette nella sua varietà di condimenti e salse. È una delizia per i sensi e offre un'esperienza culinaria autentica.",
+            'image' => 'https://viaggiarecomunque.it/wp-content/uploads/2019/11/cucina-nepalese.jpg',
         ],
         [
             'name' => 'Italiano',
-            'description' => 'Piatti italiani pieni di tradizione e gusto',
-            'image' => 'https://esempio.com/immagini/italiano.jpg',
+            'description' => "La cucina italiana è rinomata in tutto il mondo per la sua semplicità e qualità degli ingredienti. Pizze fragranti, pasta al dente, formaggi prelibati e olio d'oliva extravergine sono solo alcune delle delizie che offre. Dalla classica pasta alla carbonara alla tradizionale pizza margherita, ogni regione italiana ha le sue specialità culinarie uniche. La cucina italiana celebra la freschezza degli ingredienti stagionali e si basa su ricette tradizionali tramandate di generazione in generazione. È un connubio perfetto di gusto, passione e amore per il cibo, che offre un'esperienza culinaria indimenticabile.",
+            'image' => 'https://www.trattoriadatito.it/wp-content/uploads/2020/08/Quanto-ne-sai-di-cucina-italiana.jpg',
         ],
         [
-            'name' => 'Piadineria',
-            'description' => 'Piadine di tutti i tipi e condimenti a scelta.',
-            'image' => 'https://esempio.com/immagini/piadineria.jpg',
+            'name' => 'Pizza',
+            'description' => "La pizza è un'icona della cucina italiana, amata in tutto il mondo. La base di pasta sottile e croccante, ricoperta di salsa di pomodoro e formaggio filante, è un piacere per il palato. Le varietà di condimenti, come salumi, formaggi, verdure e aromi, offrono infinite possibilità di gusto. La pizza è un simbolo di convivialità e condivisione, perfetta da gustare con amici e familiari. Che sia una margherita classica o una creazione gourmet, la pizza è un piatto irresistibile che continua a deliziare le papille gustative di chiunque la assaggi.",
+            'image' => 'https://www.buttalapasta.it/wp-content/uploads/2017/11/pizza-margherita.jpg',
         ],
         [
-            'name' => 'Messicano',
-            'description' => 'Prelibatezze dai sapori forti e speziati.',
-            'image' => 'https://esempio.com/immagini/messican.jpg',
+            'name' => 'Pesce',
+            'description' => "I piatti a base di pesce offrono una varietà di sapori e sono amati per la loro freschezza. Dal sushi giapponese al ceviche latinoamericano, il pesce crudo è una prelibatezza apprezzata in tutto il mondo. Piatti come la zuppa di pesce, la grigliata mista di frutti di mare e il pesce alla brace sono popolari per la loro delicatezza e gusto succulento. Le regioni costiere offrono specialità locali come la paella spagnola e l'insalata di mare italiana. I piatti a base di pesce sono una fonte di proteine ​​salutari e offrono una vasta gamma di sapore, soddisfacendo i palati più esigenti.",
+            'image' => 'https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2022/05/secondi-piatti-di-pesce-1200x675.jpg',
         ],
         [
-            'name' => 'Gelateria',
-            'description' => 'Gelato artigianale in una varietà di gusti.',
-            'image' => 'https://esempio.com/immagini/gelato.jpg',
+            'name' => 'Sushi',
+            'description' => "Il sushi è un'arte culinaria giapponese che combina sapori delicati e presentazione estetica. Preparato con riso di alta qualità e pesce crudo fresco, è un connubio di consistenze e sapori unici. Il sushi tradizionale include nigiri (toppato con fette di pesce), maki (arrotolato con riso e alga nori) e sashimi (fette di pesce crudo senza riso). È spesso accompagnato da salsa di soia, zenzero marinato e wasabi. Il sushi è apprezzato per la sua freschezza, equilibrio di gusti e il rispetto per gli ingredienti. È un'esperienza culinaria raffinata che celebra l'arte e la tradizione giapponese.",
+            'image' => 'https://s3-eu-west-1.amazonaws.com/fratelliorsero/wp-content/uploads/2019/11/25120833/shutterstock_648560977-1.jpg',
         ],
+        [
+            'name' => 'Zuppe',
+            'description' => "Le zuppe sono piatti versatili e confortanti che si trovano in diverse culture culinarie. Dal brodo di pollo alle zuppe di verdure, passando per le minestre di legumi e le zuppe di pesce, offrono una varietà di sapori e consistenze. Le zuppe sono spesso arricchite da spezie, erbe aromatiche e condimenti che donano profondità al sapore. Sono un'ottima fonte di nutrimento e possono essere personalizzate secondo le preferenze individuali. Dalla zuppa calda invernale che riscalda l'anima alle zuppe fredde estive che rinfrescano, le zuppe sono un piacere culinario che soddisfa il palato e offre comfort in ogni stagione.",
+            'image' => 'https://media-assets.lacucinaitaliana.it/photos/61fafc5e19ad4b37e96bc94e/16:9/w_2560%2Cc_limit/LAND-Vellutata-di-patate-broccoli-e-bacon.jpg',
+        ],
+        [
+            'name' => 'Giapponese',
+            'description' => "La cucina giapponese è celebre per la sua delicatezza e armonia. Sushi, sashimi, ramen e tempura sono solo alcuni dei piatti tradizionali che offrono un equilibrio perfetto di gusto, freschezza e presentazione estetica. L'uso di ingredienti di alta qualità e la maestria nella preparazione sono caratteristiche distintive. La cucina giapponese esalta i sapori naturali degli alimenti e si basa sulla freschezza del pesce, sull'equilibrio dei condimenti come la salsa di soia e il wasabi, e sull'attenzione ai dettagli. È una culinaria che incarna l'eleganza e la tradizione, offrendo un'esperienza gustativa unica.",
+            'image' => 'https://www.italiaatavola.net/images/contenutiarticoli/Cucina-giapponese-elisir-di-lunga-vita-Una-dieta-bilanciata-a-tutti-gli-effetti.jpg',
+        ],
+        [
+            'name' => 'Cinese',
+            'description' => "La cucina cinese è una delle più antiche e influenti al mondo. Caratterizzata da una grande varietà di piatti, offre sapori audaci, aromi intensi e un'ampia gamma di ingredienti come il riso, la soia, il tofu, le verdure e la carne. Piatti come il dim sum, il pollo all'arancia, il maiale agrodolce e i noodles sono solo alcune delle specialità cinesi amate in tutto il mondo. La cucina cinese si distingue per la sua abilità nel bilanciare i cinque sapori fondamentali: dolce, salato, acido, amaro e piccante. È una cucina che celebra la diversità regionale e la maestria culinaria, offrendo un'esperienza gustativa straordinaria.",
+            'image' => 'https://www.buttalapasta.it/wp-content/uploads/2011/01/cucina-cinese-piatti-tipici-e-specialita.jpg',
+        ]
     ]
 ];
