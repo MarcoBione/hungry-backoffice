@@ -30,7 +30,7 @@
         {{-- Container of the info about the order and the user that maded the order --}}
         <div class="d-flex p-4 justify-content-center align-items-start gap-4 flex-wrap">
             {{-- Container on the left side of the screen with the dishes info --}}
-            <div class="d-flex flex-column align-items-center">
+            <div class="col-xl-6 col-lg-5 col-12 d-flex flex-column align-items-center">
                 {{-- Container with the caterer data, the summary about the dishes and the total price --}}
                 <div class="d-flex flex-column gap-3 justify-content-start border rounded-4 p-4">
                     {{-- Container with the data about the restaurant --}}
@@ -71,7 +71,7 @@
                 </div>
             </div>
             {{-- Container on the right side of the screen with the info about the user --}}
-            <div class="d-flex flex-column gap-4">
+            <div class="col-xl-5 col-lg-4 col-12 d-flex flex-column gap-4">
                 {{-- Container with the address --}}
                 <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
                     <i class="fa-solid fa-location-dot fs-3"></i>
