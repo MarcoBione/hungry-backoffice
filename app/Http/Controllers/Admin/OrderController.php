@@ -11,12 +11,11 @@ class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $orders = Order::paginate(10);
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**
@@ -44,11 +43,10 @@ class OrderController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
      */
     public function show(Order $order)
     {
-        //
+        return view("admin.orders.show", compact("order"));
     }
 
     /**
