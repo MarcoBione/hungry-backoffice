@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Caterer;
+use App\Models\Category;
+use Illuminate\Support\Str;
 use App\Http\Requests\StoreCatererRequest;
 use App\Http\Requests\UpdateCatererRequest;
 
@@ -15,7 +18,8 @@ class CatererController extends Controller
      */
     public function index()
     {
-        //
+        $caterers = Caterer::all();
+        return view('caterers.index', compact('caterers'));
     }
 
     /**
@@ -25,7 +29,8 @@ class CatererController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('caterers.create', compact('categories'));
     }
 
     /**
@@ -36,7 +41,17 @@ class CatererController extends Controller
      */
     public function store(StoreCatererRequest $request)
     {
-        //
+        $data = $request->all();
+
+        $newCaterer = new Caterer();
+        $newCaterer->name = $data['name'];
+        $newCaterer->address = $data['address'];
+        $newCaterer->image = $data['image'];
+        $newCaterer->phone_number = $data['phone_number'];
+        $newCaterer->slug = Str::slug($data['name'], '-');
+        $newCaterer->save();
+
+        redirect()->route('caterers.show', $newCaterer->slug);
     }
 
     /**
@@ -47,7 +62,7 @@ class CatererController extends Controller
      */
     public function show(Caterer $caterer)
     {
-        //
+        return view('caterers.show', compact('caterer'));
     }
 
     /**
