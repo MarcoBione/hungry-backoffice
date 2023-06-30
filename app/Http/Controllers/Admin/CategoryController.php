@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -16,8 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('category.index', compact('category'));
+        $categories = Category::paginate(10);
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -27,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -38,7 +39,11 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        $data = $request->validated();
+        $data['user_id'] = Auth::id();
+        $category = Category::create($data);
+
+        return redirect()->route('admin.categories.show', $category->id)->with('message', "Category {$category->name} successfully created");
     }
 
     /**
@@ -49,6 +54,14 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        /* if (!Auth::user()->is_admin && $category->user_id !== Auth::id()) {
+            abort(403);
+        } */
+
+        if ($category->user_id !== Auth::id()) {
+            abort(403);
+        }
+
         return view('category.show', compact('category'));
     }
 
@@ -60,6 +73,11 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
+        if ($category->user_id !== Auth::id()) {
+            abort(403);
+        }
+
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -71,7 +89,11 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $data = $request->validated();
+
+        $category->update($data);
+
+        return redirect()->route('admin.categories.show', $category->id)->with('message', "Category {$category->name} successfully edited");
     }
 
     /**
@@ -82,6 +104,5 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
     }
 }
