@@ -10,4 +10,9 @@ class Order extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function dishes()
+    {
+        return $this->belongsToMany(Dish::class)->withPivot("quantity","notes");
+    }
 }
