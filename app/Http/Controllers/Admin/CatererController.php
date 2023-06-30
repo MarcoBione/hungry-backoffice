@@ -63,6 +63,7 @@ class CatererController extends Controller
      */
     public function show(Caterer $caterer)
     {
+
         return view('admin.caterers.show', compact('caterer'));
     }
 
