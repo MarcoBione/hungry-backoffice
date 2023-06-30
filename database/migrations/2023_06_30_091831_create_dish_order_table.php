@@ -14,8 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('dish_order', function (Blueprint $table) {
-            $table->id();
-
             $table->unsignedBigInteger('dish_id');
             $table->foreign('dish_id')->references('id')->on('dishes')->cascadeOnDelete();
 
@@ -24,6 +22,8 @@ return new class extends Migration
 
             $table->smallInteger("quantity");
             $table->text("notes")->nullable();
+
+            $table->primary(["dish_id","order_id"]);
         });
     }
 
