@@ -58,11 +58,11 @@ class CategoryController extends Controller
             abort(403);
         } */
 
-        if ($category->user_id !== Auth::id()) {
+        /* if ($category->user_id !== Auth::id()) {
             abort(403);
-        }
+        } */
 
-        return view('category.show', compact('category'));
+        return view('admin.categories.show', compact('category'));
     }
 
     /**

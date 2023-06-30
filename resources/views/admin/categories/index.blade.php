@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -14,7 +14,6 @@
             <tbody>
                 @foreach ($categories as $category)
                     <tr>
-                        <th scope="row">{{ $category->id }}</th>
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->description }}</td>
                         <td>{{ $category->class }}</td>
