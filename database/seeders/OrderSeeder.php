@@ -26,6 +26,13 @@ class OrderSeeder extends Seeder
             $order->total_price = $orderData["total_price"];
             $order->address = $orderData["address"];
             $order->save();
+
+            $dishes = $orderData["dishes"];
+            foreach($dishes as $dish)
+                $order->dishes()->attach($dish["dish_id"],[
+                    "quantity" => $dish["quantity"],
+                    "notes" => $dish["notes"]
+                ]);
         }
     }
 }
