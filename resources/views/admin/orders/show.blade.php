@@ -31,14 +31,53 @@
         <div class="d-flex p-4 justify-content-center align-items-start">
             {{-- Container on the left side of the screen with the dishes info --}}
             <div class="d-flex flex-column align-items-center">
-
+                {{-- Container with the caterer data, the summary about the dishes and the total price --}}
+                {{-- <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-solid fa-location-dot fs-3"></i>
+                    <div class="d-flex flex-column align-items-start justify-content-start">
+                        <span class="fs-5 fw-bold mb-2">Indirizzo di consegna</span>
+                        <div class="d-flex flex-column align-items-start">
+                            <span>{{ $order->receiver }}</span>
+                            <span>{{ $order->address }}</span>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
             {{-- Container on the right side of the screen with the info about the user --}}
             <div class="d-flex flex-column align-items-center">
-                <div class="d-flex gap-4 align-items-start">
-                    <i class="fa-solid fa-location-dot fs-5"></i>
+                {{-- Container with the address --}}
+                <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-solid fa-location-dot fs-3"></i>
                     <div class="d-flex flex-column align-items-start justify-content-start">
-                        <p class="fs-5 fw-bold">Indirizzo di consegna</p>
+                        <span class="fs-5 fw-bold mb-2">Indirizzo di consegna</span>
+                        <div class="d-flex flex-column align-items-start">
+                            <span>{{ $order->receiver }}</span>
+                            <span>{{ $order->address }}</span>
+                        </div>
+                    </div>
+                </div>
+                {{-- Container with the notes --}}
+                <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-regular fa-message fs-3"></i>
+                    <div class="d-flex flex-column align-items-start justify-content-start">
+                        <span class="fs-5 fw-bold mb-2">Le note di {{ $order->receiver }}</span>
+                        <div class="d-flex flex-column align-items-start">
+                            @if ($order->notes)
+                                <span>{{ $order->notes }}</span>
+                            @else
+                                <span>Non ha lasciato nessuna nota</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                {{-- Container with the phone number of the caterer --}}
+                <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-regular fa-circle-question fs-3"></i>
+                    <div class="d-flex flex-column align-items-start justify-content-start">
+                        <span class="fs-5 fw-bold mb-2">Possiamo aiutarti in qualche modo?</span>
+                        <div class="d-flex flex-column align-items-start">
+                            <span>Chiama il ristorante al {{ $order->dishes[0]->caterer->phone_number }}</span>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -19,4 +19,8 @@ class Caterer extends Model
     public function categories() {
         return $this->belongsToMany(Category::class);
     }
+
+    public function dishes(){
+        return $this->belongsToMany(Dish::class);
+    }
 }
