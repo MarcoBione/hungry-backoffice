@@ -31,32 +31,33 @@
             <div class="mb-3">
                 <label for="description">Descrizione</label>
                 <textarea name="description" id="description" rows="10"
-                    class="form-control @error('description') is-invalid @enderror"></textarea>
-                {{-- @error('description')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror --}}
+                    class="form-control">
+                </textarea>
             </div>
             <div class="mb-3">
                 <label for="tipologies">Tipologie</label>
                 <textarea name="tipologies" id="tipologies" rows="10"
                     class="form-control @error('tipologies') is-invalid @enderror" required></textarea>
-                {{-- @error('tipologies')
+                @error('tipologies')
                     <div class="invalid-feedback">{{ $message }}</div>
-                @enderror --}}
+                @enderror
             </div>
             <div class="form-check">
                 <p>Visibile sul sito?</p>
-                <input class="form-check-input" type="radio" name="visible" id="false">
-                <label class="form-check-label" for="false">
-                    No
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="visible" id="true" checked>
+                <input class="form-check-input" type="radio" name="visible" id="true" value="true">
                 <label class="form-check-label" for="true">
                     Sì
                 </label>
             </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="visible" id="false" value="false" checked>
+                <label class="form-check-label" for="false">
+                    No
+                </label>
+            </div>
+            @error('visible')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
             <button type="submit" class="btn btn-success">Save</button>
             <button type="reset" class="btn btn-primary">Reset</button>
         </form>

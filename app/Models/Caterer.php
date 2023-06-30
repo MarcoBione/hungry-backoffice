@@ -21,6 +21,6 @@ class Caterer extends Model
     }
 
     public function dishes(){
-        return $this->belongsToMany(Dish::class);
+        return $this->hasMany(Dish::class);
     }
 }

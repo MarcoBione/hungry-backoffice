@@ -55,9 +55,10 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
+        // dd($request);
         $data = $request->validated();
-        // $slug = $this->getSlug($request->name);
-        $slug = Str::slug($request->name, '-');
+        $slug = $this->getSlug($request->name);
+        //$slug = Str::slug($request->name, '-');
         $data['slug'] = $slug;
         $data['caterer_id'] = Auth::id();
         $dish = Dish::create($data);
