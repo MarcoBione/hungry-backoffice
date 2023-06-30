@@ -17,9 +17,6 @@ class DishController extends Controller
     {
         $slug = Str::of($title)->slug("-");
         $count = 1;
-
-        // Prendi il primo post il cui slug è uguale a $slug
-        // se è presente allora genero un nuovo slug aggiungendo -$count
         while( Dish::where("slug", $slug)->first() ) {
             $slug = Str::of($title)->slug("-") . "-{$count}";
             $count++;
@@ -108,6 +105,11 @@ class DishController extends Controller
         // $slug = Str::slug($request->name, '-');
         $data['slug'] = $slug;
         $dish->update($data);
+        if ($request->has('orders')) {
+            $dish->orders()->sync($request->orders);
+        } else {
+            $dish->orders()->sync([]);
+        }
         return redirect()->route('admin.dishes.show', $dish->slug)->with('message', 'Il piatto è stato modificato');
     }
 

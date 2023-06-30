@@ -1,6 +1,11 @@
 @extends('layouts.app');
 @section('content')
     <div class="container m-5">
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+        @endif
         <div class="card">
             <h1 class="card-title">Piatto: {{ $dish->name }}</h1>
             <div class=" card-body d-flex align-items-center justify-content-between">
@@ -34,6 +39,6 @@
                 </form>
             </div>
         </div>
-
     </div>
+    @include('partials.modal-delete')
 @endsection
