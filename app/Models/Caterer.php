@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Caterer extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'address', 'image', 'phone_number'];
+
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+    public function categories() {
+        return $this->belongsToMany(Category::class, 'caterer_item');
+    }
 }
