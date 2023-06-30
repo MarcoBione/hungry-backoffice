@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Dish;
+use App\Models\Caterer;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
 use Illuminate\Support\Str;
@@ -32,8 +33,10 @@ class DishController extends Controller
      */
     public function index()
     {
+        $id = Auth::id();
+        $caterer = Caterer::where('id', $id)->first();
         $dishes=Dish::paginate(10);
-        return view('admin.dishes.index', compact('dishes'));
+        return view('admin.dishes.index', compact('dishes', 'caterer'));
     }
 
     /**
@@ -53,11 +56,14 @@ class DishController extends Controller
     public function store(StoreDishRequest $request)
     {
         $data = $request->validated();
-        $slug = $this->getSlug($request->name);
-        //$slug = Str::slug($request->name, '-');
+        // $slug = $this->getSlug($request->name);
+        $slug = Str::slug($request->name, '-');
         $data['slug'] = $slug;
         $data['caterer_id'] = Auth::id();
         $dish = Dish::create($data);
+        if ($request->has('orders')) {
+            $dish->orders()->attach($request->orders);
+        }
         return redirect()->route('admin.dish.show', $dish->slug);
     }
 

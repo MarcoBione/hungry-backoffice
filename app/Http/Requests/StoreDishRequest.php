@@ -32,4 +32,13 @@ class StoreDishRequest extends FormRequest
             'tipologies' => 'required',
         ];
     }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Il campo è obbligatorio',
+            'price.required' => 'Il campo è obbligatorio',
+            'visible.required' => 'Il campo è obbligatorio',
+            'tipologies' => 'Il campo è obbligatorio'
+        ];
+    }
 }
