@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container mt-3">
+        <div class="p-5 d-flex justify-content-end">
+            <a href="{{ route('admin.categories.index') }}" class="btn btn-success">Torna a categorie</a>
+        </div>
         <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
