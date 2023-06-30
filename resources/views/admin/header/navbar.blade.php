@@ -11,17 +11,17 @@
         <ul class="navbar-nav w-100 d-flex justify-content-between">
 
           <li class="nav-item">
-            <a class="nav-link text-primary fw-semibold" href="#"><i class="fa-solid fa-house-user"></i> | Gestisci attività</a>
+            <a class="nav-link text-primary fw-semibold" href="{{ route('admin.caterers.index') }}"><i class="fa-solid fa-house-user"></i> | Gestisci attività</a>
           </li>
 
           {{-- da vedersi solo con profilo di tipo admin --}}
           <li class="nav-item">
-            <a class="nav-link text-primary fw-semibold" href="#"><i class="fa-solid fa-screwdriver-wrench"></i> | Gestisci categorie</a>
+            <a class="nav-link text-primary fw-semibold" href="{{ route('admin.categories.index') }}"><i class="fa-solid fa-screwdriver-wrench"></i> | Gestisci categorie</a>
           </li>
           {{-- da vedersi solo con profilo di tipo admin --}}
 
           <li class="nav-item">
-            <a class="nav-link text-primary fw-semibold" href="#"><i class="fa-solid fa-money-bill-wave"></i> | Controlla ordini</a>
+            <a class="nav-link text-primary fw-semibold" href="{{ route('admin.orders.index') }}"><i class="fa-solid fa-money-bill-wave"></i> | Controlla ordini</a>
           </li>
 
         </ul>
