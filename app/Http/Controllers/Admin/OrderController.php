@@ -43,11 +43,10 @@ class OrderController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
      */
     public function show(Order $order)
     {
-        //
+        return view("admin.orders.show", compact("order"));
     }
 
     /**
