@@ -27,15 +27,22 @@
                 <p>{{ $order->status }}</p>
             </div>
         </div>
+        {{-- Container of the info about the order and the user that maded the order --}}
+        <div class="d-flex p-4 justify-content-center align-items-start">
+            {{-- Container on the left side of the screen with the dishes info --}}
+            <div class="d-flex flex-column align-items-center">
+
+            </div>
+            {{-- Container on the right side of the screen with the info about the user --}}
+            <div class="d-flex flex-column align-items-center">
+
+            </div>
+        </div>
     </div>
     {{-- <th scope="col">Id</th>
     <th scope="col">Destinatario</th>
     <th scope="col">Numero di telefono</th>
-    <th scope="col">Stato</th>
     <th scope="col">Note</th>
     <th scope="col">Prezzo totale</th>
     <th scope="col">Indirizzo</th>
-    <th scope="col">Creazione</th>
-    <th scope="col">Ultima modifica</th>
-    <th scope="col">Azioni</th> --}}
 @endsection
