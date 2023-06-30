@@ -46,6 +46,20 @@
                         </div>
                     </div>
                 </div>
+                {{-- Container with the notes --}}
+                <div class="d-flex gap-4 align-items-start border rounded-4 p-4">
+                    <i class="fa-regular fa-message fs-3"></i>
+                    <div class="d-flex flex-column align-items-start justify-content-start">
+                        <span class="fs-5 fw-bold mb-2">Le note di {{ $order->receiver }}</span>
+                        <div class="d-flex flex-column align-items-start">
+                            @if ($order->notes)
+                                <span>{{ $order->notes }}</span>
+                            @else
+                                <span>Non ha lasciato nessuna nota</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
