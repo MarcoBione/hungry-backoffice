@@ -3,11 +3,12 @@
 @section('content')
     <div class="container">
         <div class="p-5 d-flex justify-content-end">
-            <a href="{{ route('admin.categories.create') }}" class="btn btn-success">crea nuova categoria</a>
+            <a href="{{ route('admin.categories.create') }}" class="btn btn-success text-capitalize">crea nuova
+                categoria</a>
         </div>
         <table class="table">
             <thead>
-                <tr>
+                <tr class="text-capitalize">
                     <th scope="col">nome categoria</th>
                     <th scope="col">descrizione</th>
                     <th scope="col">stile</th>
