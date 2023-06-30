@@ -8,6 +8,23 @@ return [
             "notes" => "Il campanello è rotto, urlare quando si è dal cancello",
             "total_price" => 20.5,
             "address" => "Giuseppe Sacconi, 5",
+            "dishes" => [
+                [
+                    "dish_id" => 1,
+                    "quantity" => 2,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 2,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 11,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ]
+            ]
         ],
         [
             "receiver" => "Luca",
@@ -16,6 +33,23 @@ return [
             "notes" => "Bussare 3 volte di fila per favore",
             "total_price" => 18.2,
             "address" => "Via Veronese Guarino, 10",
+            "dishes" => [
+                [
+                    "dish_id" => 3,
+                    "quantity" => 2,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 4,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 12,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ]
+            ]
         ],
         [
             "receiver" => "Marta",
@@ -24,6 +58,23 @@ return [
             "notes" => "Pulitevi le scarpe prima di entrare",
             "total_price" => 15,
             "address" => "Via Tito Livio, 3",
+            "dishes" => [
+                [
+                    "dish_id" => 5,
+                    "quantity" => 2,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 6,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 13,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ]
+            ]
         ],
         [
             "receiver" => "Erika",
@@ -32,6 +83,23 @@ return [
             "notes" => "Non mandate Filiberto a fare la consegna, è un maleducato",
             "total_price" => 6.9,
             "address" => "Via Cadore, 10",
+            "dishes" => [
+                [
+                    "dish_id" => 7,
+                    "quantity" => 2,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 8,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 14,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ]
+            ]
         ],
         [
             "receiver" => "Luana",
@@ -40,6 +108,23 @@ return [
             "notes" => "Ho fame, muovetevi",
             "total_price" => 17.5,
             "address" => "Via K.Adenauer, 3",
+            "dishes" => [
+                [
+                    "dish_id" => 9,
+                    "quantity" => 2,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 10,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ],
+                [
+                    "dish_id" => 15,
+                    "quantity" => 1,
+                    "notes" => "Test"
+                ]
+            ]
         ]
     ],
     "dishes" => [
