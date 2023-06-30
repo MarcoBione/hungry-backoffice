@@ -14,6 +14,6 @@ class Dish extends Model
          return $this->belongsTo(Caterer::class);
      }
      public function orders(){
-         return $this->belongsToMany(Order::class)->withPivot(["quantity","notes"]);;
+         return $this->belongsToMany(Order::class)->withPivot("quantity","notes");
      }
 }
