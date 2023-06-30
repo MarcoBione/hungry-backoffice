@@ -46,8 +46,14 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                            <a class="nav-link fw-semibold" href="{{route('dashboard') }}">{{ __('Home') }}</a>
                         </li>
+
+                        <li class="nav-item">
+                            {{-- link che manderà al sito frontend --}}
+                            <a class="nav-link fw-semibold" href="#">{{ __('Torna su Hungry') }}</a>
+                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
