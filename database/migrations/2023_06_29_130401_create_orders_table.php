@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("receiver", 100);
             $table->string("phone_number", 15);
             $table->string("status", 150);
-            $table->text("notes");
+            $table->text("notes")->nullable();
             $table->decimal("total_price",5,2);
             $table->string("address");
             $table->timestamps();
