@@ -111,6 +111,8 @@ class CatererController extends Controller
      */
     public function destroy(Caterer $caterer)
     {
-        //
+        $caterer->delete();
+
+        return redirect()->route('admin.caterers.index')->with('message', "$caterer->name eliminato con successo");
     }
 }
