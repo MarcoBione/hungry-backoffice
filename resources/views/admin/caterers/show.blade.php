@@ -25,14 +25,22 @@
                 @endif
                 @if (count($dishes) > 0)
                     <div class="d-flex align-items-center gap-2 my-2">
-                        <h6 class="mt-3">Piatti:</h6>
-                        @foreach ($dishes as $dish)
-                            <a href="{{ route('admin.dishes.show', $dish->id) }}"
-                                class="badge rounded-pill text-bg-primary py-2 px-2 mt-2">{{ $dish->name }}</a>
-                        @endforeach
+
+                        <ul>
+                            <h6 class="mt-3"><i class="fa-solid fa-utensils me-2"></i>Piatti: </h6>
+                            @foreach ($dishes as $dish)
+                            <li>
+                                <a href="{{ route('admin.dishes.show', $dish->id) }}"
+                                    class=" py-2 px-2 mt-2">{{ $dish->name }}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+
+
+
                     </div>
                 @endif
-                <div class="mt-5">
+                <div class="mt-5 d-flex justify-content-end">
                     <h4><a href="{{ route('admin.caterers.index')}}">Torna alla lista dei ristoranti</a></h4>
                 </div>
 
