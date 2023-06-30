@@ -41,18 +41,22 @@ class CatererController extends Controller
      */
     public function store(StoreCatererRequest $request)
     {
-        $data = $request->all();
-
-        $newCaterer = new Caterer();
-        $newCaterer->name = $data['name'];
-        $newCaterer->address = $data['address'];
-        $newCaterer->image = $data['image'];
-        $newCaterer->phone_number = $data['phone_number'];
-        $newCaterer->slug = Str::slug($data['name'], '-');
+        $data = $request->validated();
+        $slug = Str::slug($request->name, '-');
+        $data['slug'] = $slug;
+        $caterer = Caterer::create($data);
+        if($request->has('categories')) {
+            $caterer->categories()->attach($request->categories);
+        }
+        // $newCaterer = new Caterer();
+        // $newCaterer->name = $data['name'];
+        // $newCaterer->address = $data['address'];
+        // $newCaterer->image = $data['image'];
+        // $newCaterer->phone_number = $data['phone_number'];
+        // $newCaterer->slug = Str::slug($data['name'], '-');
         // $newCaterer->category()->attach($request->category);
-        $newCaterer->save();
-
-        redirect()->route('admin.caterers.show', $newCaterer->slug);
+        // $newCaterer->save();
+        return redirect()->route('admin.caterers.show', $caterer->slug);
     }
 
     /**
