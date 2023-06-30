@@ -27,20 +27,24 @@
                     </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <div class="text-center text-black-50">
+                        {{ __('Benvenuto nella tua area di amministrazione!') }}
+                    </div>
 
                     {{-- il contenuto della pagina andrebbe qua! --}}
-                    <div>
+                    <div class="card-body">
                         {{-- codee.. --}}
-                        qua metto cio che voglio vedere in dashboard
+                        <p>qua metto cio che voglio vedere in dashboard come informazioni da prima pagina (es:Stats)</p>
                     </div>
                     {{-- il contenuto della pagina andrebbe qua! --}}
-                </div>
 
+                </div>
 
             </div>
 
         </div>
+
+
 
     </div>
 </div>
