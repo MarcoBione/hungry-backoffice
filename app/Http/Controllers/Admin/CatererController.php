@@ -12,6 +12,17 @@ use App\Http\Requests\UpdateCatererRequest;
 
 class CatererController extends Controller
 {
+    private function getSlug($title)
+    {
+        $slug = Str::of($title)->slug("-");
+        $count = 1;
+        while( Caterer::where("slug", $slug)->first() ) {
+            $slug = Str::of($title)->slug("-") . "-{$count}";
+            $count++;
+        }
+
+        return $slug;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -33,12 +44,11 @@ class CatererController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCatererRequest  $request
      */
     public function store(StoreCatererRequest $request)
     {
         $data = $request->validated();
-        $slug = Str::slug($request->name, '-');
+        $slug = $this->getSlug($request->name);
         $data['slug'] = $slug;
         $caterer = Caterer::create($data);
         if($request->has('categories')) {
@@ -62,7 +72,6 @@ class CatererController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Caterer  $caterer
-     * @return \Illuminate\Http\Response
      */
     public function edit(Caterer $caterer)
     {
@@ -79,6 +88,12 @@ class CatererController extends Controller
     public function update(UpdateCatererRequest $request, Caterer $caterer)
     {
         $data = $request->validated();
+        if($request->name === $caterer->name){
+            $slug = $caterer->slug;
+        } else {
+            $slug = $this->getSlug($request->name);
+        }
+        $data['slug'] = $slug;
         $caterer->update($data);
         if($request->has('categories')) {
             $caterer->categories()->sync($request->categories);

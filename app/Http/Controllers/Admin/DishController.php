@@ -58,11 +58,12 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
-        // dd($request);
         $data = $request->validated();
         $slug = $this->getSlug($request->name);
         $data['slug'] = $slug;
-        $data['caterer_id'] = Auth::id();
+        $user_id = Auth::id();
+        $caterer_id = Caterer::where('user_id', $user_id)->value('id')->first();
+        $data['caterer_id'] = $caterer_id;
         $dish = Dish::create($data);
         if ($request->has('orders')) {
             $dish->orders()->attach($request->orders);
