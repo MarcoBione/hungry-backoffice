@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <h1>I piatti del ristorante {{ $caterer->name }}</h1>
+        <h1>{{Auth::user()->is_admin ? 'Tutti i piatti' : "I piatti del ristorante $caterer->name"}}</h1>
         @if (session()->has('message'))
             <div class="alert alert-success">
                 {{ session()->get('message') }}
