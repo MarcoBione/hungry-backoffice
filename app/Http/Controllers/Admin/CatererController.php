@@ -14,8 +14,6 @@ class CatererController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -25,8 +23,6 @@ class CatererController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -38,7 +34,6 @@ class CatererController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreCatererRequest  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(StoreCatererRequest $request)
     {
@@ -49,22 +44,13 @@ class CatererController extends Controller
         if($request->has('categories')) {
             $caterer->categories()->attach($request->categories);
         }
-        // $newCaterer = new Caterer();
-        // $newCaterer->name = $data['name'];
-        // $newCaterer->address = $data['address'];
-        // $newCaterer->image = $data['image'];
-        // $newCaterer->phone_number = $data['phone_number'];
-        // $newCaterer->slug = Str::slug($data['name'], '-');
-        // $newCaterer->category()->attach($request->category);
-        // $newCaterer->save();
-        return redirect()->route('admin.caterers.show', $caterer->slug);
+        return redirect()->route('admin.caterers.show', $caterer->slug)->with('message', "Il ristorante $caterer->name è stato aggiunto con successo");
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Caterer  $caterer
-     * @return \Illuminate\Http\Response
      */
     public function show(Caterer $caterer)
     {
@@ -89,7 +75,6 @@ class CatererController extends Controller
      *
      * @param  \App\Http\Requests\UpdateCatererRequest  $request
      * @param  \App\Models\Caterer  $caterer
-     * @return \Illuminate\Http\Response
      */
     public function update(UpdateCatererRequest $request, Caterer $caterer)
     {
@@ -101,19 +86,18 @@ class CatererController extends Controller
             $caterer->categories()->sync([]);
         }
 
-        return redirect()->route('admin.caterers.show', $caterer->slug)->with('message', 'I dati del ristorante sono stati aggiornati');
+        return redirect()->route('admin.caterers.show', $caterer->slug)->with('message', "I dati del ristorante $caterer->name sono stati aggiornati correttamente");
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Caterer  $caterer
-     * @return \Illuminate\Http\Response
      */
     public function destroy(Caterer $caterer)
     {
         $caterer->delete();
 
-        return redirect()->route('admin.caterers.index')->with('message', "$caterer->name eliminato con successo");
+        return redirect()->route('admin.caterers.index')->with('message', "Il ristorante $caterer->name è stato eliminato con successo");
     }
 }
