@@ -30,7 +30,7 @@
                             <h6 class="mt-3"><i class="fa-solid fa-utensils me-2"></i>Piatti: </h6>
                             @foreach ($dishes as $dish)
                             <li>
-                                <a href="{{ route('admin.dishes.show', $dish->id) }}"
+                                <a href="{{ route('admin.dishes.show', $dish->slug) }}"
                                     class=" py-2 px-2 mt-2">{{ $dish->name }}</a>
                             </li>
                             @endforeach
