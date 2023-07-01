@@ -32,8 +32,13 @@ class DishController extends Controller
     {
         $id = Auth::id();
         $caterer = Caterer::where('id', $id)->first();
-        // $dishes= Dish::paginate(10);
-        $dishes = Dish::where('caterer_id', $id)->paginate(10);
+        $user = Auth::user();
+        if ($user->is_admin) {
+            $dishes= Dish::paginate(10);
+        } else {
+            $dishes = Dish::where('caterer_id', $id)->paginate(10);
+        }
+
         return view('admin.dishes.index', compact('dishes', 'caterer'));
     }
 
@@ -73,7 +78,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        if($dish->caterer_id !== Auth::id()){
+        if(!Auth::user()->is_admin && $dish->caterer_id !== Auth::id()){
             abort(403);
         }
         return view('admin.dishes.show', compact('dish'));
@@ -86,7 +91,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        if($dish->caterer_id !== Auth::id()){
+        if(!Auth::user()->is_admin && $dish->caterer_id !== Auth::id()){
             abort(403);
         }
         return view('admin.dishes.edit', compact('dish'));
@@ -101,11 +106,8 @@ class DishController extends Controller
     public function update(UpdateDishRequest $request, Dish $dish)
     {
         $data = $request->validated();
-        // dd($request->slug);
-        $tempSlug = Str::slug($request->name, '-');
-        //dd($tempSlug, $dish->slug);
-        if($tempSlug === $dish->slug){
-            $slug = $tempSlug;
+        if($request->name === $dish->name){
+            $slug = $dish->slug;
         } else {
             $slug = $this->getSlug($request->name);
         }

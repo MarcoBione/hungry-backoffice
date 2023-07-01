@@ -37,10 +37,8 @@
             </div>
             <div class="mb-3">
                 <label for="tipologies">Tipologie</label>
-                <textarea name="tipologies" id="tipologies" rows="10"
-                    class="form-control @error('tipologies') is-invalid @enderror" required>
-                    {{ old('tipologies', $dish->tipologies) }}
-                </textarea>
+                <textarea required name="tipologies" id="tipologies" rows="10"
+                    class="form-control @error('tipologies') is-invalid @enderror">{{ old('tipologies', $dish->tipologies) }}</textarea>
                 @error('tipologies')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

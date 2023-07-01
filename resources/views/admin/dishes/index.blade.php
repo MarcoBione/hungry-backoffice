@@ -27,7 +27,7 @@
                         <td>{{ $dish->description }}</td>
                         <td>{{ $dish->tipologies }}</td>
                         <td>{{ $dish->visible == 1 ? 'sì' : 'no' }}</td>
-                        <td>{{ $dish->price }}</td>
+                        <td>{{ $dish->price }} &euro;</td>
                         <td>
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="{{ route('admin.dishes.show', $dish->slug) }}"
