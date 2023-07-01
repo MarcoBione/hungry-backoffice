@@ -8,3 +8,8 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
 @import "~bootstrap/scss/bootstrap";
+
+._back:hover{
+    color: coral;
+    transition: color 0.3s;
+}
