@@ -32,7 +32,8 @@ class DishController extends Controller
     {
         $id = Auth::id();
         $caterer = Caterer::where('id', $id)->first();
-        $dishes=Dish::paginate(10);
+        // $dishes= Dish::paginate(10);
+        $dishes = Dish::where('caterer_id', $id)->paginate(10);
         return view('admin.dishes.index', compact('dishes', 'caterer'));
     }
 
@@ -55,7 +56,6 @@ class DishController extends Controller
         // dd($request);
         $data = $request->validated();
         $slug = $this->getSlug($request->name);
-        //$slug = Str::slug($request->name, '-');
         $data['slug'] = $slug;
         $data['caterer_id'] = Auth::id();
         $dish = Dish::create($data);
@@ -101,8 +101,14 @@ class DishController extends Controller
     public function update(UpdateDishRequest $request, Dish $dish)
     {
         $data = $request->validated();
-        $slug = $this->getSlug($request->name);
-        // $slug = Str::slug($request->name, '-');
+        // dd($request->slug);
+        $tempSlug = Str::slug($request->name, '-');
+        //dd($tempSlug, $dish->slug);
+        if($tempSlug === $dish->slug){
+            $slug = $tempSlug;
+        } else {
+            $slug = $this->getSlug($request->name);
+        }
         $data['slug'] = $slug;
         $dish->update($data);
         if ($request->has('orders')) {
