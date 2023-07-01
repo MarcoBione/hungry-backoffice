@@ -62,7 +62,7 @@ class DishController extends Controller
         $slug = $this->getSlug($request->name);
         $data['slug'] = $slug;
         $user_id = Auth::id();
-        $caterer_id = Caterer::where('user_id', $user_id)->value('id')->first();
+        $caterer_id = Caterer::where('user_id', $user_id)->value('id');
         $data['caterer_id'] = $caterer_id;
         $dish = Dish::create($data);
         if ($request->has('orders')) {

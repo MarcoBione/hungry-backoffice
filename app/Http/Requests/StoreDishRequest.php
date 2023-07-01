@@ -60,4 +60,4 @@ class StoreDishRequest extends FormRequest
             'visible' => $this->toBoolean($this->visible),
         ]);
     }
- }
+}
