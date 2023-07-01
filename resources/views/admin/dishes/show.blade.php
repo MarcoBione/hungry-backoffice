@@ -36,6 +36,11 @@
                         data-item-title="{{ $dish->title }}"> <i class="fa-solid fa-trash"></i>Elimina</button>
                 </form>
             </div>
+            <div class="text-end card-body">
+                <a href="{{ route('admin.dishes.index', $dish->slug) }}" class="btn btn-primary text-white">
+                    Torna alla lista dei piatti
+                </a>
+            </div>
         </div>
     </div>
     @include('partials.modal-delete')
