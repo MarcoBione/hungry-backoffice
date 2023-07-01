@@ -16,6 +16,15 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users = config("dataseeder.users");
+        foreach($users as $data){
+            $user = new User();
+            $user->name = $data['name'];
+            $user->email = $data['email'];
+            $user->is_admin = $data['is_admin'];
+            $user->vat_number = $data['vat_number'];
+            $user->password = md5($data['password']);
+            $user->save();
+        }
     }
 }

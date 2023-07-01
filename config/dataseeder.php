@@ -437,7 +437,7 @@ return [
         [
             "name" => "Christian Totaro",
             "email" => "totaro.christian.18@gmail.com",
-            "password" => "11111111",
+            "password" => "11111111111",
             "vat_number" => "11111111111",
             "is_admin" => true
         ],
