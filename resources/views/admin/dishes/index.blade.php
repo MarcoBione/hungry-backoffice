@@ -26,7 +26,7 @@
                         <td>{{ $dish->name }}</td>
                         <td>{{ $dish->description }}</td>
                         <td>{{ $dish->tipologies }}</td>
-                        <td>{{ $dish->visible }}</td>
+                        <td>{{ $dish->visible == 1 ? 'sì' : 'no' }}</td>
                         <td>{{ $dish->price }}</td>
                         <td>
                             <div class="d-flex justify-content-between align-items-center">
@@ -34,7 +34,7 @@
                                     class="btn btn-primary text-white"><i class="fa-solid fa-eye"></i></a>
                                 <a href="{{ route('admin.dishes.edit', $dish->slug) }}"
                                     class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
-                                <form action="{{ route('admin.dishes.destroy', $dish->slug) }}" method="POST">
+                                <form action="{{ route('admin.dishes.destroy', $dish->slug) }}" method="POST" class="mb-0">
                                     @csrf
                                     @method('DELETE')
                                     <button type='submit' class="delete-button btn btn-danger text-white"
@@ -47,6 +47,7 @@
 
             </tbody>
         </table>
+    {{ $dishes->links('vendor.pagination.bootstrap-5') }}
     </div>
     @include('partials.modal-delete')
 @endsection
