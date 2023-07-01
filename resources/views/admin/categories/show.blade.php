@@ -16,7 +16,7 @@
                 <h3 class="m-4"> <span class="text-warning text-uppercase">{{ $category->name }}</span>
                 </h3>
                 <h2 class="m-4">
-                    {{ $category->description }}
+                    {!! $category->description !!}
                 </h2>
             </div>
 
