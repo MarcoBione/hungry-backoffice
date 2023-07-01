@@ -101,8 +101,11 @@ class DishController extends Controller
     public function update(UpdateDishRequest $request, Dish $dish)
     {
         $data = $request->validated();
-        if($request->slug === $dish->slug){
-            $slug = $request->slug;
+        // dd($request->slug);
+        $tempSlug = Str::slug($request->name, '-');
+        //dd($tempSlug, $dish->slug);
+        if($tempSlug === $dish->slug){
+            $slug = $tempSlug;
         } else {
             $slug = $this->getSlug($request->name);
         }
