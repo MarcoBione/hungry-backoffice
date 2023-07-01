@@ -27,7 +27,7 @@ class CatererController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.caterers.create', compact('categories', 'dishes'));
+        return view('admin.caterers.create', compact('categories'));
     }
 
     /**
