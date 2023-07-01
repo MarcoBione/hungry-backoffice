@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="p-5 d-flex justify-content-end">
+        <div class="pt-4 d-flex justify-content-end">
             <a href="{{ route('admin.categories.create') }}" class="btn btn-success text-capitalize">crea nuova
                 categoria</a>
         </div>
@@ -17,13 +17,18 @@
             </thead>
             <tbody>
                 @foreach ($categories as $category)
-                    <tr>
+                    <tr class="align-middle fw-bold">
                         <td>{{ $category->name }}</td>
-                        <td>{!! $category->description !!}</td>
-                        <td>{{ $category->class }}</td>
-                        <td>{{ $category->image }}</td>
                         <td>
-                            <div class="d-flex justify-content-between align-items-center">
+                            <div class="container-text">
+                                {!! $category->description !!}
+                            </div>
+                        </td>
+                        <td><span class="text-info">{{ $category->class }}</span></td>
+                        <td class="w-25"><img class="img-fluid img-thumbnail" src="{{ $category->image }}" alt="">
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
                                 <a href="{{ route('admin.categories.show', $category->id) }}"
                                     class="btn btn-primary text-white"><i class="fa-solid fa-eye"></i></a>
                                 <a href="{{ route('admin.categories.edit', $category->id) }}"
