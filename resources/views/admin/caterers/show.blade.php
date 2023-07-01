@@ -24,13 +24,13 @@
                     </div>
                 @endif
                 @if (count($dishes) > 0)
-                    <div class="d-flex align-items-center gap-2 my-2">
-
+                    <div class="d-flex flex-column justify-content-center align-items-center my-2">
+                        <a href="{{ route('admin.dishes.create') }}" class="btn btn-success text-capitalize">aggiungi piatto</a>
                         <ul>
                             <h6 class="mt-3"><i class="fa-solid fa-utensils me-2"></i>Piatti: </h6>
                             @foreach ($dishes as $dish)
                             <li>
-                                <a href="{{ route('admin.dishes.show', $dish->id) }}"
+                                <a href="{{ route('admin.dishes.show', $dish->slug) }}"
                                     class=" py-2 px-2 mt-2">{{ $dish->name }}</a>
                             </li>
                             @endforeach
