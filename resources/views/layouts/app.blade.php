@@ -49,11 +49,25 @@
                             <a class="nav-link fw-semibold" href="{{route('dashboard') }}">{{ __('Home') }}</a>
                         </li>
 
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-black-50 fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Comandi rapidi
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('admin.caterers.index') }}">{{__('Attività')}}</a>
+                                <a class="dropdown-item" href="{{ route('admin.dishes.index') }}">{{__('Piatti')}}</a>
+                                <a class="dropdown-item" href="{{ route('admin.orders.index') }}">{{ __('Ordini') }}</a>
+                            </div>
+
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             {{-- link che manderà al sito frontend --}}
-                            <a class="nav-link fw-semibold" href="#">{{ __('Torna su Hungry') }}</a>
+                            <a class="nav-link fw-semibold _back" href="#">{{ __('Torna su Hungry') }}</a>
                         </li>
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->
