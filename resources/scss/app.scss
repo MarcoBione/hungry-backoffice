@@ -1,4 +1,4 @@
-@use './partials/variables' as *;
+@use "./partials/variables" as *;
 
 $fa-font-path: "../fonts/webfonts" !default;
 
@@ -9,7 +9,12 @@ $fa-font-path: "../fonts/webfonts" !default;
 
 @import "~bootstrap/scss/bootstrap";
 
-._back:hover{
+._back:hover {
     color: coral;
     transition: color 0.3s;
+}
+
+.container-text {
+    inline-size: 600px;
+    overflow-wrap: break-word;
 }
