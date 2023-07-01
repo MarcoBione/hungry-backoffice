@@ -346,7 +346,7 @@ return [
     ],
     'caterers' => [
         [
-            'user_id' => 1,
+            'user_id' => 5,
             'name' => 'Pizzium',
             'address' => 'Via Augusto Anfossi 1',
             'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/27/1d/6d/84/pizza-salsiccia-e-friarielli.jpg',
@@ -354,7 +354,7 @@ return [
             "categories" => [3,4]
         ],
         [
-            'user_id' => 1,
+            'user_id' => 4,
             'name' => 'Yokohama Flavour Journey Cuisine',
             'address' => 'Via Pantano 8',
             'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/18/90/d2/2a/sunset.jpg',
@@ -362,7 +362,7 @@ return [
             "categories" => [5,6,7,8]
         ],
         [
-            'user_id' => 1,
+            'user_id' => 3,
             'name' => 'Fei Yun Ge',
             'address' => 'Via Melchiorre Gioia 141',
             'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/1d/5b/88/9a/ravioli-di-carne.jpg',
@@ -370,7 +370,7 @@ return [
             "categories" => [9,5,6]
         ],
         [
-            'user_id' => 1,
+            'user_id' => 2,
             'name' => 'Viaggi Nel Gusto',
             'address' => 'Via Edmondo De Amicis 24',
             'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/1d/57/c7/70/caption.jpg',
@@ -432,5 +432,42 @@ return [
             'description' => "La cucina cinese è una delle più antiche e influenti al mondo. Caratterizzata da una grande varietà di piatti, offre sapori audaci, aromi intensi e un'ampia gamma di ingredienti come il riso, la soia, il tofu, le verdure e la carne. Piatti come il dim sum, il pollo all'arancia, il maiale agrodolce e i noodles sono solo alcune delle specialità cinesi amate in tutto il mondo. La cucina cinese si distingue per la sua abilità nel bilanciare i cinque sapori fondamentali: dolce, salato, acido, amaro e piccante. È una cucina che celebra la diversità regionale e la maestria culinaria, offrendo un'esperienza gustativa straordinaria.",
             'image' => 'https://www.buttalapasta.it/wp-content/uploads/2011/01/cucina-cinese-piatti-tipici-e-specialita.jpg',
         ]
-    ]
+    ],
+     "users" => [
+        [
+            "name" => "Christian Totaro",
+            "email" => "totaro.christian.18@gmail.com",
+            "password" => "11111111111",
+            "vat_number" => "11111111111",
+            "is_admin" => true
+        ],
+        [
+            "name" => "Marika Di Blasio",
+            "email" => "gigi@gigi.com",
+            "password" => "11111111",
+            "vat_number" => "11111111111",
+            "is_admin" => true
+        ],
+        [
+            "name" => "Andrea Collura",
+            "email" => "andrea@collura",
+            "password" => "11111111",
+            "vat_number" => "11111111111",
+            "is_admin" => true
+        ],
+        [
+            "name" => "Chiara Sucato",
+            "email" => "chiara@sucato",
+            "password" => "11111111",
+            "vat_number" => "11111111111",
+            "is_admin" => true
+        ],
+        [
+            "name" => "Marco Bione",
+            "email" => "marco@bione",
+            "password" => "11111111",
+            "vat_number" => "11111111111",
+            "is_admin" => true
+        ]
+     ]
 ];
