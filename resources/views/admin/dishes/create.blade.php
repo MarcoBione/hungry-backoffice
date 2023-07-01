@@ -36,7 +36,7 @@
             <div class="mb-3">
                 <label for="tipologies">Tipologie</label>
                 <textarea required name="tipologies" id="tipologies" rows="10"
-                    class="form-control @error('tipologies') is-invalid @enderror"></textarea>
+                    class="form-control @error('tipologies') is-invalid @enderror d-block"></textarea>
                 @error('tipologies')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
