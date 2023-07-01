@@ -31,12 +31,12 @@ class DishController extends Controller
     public function index()
     {
         $id = Auth::id();
-        $caterer = Caterer::where('id', $id)->first();
+        $caterer = Caterer::where('user_id', $id)->first();
         $user = Auth::user();
         if ($user->is_admin) {
             $dishes= Dish::paginate(10);
         } else {
-            $dishes = Dish::where('caterer_id', $id)->paginate(10);
+            $dishes = Dish::where('caterer_id', $caterer->id)->paginate(10);
         }
 
         return view('admin.dishes.index', compact('dishes', 'caterer'));
