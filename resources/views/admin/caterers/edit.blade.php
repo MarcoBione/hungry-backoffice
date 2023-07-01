@@ -41,8 +41,13 @@
                 <p>Seleziona una o più Categorie</p>
                 @foreach ($categories as $category)
                     <div>
-                        <input type="checkbox" name="categories[]" value="{{ $category->id }}" class="form-check-input"
-                            {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }}>
+                        @if ($errors->any())
+                            <input type="checkbox" name="categories[]" value="{{ $category->id }}" class="form-check-input"
+                                {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }}>
+                        @else
+                            <input type="checkbox" name="categories[]" value="{{ $category->id }}" class="form-check-input"
+                                {{ $caterer->categories->contains($category) ? 'checked' : '' }}>
+                        @endif
                         <label for="" class="form-check-label">{{ $category->name }}</label>
                     </div>
                 @endforeach
