@@ -22,7 +22,7 @@
                         <form action="{{ route('admin.caterers.destroy', $caterer->slug) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type='submit' class="btn btn-danger"
+                            <button type='submit' class="delete-button btn btn-danger text-white"
                                 data-item-title="{{ $caterer->name }}">Cancella</button>
                         </form>
                     </div>
@@ -30,4 +30,6 @@
             @endforeach
         </div>
     </div>
+
+    @include('partials.modal-delete')
 @endsection

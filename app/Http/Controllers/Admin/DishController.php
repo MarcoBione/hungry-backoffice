@@ -31,9 +31,14 @@ class DishController extends Controller
     public function index()
     {
         $id = Auth::id();
-        $caterer = Caterer::where('id', $id)->first();
-        // $dishes= Dish::paginate(10);
-        $dishes = Dish::where('caterer_id', $id)->paginate(10);
+        $caterer = Caterer::where('user_id', $id)->first();
+        $user = Auth::user();
+        if ($user->is_admin) {
+            $dishes= Dish::paginate(10);
+        } else {
+            $dishes = Dish::where('caterer_id', $caterer->id)->paginate(10);
+        }
+
         return view('admin.dishes.index', compact('dishes', 'caterer'));
     }
 
@@ -53,11 +58,12 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
-        // dd($request);
         $data = $request->validated();
         $slug = $this->getSlug($request->name);
         $data['slug'] = $slug;
-        $data['caterer_id'] = Auth::id();
+        $user_id = Auth::id();
+        $caterer_id = Caterer::where('user_id', $user_id)->value('id')->first();
+        $data['caterer_id'] = $caterer_id;
         $dish = Dish::create($data);
         if ($request->has('orders')) {
             $dish->orders()->attach($request->orders);
@@ -73,7 +79,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        if($dish->caterer_id !== Auth::id()){
+        if(!Auth::user()->is_admin && $dish->caterer_id !== Auth::id()){
             abort(403);
         }
         return view('admin.dishes.show', compact('dish'));
@@ -86,7 +92,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        if($dish->caterer_id !== Auth::id()){
+        if(!Auth::user()->is_admin && $dish->caterer_id !== Auth::id()){
             abort(403);
         }
         return view('admin.dishes.edit', compact('dish'));
@@ -101,11 +107,8 @@ class DishController extends Controller
     public function update(UpdateDishRequest $request, Dish $dish)
     {
         $data = $request->validated();
-        // dd($request->slug);
-        $tempSlug = Str::slug($request->name, '-');
-        //dd($tempSlug, $dish->slug);
-        if($tempSlug === $dish->slug){
-            $slug = $tempSlug;
+        if($request->name === $dish->name){
+            $slug = $dish->slug;
         } else {
             $slug = $this->getSlug($request->name);
         }
