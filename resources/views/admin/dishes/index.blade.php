@@ -1,4 +1,4 @@
-@extends('layouts.app');
+@extends('layouts.app')
 @section('content')
     <div class="container">
         <h1>I piatti del ristorante {{ $caterer->name }}</h1>
@@ -14,7 +14,7 @@
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
-                    <th scope="col">Descrizione</th>
+                    <th class="d-md-none" scope="col">Descrizione</th>
                     <th scope="col">Tipologie</th>
                     <th scope="col">Visibilità</th>
                     <th scope="col">Prezzo</th>
@@ -24,7 +24,7 @@
                 @foreach ($dishes as $dish)
                     <tr>
                         <td>{{ $dish->name }}</td>
-                        <td>{{ $dish->description }}</td>
+                        <td class="d-md-none">{{ $dish->description }}</td>
                         <td>{{ $dish->tipologies }}</td>
                         <td>{{ $dish->visible == 1 ? 'sì' : 'no' }}</td>
                         <td>{{ $dish->price }} &euro;</td>
