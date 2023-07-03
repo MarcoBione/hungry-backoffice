@@ -8,17 +8,16 @@
     @endif
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col col-4">
+            <div class="col col-6">
                 <div class="card">
-                    <img class="card-img-top" style="height: 300px; object-fit: cover; object-position: center" src="{{ $caterer->image }}" alt="{{ $caterer->name }}">
+                    <img class="card-img-top" style="height: 300px; object-fit: cover; object-position: center"
+                        src="{{ $caterer->image }}" alt="{{ $caterer->name }}">
                 </div>
             </div>
-            <div class="col col-4">
+            <div class="col col-6">
                 <h3>{{ $caterer->name }}</h3>
                 <p>{{ $caterer->address }}</p>
                 <p>{{ $caterer->phone_number }}</p>
-
-
                 @if ($caterer->categories && count($caterer->categories) > 0)
                     <div class="d-flex align-items-center gap-2 my-2">
                         <h6 class="mt-3">Categorie:</h6>
@@ -28,29 +27,34 @@
                         @endforeach
                     </div>
                 @endif
-                <div class="d-flex flex-column justify-content-center align-items-center my-2">
-                    <a href="{{ route('admin.dishes.create') }}" class="btn btn-success text-capitalize">aggiungi piatto</a>
-                    @if (count($dishes) > 0)
-                        <ul>
-                            <h6 class="mt-3"><i class="fa-solid fa-utensils me-2"></i>Piatti: </h6>
-                            @foreach ($dishes as $dish)
-                            {{-- <h3>{{$dish['tipology']}}</h3>
-                                @foreach ($dish['dishes'] as $el)
-                                <li>
-                                <a href="{{ route('admin.dishes.show', $el->slug) }}"
-                                    class=" py-2 px-2 mt-2">{{ $el->name }}</a>
-                                </li>
-                                @endforeach --}}
-                                @foreach ($dish as $type)
-                                <h3>{{$type->name}}</h3>
-
-                                @endforeach
-                            @endforeach
-                        </ul>
-                    @endif
-                </div>
-
             </div>
+        </div>
+        <div class="my-2">
+            <a href="{{ route('admin.dishes.create') }}" class="btn btn-success text-capitalize">aggiungi piatto</a>
+            @if (count($dishes) > 0)
+                    <h3 class="my-5"><i class="fa-solid fa-utensils me-2"></i>Piatti</h3>
+                    @foreach ($dishes as $key => $dish)
+                        <div class="accordion" id="tipologiesAccordion">
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button text-capitalize" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#{{$key}}" aria-expanded="false"
+                                        aria-controls="{{$key}}">
+                                        {{ $key }}
+                                    </button>
+                                </h2>
+                                <div id="{{$key}}" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOne" data-bs-parent="#tipologiesAccordion">
+                                    <div class="accordion-body">
+                                        @foreach ($dish as $type)
+                                            <h6>{{ $type->name }}</h6>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+            @endif
         </div>
     </div>
 
