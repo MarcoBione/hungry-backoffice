@@ -35,23 +35,46 @@
                     <h3 class="my-5"><i class="fa-solid fa-utensils me-2"></i>Piatti</h3>
                     @foreach ($dishes as $key => $dish)
                         <div class="accordion" id="tipologiesAccordion">
-                            <div class="accordion-item mb-3">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button text-capitalize" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#{{str_replace(' ', '', $key)}}" aria-expanded="false"
-                                        aria-controls="{{str_replace(' ', '', $key)}}">
-                                        {{ $key }}
-                                    </button>
-                                </h2>
-                                <div id="{{str_replace(' ', '', $key)}}" class="accordion-collapse collapse"
-                                    aria-labelledby="headingOne" data-bs-parent="#tipologiesAccordion">
-                                    <div class="accordion-body">
-                                        @foreach ($dish as $type)
-                                            <a class="text-decoration-none text-dark" href="{{ route('admin.dishes.show', $type->slug)}}"><h6>{{ $type->name }}</h6></a>
-                                        @endforeach
+                            @if(str_contains($key, ';'))
+                                @foreach($cip = explode(';', $key ) as $help)
+                                {{-- {{dd($cip, $help[1])}} --}}
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button text-capitalize" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#{{str_replace(' ', '', $help)}}" aria-expanded="false"
+                                            aria-controls="{{str_replace(' ', '', $help)}}">
+                                            {{ $help }}
+                                        </button>
+                                    </h2>
+                                    <div id="{{str_replace(' ', '', $help)}}" class="accordion-collapse collapse"
+                                        aria-labelledby="headingOne" data-bs-parent="#tipologiesAccordion">
+                                        <div class="accordion-body">
+                                            @foreach ($dish as $type)
+                                                <a class="text-decoration-none text-dark" href="{{ route('admin.dishes.show', $type->slug)}}"><h6>{{ $type->name }}</h6></a>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                @endforeach
+                            @elseif(!str_contains($key, ';'))
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button text-capitalize" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#{{str_replace(' ', '', $key)}}" aria-expanded="false"
+                                            aria-controls="{{str_replace(' ', '', $key)}}">
+                                            {{ $key }}
+                                        </button>
+                                    </h2>
+                                    <div id="{{str_replace(' ', '', $key)}}" class="accordion-collapse collapse"
+                                        aria-labelledby="headingOne" data-bs-parent="#tipologiesAccordion">
+                                        <div class="accordion-body">
+                                            @foreach ($dish as $type)
+                                                <a class="text-decoration-none text-dark" href="{{ route('admin.dishes.show', $type->slug)}}"><h6>{{ $type->name }}</h6></a>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     @endforeach
             @endif
