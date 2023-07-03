@@ -7,6 +7,21 @@
         </div>
     @endif
     <div class="pt-4 container d-flex flex-column align-items-center justify-content-center gap-4">
+        <div class="w-100 d-flex justify-content-end align-items-center gap-2">
+            <a href="{{ route('admin.orders.edit', $order->id) }}" class="btn btn-warning text-white d-flex gap-2 align-items-center">
+                <i class="fa-solid fa-pencil"></i>
+                <span>Modifica</span>
+            </a>
+            <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type='submit' class="delete-button btn btn-danger text-white d-flex gap-2 align-items-center"
+                    data-item-title="{{ $order->receiver }}">
+                    <i class="fa-solid fa-trash"></i>
+                    <span>Elimina</span>
+                </button>
+            </form>
+        </div>
         {{-- Title with the order id and the basket icon --}}
         <h1 class="d-flex gap-3">
             <i class="fa-solid fa-basket-shopping"></i>
@@ -110,8 +125,6 @@
             </div>
         </div>
     </div>
-    {{--
-        <th scope="col">Numero di telefono</th>
-        <th scope="col">Prezzo totale</th>
-    --}}
+
+    @include('partials.modal-delete')
 @endsection
