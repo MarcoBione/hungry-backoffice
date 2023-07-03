@@ -79,9 +79,10 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        if(!Auth::user()->is_admin && $dish->caterer_id !== Auth::id()){
-            abort(403);
-        }
+        // if(!Auth::user()->is_admin && $dish->caterer !== Auth::id()){
+        //     abort(403);
+        // }
+
         return view('admin.dishes.show', compact('dish'));
     }
 
