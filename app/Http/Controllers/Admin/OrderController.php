@@ -17,20 +17,24 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $caterer = Caterer::where('user_id', Auth::id())->first();
+        $user = Auth::user();
+        if(!$user->is_admin){
+            $caterer = Caterer::where('user_id', Auth::id())->first();
 
-        if($caterer){
-            $caterer_id = $caterer->id;
-            $orders = DB::table("orders")->
-            join("dish_order","dish_order.order_id","=","orders.id")->
-            join("dishes","dishes.id","=","dish_order.dish_id")->
-            where("dishes.caterer_id",$caterer_id)->
-            select("orders.*")->
-            distinct()->
-            paginate(10);
-        }
-        else
-            $orders = Order::where("id",-1)->paginate(10);
+            if($caterer){
+                $caterer_id = $caterer->id;
+                $orders = DB::table("orders")->
+                join("dish_order","dish_order.order_id","=","orders.id")->
+                join("dishes","dishes.id","=","dish_order.dish_id")->
+                where("dishes.caterer_id",$caterer_id)->
+                select("orders.*")->
+                distinct()->
+                paginate(10);
+            }
+            else
+                $orders = Order::where("id",-1)->paginate(10);
+        }else
+            $orders = Order::paginate(10);
 
         return view('admin.orders.index', compact('orders'));
     }
