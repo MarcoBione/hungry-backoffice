@@ -9,6 +9,7 @@ use App\Models\Dish;
 use Illuminate\Support\Str;
 use App\Http\Requests\StoreCatererRequest;
 use App\Http\Requests\UpdateCatererRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CatererController extends Controller
 {
@@ -28,7 +29,11 @@ class CatererController extends Controller
      */
     public function index()
     {
-        $caterers = Caterer::all();
+        if(Auth::user()->is_admin)
+            $caterers = Caterer::all();
+        else
+            $caterers = Caterer::all()->where("user_id", Auth::id());
+
         return view('admin.caterers.index', compact('caterers'));
     }
 
