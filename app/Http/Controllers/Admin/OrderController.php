@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Caterer;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -14,7 +17,25 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(10);
+        $user = Auth::user();
+        if(!$user->is_admin){
+            $caterer = Caterer::where('user_id', Auth::id())->first();
+
+            if($caterer){
+                $caterer_id = $caterer->id;
+                $orders = DB::table("orders")->
+                join("dish_order","dish_order.order_id","=","orders.id")->
+                join("dishes","dishes.id","=","dish_order.dish_id")->
+                where("dishes.caterer_id",$caterer_id)->
+                select("orders.*")->
+                distinct()->
+                paginate(10);
+            }
+            else
+                $orders = Order::where("id",-1)->paginate(10);
+        }else
+            $orders = Order::paginate(10);
+
         return view('admin.orders.index', compact('orders'));
     }
 
