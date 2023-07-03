@@ -34,14 +34,14 @@
                         <ul>
                             <h6 class="mt-3"><i class="fa-solid fa-utensils me-2"></i>Piatti: </h6>
                             @foreach ($dishes as $dish)
-                            <h3>{{$dish['tipology']}}</h3>
+                            {{-- <h3>{{$dish['tipology']}}</h3>
                                 @foreach ($dish['dishes'] as $el)
                                 <li>
                                 <a href="{{ route('admin.dishes.show', $el->slug) }}"
                                     class=" py-2 px-2 mt-2">{{ $el->name }}</a>
                                 </li>
-                                @endforeach
-
+                                @endforeach --}}
+                                <h3>{{$dish->attributes['slug']}}</h3>
                             @endforeach
                         </ul>
                     @endif
