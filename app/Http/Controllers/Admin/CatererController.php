@@ -80,7 +80,7 @@ class CatererController extends Controller
         //     $dishes[] = $obj;
         // }
         $dishes = Dish::all()->where('caterer_id', $caterer->id)->groupBy('tipologies');
-        dd($dishes);
+        // dd($dishes);
         return view('admin.caterers.show', compact('caterer', 'dishes'));
     }
 

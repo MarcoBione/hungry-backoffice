@@ -41,7 +41,10 @@
                                     class=" py-2 px-2 mt-2">{{ $el->name }}</a>
                                 </li>
                                 @endforeach --}}
-                                <h3>{{$dish->attributes['slug']}}</h3>
+                                @foreach ($dish as $type)
+                                <h3>{{$type->name}}</h3>
+
+                                @endforeach
                             @endforeach
                         </ul>
                     @endif
