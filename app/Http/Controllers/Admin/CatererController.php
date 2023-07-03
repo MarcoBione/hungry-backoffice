@@ -70,7 +70,17 @@ class CatererController extends Controller
      */
     public function show(Caterer $caterer)
     {
-        $dishes = Dish::all()->where('caterer_id', $caterer->id);
+        $dishes = [];
+        $tipologies[]= Dish::where('caterer_id', $caterer->id)->value('tipologies');
+        // dd($tipologies);
+        foreach($tipologies as $tipology){
+            $obj = array();
+            $obj['tipology'] = $tipology;
+            $obj['dishes'] = Dish::all()->where('caterer_id', $caterer->id)->where('tipologies', $tipology);
+            $dishes[] = $obj;
+        }
+
+        // dd($dishes);
         return view('admin.caterers.show', compact('caterer', 'dishes'));
     }
 

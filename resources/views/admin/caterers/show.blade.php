@@ -34,16 +34,17 @@
                         <ul>
                             <h6 class="mt-3"><i class="fa-solid fa-utensils me-2"></i>Piatti: </h6>
                             @foreach ($dishes as $dish)
-                            <li>
-                                <a href="{{ route('admin.dishes.show', $dish->slug) }}"
-                                    class=" py-2 px-2 mt-2">{{ $dish->name }}</a>
-                            </li>
+                            <h3>{{$dish['tipology']}}</h3>
+                                @foreach ($dish['dishes'] as $el)
+                                <li>
+                                <a href="{{ route('admin.dishes.show', $el->slug) }}"
+                                    class=" py-2 px-2 mt-2">{{ $el->name }}</a>
+                                </li>
+                                @endforeach
+
                             @endforeach
                         </ul>
                     @endif
-                </div>
-                <div class="mt-5 d-flex justify-content-end">
-                    <h4><a href="{{ route('admin.caterers.index')}}">Torna alla lista dei ristoranti</a></h4>
                 </div>
 
             </div>
