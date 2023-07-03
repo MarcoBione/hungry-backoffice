@@ -47,7 +47,7 @@
                                     aria-labelledby="headingOne" data-bs-parent="#tipologiesAccordion">
                                     <div class="accordion-body">
                                         @foreach ($dish as $type)
-                                            <h6>{{ $type->name }}</h6>
+                                            <a class="text-decoration-none text-dark" href="{{ route('admin.dishes.show', $type->slug)}}"><h6>{{ $type->name }}</h6></a>
                                         @endforeach
                                     </div>
                                 </div>
