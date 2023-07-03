@@ -439,21 +439,21 @@ return [
             "email" => "christian@totaro",
             "password" => "11111111",
             "vat_number" => "11111111111",
-            "is_admin" => true
+            "is_admin" => false
         ],
         [
             "name" => "Marika Di Blasio",
             "email" => "gigi@gigi.com",
             "password" => "11111111",
             "vat_number" => "11111111111",
-            "is_admin" => true
+            "is_admin" => false
         ],
         [
             "name" => "Andrea Collura",
             "email" => "andrea@collura",
             "password" => "11111111",
             "vat_number" => "11111111111",
-            "is_admin" => true
+            "is_admin" => false
         ],
         [
             "name" => "Chiara Sucato",
@@ -467,7 +467,7 @@ return [
             "email" => "marco@bione",
             "password" => "11111111",
             "vat_number" => "11111111111",
-            "is_admin" => true
+            "is_admin" => false
         ]
      ]
 ];
