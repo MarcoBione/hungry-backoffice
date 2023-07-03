@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        @if (auth()->user()->is_admin)
+        @if (auth()->user()->is_admin || count($caterers)==0)
             <div class="text-end">
                 <a class="btn btn-success mt-3" href="{{ route('admin.caterers.create') }}">Aggiungi un ristorante</a>
             </div>
