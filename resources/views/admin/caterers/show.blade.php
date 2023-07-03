@@ -38,16 +38,16 @@
                             <div class="accordion-item mb-3">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button text-capitalize" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#{{$key}}" aria-expanded="false"
-                                        aria-controls="{{$key}}">
+                                        data-bs-target="#{{str_replace(' ', '', $key)}}" aria-expanded="false"
+                                        aria-controls="{{str_replace(' ', '', $key)}}">
                                         {{ $key }}
                                     </button>
                                 </h2>
-                                <div id="{{$key}}" class="accordion-collapse collapse"
+                                <div id="{{str_replace(' ', '', $key)}}" class="accordion-collapse collapse"
                                     aria-labelledby="headingOne" data-bs-parent="#tipologiesAccordion">
                                     <div class="accordion-body">
                                         @foreach ($dish as $type)
-                                            <h6>{{ $type->name }}</h6>
+                                            <a class="text-decoration-none text-dark" href="{{ route('admin.dishes.show', $type->slug)}}"><h6>{{ $type->name }}</h6></a>
                                         @endforeach
                                     </div>
                                 </div>

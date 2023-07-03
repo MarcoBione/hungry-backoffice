@@ -70,7 +70,36 @@ class CatererController extends Controller
      */
     public function show(Caterer $caterer)
     {
+        if(!Auth::user()->is_admin && $caterer->user_id !== Auth::id()){
+            abort(403);
+        }
         $dishes = Dish::all()->where('caterer_id', $caterer->id)->groupBy('tipologies');
+        $newDish = null;
+         foreach($dishes as $key => $dish){
+             if(str_contains($key, ';')){
+                 $cip = explode(';', $key );
+               foreach($cip as $help){
+                //duplico l'oggetto
+                $originalDish=Dish::find($dish[0]->id);
+                //dd($dish);
+                //gli cambio la categoria
+                $newDish = $originalDish->replicate(['tipologies']);
+                $newDish->tipologies = $help;
+                // $newDish->slug = $this->getSlug('che-palle');
+                $key = $help;
+                // $newDish->save();
+                //dd($key);
+                //aggiungo gli oggetti nuovi
+                $dishes[$key] = $newDish;
+                }
+                $dishes->forget('piatti semplici e buoni;panuozzum');
+                // $collection->forget('color');
+               //dd($dishes);
+                //rimuovo
+             };
+        // var_dump($cip);
+         }
+        //dd($dishes);
         return view('admin.caterers.show', compact('caterer', 'dishes'));
     }
 
@@ -81,6 +110,9 @@ class CatererController extends Controller
      */
     public function edit(Caterer $caterer)
     {
+        if(!Auth::user()->is_admin && $caterer->user_id !== Auth::id()){
+            abort(403);
+        }
         $categories = Category::all();
         return view('admin.caterers.edit', compact('categories', 'caterer'));
     }
