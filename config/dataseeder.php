@@ -460,7 +460,7 @@ return [
             "email" => "chiara@sucato",
             "password" => "11111111",
             "vat_number" => "11111111111",
-            "is_admin" => true
+            "is_admin" => false
         ],
         [
             "name" => "Marco Bione",
