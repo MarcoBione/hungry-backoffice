@@ -2,9 +2,11 @@
 
 @section('content')
     <div class="container">
-        <div class="text-end">
-            <a class="btn btn-success mt-3" href="{{ route('admin.caterers.create') }}">Aggiungi un ristorante</a>
-        </div>
+        @if (auth()->user()->is_admin || count($caterers)==0)
+            <div class="text-end">
+                <a class="btn btn-success mt-3" href="{{ route('admin.caterers.create') }}">Aggiungi un ristorante</a>
+            </div>
+        @endif
         <div class="container d-flex flex-wrap gap-3 justify-content-start mt-5">
 
             @foreach ($caterers as $caterer)

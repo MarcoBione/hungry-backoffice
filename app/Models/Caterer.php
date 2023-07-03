@@ -9,7 +9,7 @@ class Caterer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'address', 'image', 'phone_number', 'slug'];
+    protected $fillable = ['name', 'address', 'image', 'phone_number', 'slug', 'user_id'];
 
 
     public function user() {
