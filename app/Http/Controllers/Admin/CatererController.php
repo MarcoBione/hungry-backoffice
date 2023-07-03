@@ -55,6 +55,7 @@ class CatererController extends Controller
         $data = $request->validated();
         $slug = $this->getSlug($request->name);
         $data['slug'] = $slug;
+        $data['user_id'] = Auth::id();
         $caterer = Caterer::create($data);
         if($request->has('categories')) {
             $caterer->categories()->attach($request->categories);
