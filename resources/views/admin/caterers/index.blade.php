@@ -7,8 +7,7 @@
                 <a class="btn btn-success mt-3" href="{{ route('admin.caterers.create') }}">Aggiungi un ristorante</a>
             </div>
         @endif
-        <div class="container d-flex flex-wrap gap-3 justify-content-start mt-5">
-
+        <div class="container d-flex flex-wrap gap-3 justify-content-center align-items-center mt-5">
             @foreach ($caterers as $caterer)
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
