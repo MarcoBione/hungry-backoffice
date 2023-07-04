@@ -66,7 +66,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             {{-- link che manderà al sito frontend --}}
-                            <a class="nav-link fw-semibold _back" href="#">{{ __('Torna su Hungry') }}</a>
+                            <a class="nav-link fw-semibold _back" href="http://127.0.0.1:5174">{{ __('Torna su Hungry') }}</a>
                         </li>
                     </ul>
 
