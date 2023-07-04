@@ -42,6 +42,10 @@ class CatererController extends Controller
      */
     public function create()
     {
+        $caterers = Caterer::count();
+        if(!auth()->user()->is_admin || $caterers > 0){
+            abort(403);
+        }
         $categories = Category::all();
         return view('admin.caterers.create', compact('categories'));
     }

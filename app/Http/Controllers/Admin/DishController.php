@@ -48,7 +48,8 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view('admin.dishes.create');
+        $caterers = Caterer::all();
+        return view('admin.dishes.create', compact('caterers'));
     }
 
     /**
@@ -61,8 +62,12 @@ class DishController extends Controller
         $data = $request->validated();
         $slug = $this->getSlug($request->name);
         $data['slug'] = $slug;
-        $user_id = Auth::id();
-        $caterer_id = Caterer::where('user_id', $user_id)->value('id');
+        if($request->has('caterer_id')){
+            $caterer_id = $request->caterer_id;
+        } else {
+            $user_id = Auth::id();
+            $caterer_id = Caterer::where('user_id', $user_id)->value('id');
+        }
         $data['caterer_id'] = $caterer_id;
         $dish = Dish::create($data);
         if ($request->has('orders')) {
@@ -96,7 +101,8 @@ class DishController extends Controller
         if(!Auth::user()->is_admin && $dish->caterer->user_id !== Auth::id()){
             abort(403);
         }
-        return view('admin.dishes.edit', compact('dish'));
+        $caterers = Caterer::all();
+        return view('admin.dishes.edit', compact('dish', 'caterers'));
     }
 
     /**
@@ -114,6 +120,10 @@ class DishController extends Controller
             $slug = $this->getSlug($request->name);
         }
         $data['slug'] = $slug;
+        if($request->has('caterer_id')){
+            $caterer_id = $request->caterer_id;
+            $data['caterer_id'] = $caterer_id;
+        }
         $dish->update($data);
         if ($request->has('orders')) {
             $dish->orders()->sync($request->orders);

@@ -8,6 +8,17 @@
         <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
+            @if(Auth::user()->is_admin)
+            <div class="mb-3">
+                <label for="caterer_id">Scegli il caterer</label>
+                <select class="form-select mb-3" name="caterer_id" id="caterer_id">
+                    <option value="">Seleziona il caterer</option>
+                    @foreach ($caterers as $caterer)
+                    <option value="{{$caterer->id}}">{{$caterer->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            @endif
             <div class="mb-3">
                 <label for="name">Nome Categoria</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
