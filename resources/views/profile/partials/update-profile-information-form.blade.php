@@ -17,27 +17,33 @@
         @csrf
         @method('patch')
 
-        <div class="mb-2">
-            <label for="name">{{__('Name')}}</label>
+        <div class="mb-2 was-validated">
+            <label for="name">Nome e cognome <span class="fs-7 text-warning-emphasis">*</span></label>
             <input class="form-control" type="text" name="name" id="name" autocomplete="name" value="{{old('name', $user->name)}}" required autofocus>
             @error('name')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->get('name')}}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->get('name')}}</strong>
+                </span>
+            @else
+                <div class="invalid-feedback" role="alert">
+                    Per favore, inserisci il tuo nome e cognome
+                </div>
             @enderror
         </div>
 
-        <div class="mb-2">
-            <label for="email">
-                {{__('Email') }}
-            </label>
+        <div class="mb-2 was-validated">
+            <label for="email">E-mail <span class="fs-7 text-warning-emphasis">*</span></label>
 
             <input id="email" name="email" type="email" class="form-control" value="{{ old('email', $user->email)}}" required autocomplete="username" />
 
             @error('email')
-            <span class="alert alert-danger mt-2" role="alert">
-                <strong>{{ $errors->get('email')}}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->get('email')}}</strong>
+                </span>
+            @else
+                <div class="invalid-feedback" role="alert">
+                    Per favore, inserisci la tua email
+                </div>
             @enderror
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
@@ -61,13 +67,17 @@
 
         {{-- aggiungo campo di aggiornamento partitaiva vat_number --}}
 
-        <div class="mb-2">
-            <label for="vat_number">{{__('Partita Iva')}}</label>
+        <div class="mb-2 was-validated">
+            <label for="vat_number">Partita Iva <span class="fs-7 text-warning-emphasis">*</span></label>
             <input class="form-control" type="text" name="vat_number" id="vat_number" autocomplete="vat_number" value="{{old('vat_number', $user->vat_number)}}" required autofocus>
             @error('vat_number')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->get('vat_number')}}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->get('vat_number')}}</strong>
+                </span>
+            @else
+                <div class="invalid-feedback" role="alert">
+                    Per favore, inserisci la tua partita iva
+                </div>
             @enderror
         </div>
 
