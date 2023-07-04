@@ -66,7 +66,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type='submit' class="delete-button btn btn-danger text-white"
-                                        data-item-title="{{ $order->receiver }}"><i class="fa-solid fa-trash"></i></button>
+                                        data-item-title="{{ $order->receiver }}"> <i class="fa-solid fa-trash"></i></button>
                                 </form>
                             </div>
                         </td>
