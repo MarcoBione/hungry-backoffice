@@ -28,7 +28,7 @@
                             </div>
                         </td>
                         <td><span class="text-info">{{ $category->class }}</span></td>
-                        <td class="w-25"><img class="img-fluid img-thumbnail" src="{{ $category->image }}" alt="">
+                        <td class="w-25"><img class="img-fluid img-thumbnail" src="{{ asset('storage/' . $category->image) }}" alt="{{$category->name}}">
                         </td>
                         <td>
                             <div class="d-flex justify-content-between">

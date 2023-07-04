@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Caterer;
 use App\Models\Category;
 use App\Models\Dish;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Http\Requests\StoreCatererRequest;
 use App\Http\Requests\UpdateCatererRequest;
@@ -60,6 +61,10 @@ class CatererController extends Controller
         $slug = $this->getSlug($request->name);
         $data['slug'] = $slug;
         $data['user_id'] = Auth::id();
+        if ($request->has('image')) {
+            $image_path = Storage::put('images', $request->image);
+            $data['image'] = $image_path;
+        }
         $caterer = Caterer::create($data);
         if($request->has('categories')) {
             $caterer->categories()->attach($request->categories);
@@ -110,6 +115,13 @@ class CatererController extends Controller
             $slug = $this->getSlug($request->name);
         }
         $data['slug'] = $slug;
+        if ($request->has('image')) {
+            if ($caterer->image) {
+                Storage::delete($caterer->image);
+            }
+            $image_path = Storage::put('images', $request->image);
+            $data['image'] = $image_path;
+        }
         $caterer->update($data);
         if($request->has('categories')) {
             $caterer->categories()->sync($request->categories);

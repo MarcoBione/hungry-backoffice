@@ -33,7 +33,7 @@
             </div>
             <div class="d-flex justify-content-end">
                 <div>
-                    <img class="img-fluid p-3" src="{{ $category->image }}" alt="">
+                    <img class="img-fluid p-3" src="{{ asset('storage/' . $category->image) }}" alt="{{$category->name}}">
                 </div>
             </div>
 

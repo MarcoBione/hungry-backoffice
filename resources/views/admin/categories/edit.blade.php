@@ -53,19 +53,26 @@
                         </div>
                     @enderror
             </div>
-            <div class="mb-3 was-validated">
-                <label for="image">Immagine categoria <span class="fs-7 text-warning-emphasis">*</span></label>
-                <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
-                    id="image" value="{{ old('image', $category->image) }}">
-                    @error('image')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @else
-                        <div class="invalid-feedback" role="alert">
-                            Per favore, inserisci l'immagine
-                        </div>
-                    @enderror
+            <div class="d-flex">
+                <div class="mb-3 was-validated">
+                    <label for="image">Immagine categoria <span class="fs-7 text-warning-emphasis">*</span></label>
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
+                        id="image" value="{{ old('image', $category->image) }}" required>
+                        @error('image')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @else
+                            <div class="invalid-feedback" role="alert">
+                                Per favore, inserisci l'immagine
+                            </div>
+                        @enderror
+                </div>
+                <div class="media ms-4">
+                    <img id="uploadPreview" class="rounded" width="150"
+                        src="{{ $category->image ? asset('storage/' . $category->image) : 'https://via.placeholder.com/300x200' }}"
+                        alt="{{ $category->name }}">
+                </div>
             </div>
             <button type="submit" class="btn btn-success">Conferma</button>
             <button type="reset" class="btn btn-primary">Reset</button>
