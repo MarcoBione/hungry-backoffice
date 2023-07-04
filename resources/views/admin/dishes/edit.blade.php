@@ -1,7 +1,7 @@
 @extends('layouts.app');
 @section('content')
     <div class="container mt-3">
-        <form action="{{ route('admin.dishes.update', $dish->slug) }}" method="POST">
+        <form action="{{ route('admin.dishes.update', $dish->slug) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <h2 class="d-flex flex-column align-items-between flex-wrap mb-4">
@@ -35,7 +35,7 @@
             </div>
             <div class="mb-3 was-validated">
                 <label for="image">Immagine</label>
-                <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
+                <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
                     id="image" value="{{ old('image', $dish->image) }}">
                     @error('image')
                         <span class="invalid-feedback" role="alert">

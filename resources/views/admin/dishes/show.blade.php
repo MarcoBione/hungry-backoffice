@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="card-body ">
-                <img class="card-img-top" src="{{ $dish->image }}" alt="{{ $dish->name }}">
+                <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
             </div>
             <p class="card-body ">{{ $dish->description }}</p>
             <div class="card-body d-flex align-items-center justify-content-between">

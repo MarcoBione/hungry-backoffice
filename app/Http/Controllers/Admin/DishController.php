@@ -7,6 +7,7 @@ use App\Models\Dish;
 use App\Models\Caterer;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
@@ -123,6 +124,13 @@ class DishController extends Controller
         if($request->has('caterer_id')){
             $caterer_id = $request->caterer_id;
             $data['caterer_id'] = $caterer_id;
+        }
+        if ($request->has('image')) {
+            if ($dish->image) {
+                Storage::delete($dish->image);
+            }
+            $image_path = Storage::put('images', $request->image);
+            $data['image'] = $image_path;
         }
         $dish->update($data);
         if ($request->has('orders')) {

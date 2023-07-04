@@ -28,7 +28,7 @@ class StoreDishRequest extends FormRequest
             'description' => 'nullable',
             'price' => 'required|decimal:2',
             'visible' => 'required|boolean',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable',
             'tipologies' => 'required'
         ];
     }
@@ -44,8 +44,6 @@ class StoreDishRequest extends FormRequest
             'visible.required' => 'Il campo è obbligatorio',
             'tipologies.required' => 'Il campo è obbligatorio',
             'visible.boolean' => 'Il campo deve essere booleano',
-            'image.string' => 'Il campo deve essere una stringa',
-            'image.max' => 'Il campo può avere massimo 255 caratteri',
         ];
     }
 
