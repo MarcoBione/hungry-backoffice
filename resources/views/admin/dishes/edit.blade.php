@@ -14,7 +14,7 @@
                 <select class="form-select mb-3" name="caterer_id" id="caterer_id">
                     <option value="">Seleziona il caterer</option>
                     @foreach ($caterers as $caterer)
-                    <option value="{{$caterer->id}}">{{$caterer->name}}</option>
+                    <option value="{{$caterer->id}}" {{$caterer->id == old('caterer_id', $dish->caterer_id) ? 'selected' : ''}}>{{$caterer->name}}</option>
                     @endforeach
                 </select>
             </div>
