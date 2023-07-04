@@ -4,9 +4,11 @@
     <div class="container">
         <div class="p-5 d-flex justify-content-end">
             <div>
-                <a href="{{ route('admin.categories.edit', $category->id) }}"
-                    class="btn btn-success mt-2 text-capitalize">modifica
-                    categoria</a>
+                @if (auth()->user()->is_admin)
+                    <a href="{{ route('admin.categories.edit', $category->id) }}"
+                        class="btn btn-success mt-2 text-capitalize">modifica
+                        categoria</a>
+                @endif
                 <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary  mt-2 text-capitalize">Torna a
                     categorie</a>
             </div>
