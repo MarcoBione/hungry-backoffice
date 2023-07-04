@@ -37,36 +37,37 @@
                         <div class="accordion" id="tipologiesAccordion">
                             @if(str_contains($key, ';'))
                                 @foreach($partialKey = explode(';', $key ) as $item)
-                                {{-- {{dd($partialKey, $item[1])}} --}}
-                                <div class="accordion-item mb-3">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button text-capitalize" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#{{str_replace(' ', '', $item)}}" aria-expanded="false"
-                                            aria-controls="{{str_replace(' ', '', $item)}}">
-                                            {{ $item }}
-                                        </button>
-                                    </h2>
-                                    <div id="{{str_replace(' ', '', $item)}}" class="accordion-collapse collapse"
-                                        aria-labelledby="headingOne" data-bs-parent="#tipologiesAccordion">
-                                        <div class="accordion-body">
-                                            @foreach ($dish as $type)
-                                                <a class="text-decoration-none text-dark" href="{{ route('admin.dishes.show', $type->slug)}}"><h6>{{ $type->name }}</h6></a>
-                                            @endforeach
+                                <div class="accordion" id="tipologiesAccordion">
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header" id="heading{{str_replace(' ', '', $item)}}">
+                                            <button class="accordion-button text-capitalize collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#{{str_replace(' ', '', $item)}}" aria-expanded="false"
+                                                aria-controls="{{str_replace(' ', '', $item)}}">
+                                                {{ $item }}
+                                            </button>
+                                        </h2>
+                                        <div id="{{str_replace(' ', '', $item)}}" class="accordion-collapse collapse"
+                                            aria-labelledby="heading{{str_replace(' ', '', $item)}}" data-bs-parent="#tipologiesAccordion">
+                                            <div class="accordion-body">
+                                                @foreach ($dish as $type)
+                                                    <a class="text-decoration-none text-dark" href="{{ route('admin.dishes.show', $type->slug)}}"><h6>{{ $type->name }}</h6></a>
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 @endforeach
                             @elseif(!str_contains($key, ';'))
                                 <div class="accordion-item mb-3">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button text-capitalize" type="button" data-bs-toggle="collapse"
+                                    <h2 class="accordion-header" id="heading{{str_replace(' ', '', $key)}}">
+                                        <button class="accordion-button text-capitalize collapsed" type="button" data-bs-toggle="collapse"
                                             data-bs-target="#{{str_replace(' ', '', $key)}}" aria-expanded="false"
                                             aria-controls="{{str_replace(' ', '', $key)}}">
                                             {{ $key }}
                                         </button>
                                     </h2>
                                     <div id="{{str_replace(' ', '', $key)}}" class="accordion-collapse collapse"
-                                        aria-labelledby="headingOne" data-bs-parent="#tipologiesAccordion">
+                                        aria-labelledby="heading{{str_replace(' ', '', $key)}}" data-bs-parent="#tipologiesAccordion">
                                         <div class="accordion-body">
                                             @foreach ($dish as $type)
                                                 <a class="text-decoration-none text-dark" href="{{ route('admin.dishes.show', $type->slug)}}"><h6>{{ $type->name }}</h6></a>
