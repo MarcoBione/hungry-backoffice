@@ -76,7 +76,7 @@
                 </span>
             @else
                 <div class="invalid-feedback" role="alert">
-                    Per favore, inserisci ila tua partita iva
+                    Per favore, inserisci la tua partita iva
                 </div>
             @enderror
         </div>
