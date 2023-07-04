@@ -43,9 +43,7 @@
             </div>
             <div class="mb-3 was-validated">
                 <label for="total_price" class="form-label fs-5">Prezzo totale (&euro;) <span class="fs-7 text-warning-emphasis">*</span></label>
-                <input type="number" step="0.01" value="{{ old('total_price', $order->total_price) }}"
-                    class="form-control @error('total_price') is-invalid @enderror" id="total_price" name="total_price" min="0.1" step="0.1"
-                    max="9999.99" required>
+                <input type="number" step="0.01" value="{{ old('total_price', $order->total_price) }}" class="form-control @error('total_price') is-invalid @enderror" id="total_price" name="total_price" min="0.10" step="0.10" max="9999.99" required>
                 @error('total_price')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
