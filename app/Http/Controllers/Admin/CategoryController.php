@@ -17,6 +17,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        // if(!Auth::user()->is_admin){
+        //     abort(403);
+        // }
         $categories = Category::paginate(3);
         return view('admin.categories.index', compact('categories'));
     }
@@ -28,6 +31,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        if(!Auth::user()->is_admin){
+            abort(403);
+        }
         return view('admin.categories.create');
     }
 
@@ -77,6 +83,9 @@ class CategoryController extends Controller
             abort(403);
         }
  */
+        if(!Auth::user()->is_admin){
+            abort(403);
+        }
         return view('admin.categories.edit', compact('category'));
     }
 
@@ -104,6 +113,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        if(!Auth::user()->is_admin){
+            abort(403);
+        }
         $category->delete();
         return redirect()->route('admin.categories.index')->with('message', "$category->name deleted successfully!");
     }
