@@ -13,34 +13,45 @@
         @csrf
         @method('put')
 
-        <div class="mb-2">
-            <label for="current_password">{{__('Current Password')}}</label>
-            <input class="mt-1 form-control" type="password" name="current_password" id="current_password" autocomplete="current-password">
+        <div class="mb-2 was-validated">
+            <label for="current_password">Password attuale <span class="fs-7 text-warning-emphasis">*</span></label>
+            <input class="mt-1 form-control" type="password" name="current_password" id="current_password" autocomplete="current-password" required>
             @error('current_password')
-            <span class="invalid-feedback mt-2" role="alert">
-                <strong>{{ $errors->updatePassword->get('current_password') }}</strong>
-            </span>
+                <span class="invalid-feedback mt-2" role="alert">
+                    <strong>{{ $errors->updatePassword->get('current_password') }}</strong>
+                </span>
+            @else
+                <div class="invalid-feedback mt-2" role="alert">
+                    Per favore, inserisci ila tua partita iva
+                </div>
             @enderror
         </div>
 
-        <div class="mb-2">
-            <label for="password">{{__('New Password')}}</label>
-            <input class="mt-1 form-control" type="password" name="password" id="password" autocomplete="new-password">
+        <div class="mb-2 was-validated">
+            <label for="password">Nuova password <span class="fs-7 text-warning-emphasis">*</span></label>
+            <input class="mt-1 form-control" type="password" name="password" id="password" autocomplete="new-password" required>
             @error('password')
-            <span class="invalid-feedback mt-2" role="alert">
-                <strong>{{ $errors->updatePassword->get('password')}}</strong>
-            </span>
+                <span class="invalid-feedback mt-2" role="alert">
+                    <strong>{{ $errors->updatePassword->get('password')}}</strong>
+                </span>
+            @else
+                <div class="invalid-feedback mt-2" role="alert">
+                    Per favore, inserisci ila tua partita iva
+                </div>
             @enderror
         </div>
 
-        <div class="mb-2">
-
-            <label for="password_confirmation">{{__('Confirm Password')}}</label>
-            <input class="mt-2 form-control" type="password" name="password_confirmation" id="password_confirmation" autocomplete="new-password">
+        <div class="mb-2 was-validated">
+            <label for="password_confirmation">Conferma la nuova password <span class="fs-7 text-warning-emphasis">*</span></label>
+            <input class="mt-2 form-control" type="password" name="password_confirmation" id="password_confirmation" autocomplete="new-password" required>
             @error('password_confirmation')
-            <span class="invalid-feedback mt-2" role="alert">
-                <strong>{{ $errors->updatePassword->get('password_confirmation')}}</strong>
-            </span>
+                <span class="invalid-feedback mt-2" role="alert">
+                    <strong>{{ $errors->updatePassword->get('password_confirmation')}}</strong>
+                </span>
+            @else
+                <div class="invalid-feedback mt-2" role="alert">
+                    Per favore, inserisci ila tua partita iva
+                </div>
             @enderror
         </div>
 
