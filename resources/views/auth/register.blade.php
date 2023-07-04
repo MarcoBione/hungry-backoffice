@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between">
+                    <div class="card-header d-flex justify-content-between flex-wrap">
                         <span class="fs-3">Registrazione di un nuovo ristoratore</span>
                         <span class="fs-7 text-warning-emphasis">I campi contrassegnati con * sono obbligatori</span>
                     </div>
