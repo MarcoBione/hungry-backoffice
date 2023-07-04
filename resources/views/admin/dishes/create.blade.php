@@ -56,7 +56,7 @@
             <div class="mb-3 was-validated">
                 <label for="price">Prezzo <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" required
-                    id="price" min="0.10" step="0.10" max="9999.99">
+                    id="price" min="0.10" step="0.01" max="9999.99">
                 @error('price')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
