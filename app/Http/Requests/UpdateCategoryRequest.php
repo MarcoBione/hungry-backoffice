@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-
+use App\Models\Category;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateCategoryRequest extends FormRequest
@@ -27,7 +27,7 @@ class UpdateCategoryRequest extends FormRequest
             'name' => 'required|max:100|min:3',
             'description' => 'nullable',
             'class' => 'required|max:100',
-            'image' => 'required|max:255',
+            'image' => 'sometimes|required|max:255',
         ];
     }
 }

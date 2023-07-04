@@ -42,7 +42,7 @@
             <div class="mb-3 was-validated">
                 <label for="class">Nome classe stile <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('class') is-invalid @enderror" name="class"
-                    id="class" value="{{ old('class', $category->class) }}">
+                    id="class" value="{{ old('class', $category->class) }}" required>
                     @error('class')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -56,8 +56,8 @@
             <div class="d-flex">
                 <div class="mb-3 was-validated">
                     <label for="image">Immagine categoria <span class="fs-7 text-warning-emphasis">*</span></label>
-                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
-                        id="image" value="{{ old('image', $category->image) }}" required>
+                    <input type="file" class="form-control input-edit @error('image') is-invalid @enderror" name="image"
+                        id="image" value="{{ old('image', $category->image) }}">
                         @error('image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

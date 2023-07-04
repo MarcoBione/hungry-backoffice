@@ -53,8 +53,7 @@
                 </div>
                 <div class="media ms-4">
                     <img id="uploadPreview" class="rounded" width="150"
-                        src="https://via.placeholder.com/300x200"
-                        >
+                        src="https://via.placeholder.com/300x200">
                 </div>
             </div>
             <div class="mb-3 was-validated">

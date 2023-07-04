@@ -26,7 +26,7 @@ class UpdateCatererRequest extends FormRequest
         return [
             'name' => 'required',
             'address' => 'required',
-            'image' => 'required',
+            'image' => 'sometimes|required',
             'phone_number' => 'required'
         ];
     }

@@ -41,7 +41,7 @@
                 <div class="mb-3 was-validated">
                     <label for="image">Immagine <span class="fs-7 text-warning-emphasis">*</span></label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
-                        id="image" value="{{ old('image', $caterer->image) }}" required>
+                        id="image" value="{{ old('image', $caterer->image) }}" >
                         @error('image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
