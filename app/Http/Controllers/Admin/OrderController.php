@@ -64,6 +64,19 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $user = Auth::user();
+        $id = Auth::id();
+        if(!$user->is_admin){
+             $order_user_id = DB::table("orders")->
+                 join("dish_order","dish_order.order_id","=","orders.id")->
+                 join("dishes","dishes.id","=","dish_order.dish_id")->
+                 join("caterers", "caterers.id", "=", "caterer_id")
+                    ->where('orders.id', $order->id)->
+                 value('user_id');
+                if($order_user_id !== $id){
+                    abort('403');
+                }
+        }
         return view("admin.orders.show", compact("order"));
     }
 
@@ -74,6 +87,19 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
+        $user = Auth::user();
+        $id = Auth::id();
+        if(!$user->is_admin){
+             $order_user_id = DB::table("orders")->
+                 join("dish_order","dish_order.order_id","=","orders.id")->
+                 join("dishes","dishes.id","=","dish_order.dish_id")->
+                 join("caterers", "caterers.id", "=", "caterer_id")
+                    ->where('orders.id', $order->id)->
+                 value('user_id');
+                if($order_user_id !== $id){
+                    abort('403');
+                }
+        }
         return view('admin.orders.edit', compact('order'));
     }
 
@@ -98,6 +124,19 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
+        $user = Auth::user();
+        $id = Auth::id();
+        if(!$user->is_admin){
+             $order_user_id = DB::table("orders")->
+                 join("dish_order","dish_order.order_id","=","orders.id")->
+                 join("dishes","dishes.id","=","dish_order.dish_id")->
+                 join("caterers", "caterers.id", "=", "caterer_id")
+                    ->where('orders.id', $order->id)->
+                 value('user_id');
+                if($order_user_id !== $id){
+                    abort('403');
+                }
+        }
         $order->delete();
         return redirect()->route('admin.orders.index')->with('message', "L'ordine $order->id realizzato da $order->receiver il $order->created_at è stato eliminato correttamente");
     }
