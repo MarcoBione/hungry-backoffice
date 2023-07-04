@@ -70,6 +70,10 @@ class DishController extends Controller
             $caterer_id = Caterer::where('user_id', $user_id)->value('id');
         }
         $data['caterer_id'] = $caterer_id;
+        if ($request->has('image')) {
+            $image_path = Storage::put('images', $request->image);
+            $data['image'] = $image_path;
+        }
         $dish = Dish::create($data);
         if ($request->has('orders')) {
             $dish->orders()->attach($request->orders);

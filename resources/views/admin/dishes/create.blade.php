@@ -1,22 +1,23 @@
 @extends('layouts.app');
 @section('content')
     <div class="container mt-3">
-        <form action="{{ route('admin.dishes.store') }}" method="POST">
+        <form action="{{ route('admin.dishes.store') }}" method="POST" enctype="multipart/form-data>
             @csrf
             <h2 class="d-flex flex-column align-items-between flex-wrap mb-4">
                 <span class="fs-3">Creazione di un nuovo piatto</span>
                 <span class="fs-7 text-warning-emphasis">I campi contrassegnati con * sono obbligatori</span>
             </h2>
-            @if(Auth::user()->is_admin)
-            <div class="mb-3 was-validated">
-                <label for="caterer_id">Scegli il ristorante nel quale associare il piatto <span class="fs-7 text-warning-emphasis">*</span></label>
-                <select class="form-select mb-3" name="caterer_id" id="caterer_id">
-                    <option value="">Seleziona il caterer</option>
-                    @foreach ($caterers as $caterer)
-                    <option value="{{$caterer->id}}">{{$caterer->name}}</option>
-                    @endforeach
-                </select>
-            </div>
+            @if (Auth::user()->is_admin)
+                <div class="mb-3 was-validated">
+                    <label for="caterer_id">Scegli il ristorante nel quale associare il piatto <span
+                            class="fs-7 text-warning-emphasis">*</span></label>
+                    <select class="form-select mb-3" name="caterer_id" id="caterer_id">
+                        <option value="">Seleziona il caterer</option>
+                        @foreach ($caterers as $caterer)
+                            <option value="{{ $caterer->id }}">{{ $caterer->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
             @endif
             <div class="mb-3 was-validated">
                 <label for="name">Nome Piatto <span class="fs-7 text-warning-emphasis">*</span></label>
@@ -32,19 +33,25 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 was-validated">
-                <label for="image">Immagine</label>
-                <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
-                    id="image">
-                @error('image')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @else
-                    <div class="invalid-feedback" role="alert">
-                        Per favore, inserisci l'immagine del piatto
-                    </div>
-                @enderror
+            <div class="d-flex">
+                <div class="mb-3 was-validated">
+                    <label for="image">Immagine</label>
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
+                        id="image">
+                    @error('image')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @else
+                        <div class="invalid-feedback" role="alert">
+                            Per favore, inserisci l'immagine del piatto
+                        </div>
+                    @enderror
+                </div>
+                <div class="media ms-4">
+                    <img id="uploadPreview" class="rounded" width="150"
+                        src="https://via.placeholder.com/300x200">
+                </div>
             </div>
             <div class="mb-3 was-validated">
                 <label for="price">Prezzo <span class="fs-7 text-warning-emphasis">*</span></label>
@@ -67,7 +74,7 @@
             <div class="mb-3 was-validated">
                 <label for="tipologies">Tipologie <span class="fs-7 text-warning-emphasis">*</span></label>
                 <textarea name="tipologies" id="tipologies" rows="10"
-                    class="form-control @error('tipologies') is-invalid @enderror" required></textarea>
+                    class=" @error('tipologies') is-invalid @enderror" required></textarea>
                 @error('tipologies')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -114,7 +121,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- Laravel Javascript Validation -->
-    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
 
     {!! JsValidator::formRequest('App\Http\Requests\StoreDishRequest') !!}
 @endsection
