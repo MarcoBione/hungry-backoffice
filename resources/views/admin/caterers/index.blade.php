@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $caterer->name }}</h5>
                         <img class="card-img-top" style="width: 250px; height: 230px; object-fit: cover"
-                            src="{{ $caterer->image }}" alt="{{ $caterer->name }}">
+                            src="{{ asset('storage/' . $caterer->image) }}" alt="{{ $caterer->name }}">
                     </div>
                     <div class="card-body d-flex justify-content-center align-items-center gap-2 ">
                         <a href="{{ route('admin.caterers.show', $caterer->slug) }}" class="btn btn-primary text-white">

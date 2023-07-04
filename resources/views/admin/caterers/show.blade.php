@@ -11,7 +11,7 @@
             <div class="col col-6">
                 <div class="card">
                     <img class="card-img-top" style="height: 300px; object-fit: cover; object-position: center"
-                        src="{{ $caterer->image }}" alt="{{ $caterer->name }}">
+                        src="{{ asset('storage/' . $caterer->image) }}" alt="{{ $caterer->name }}">
                 </div>
             </div>
             <div class="col col-6">

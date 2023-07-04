@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -47,6 +48,10 @@ class CategoryController extends Controller
     {
         $data = $request->validated();
         /* $data['user_id'] = Auth::id(); */
+        if ($request->has('image')) {
+            $image_path = Storage::put('images', $request->image);
+            $data['image'] = $image_path;
+        }
         $category = Category::create($data);
 
         return redirect()->route('admin.categories.show', $category->id)->with('message', "Category {$category->name} successfully created");
@@ -99,7 +104,13 @@ class CategoryController extends Controller
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         $data = $request->validated();
-
+        if ($request->has('image')) {
+            if ($category->image) {
+                Storage::delete($category->image);
+            }
+            $image_path = Storage::put('images', $request->image);
+            $data['image'] = $image_path;
+        }
         $category->update($data);
 
         return redirect()->route('admin.categories.show', $category->id)->with('message', "Category {$category->name} successfully edited");

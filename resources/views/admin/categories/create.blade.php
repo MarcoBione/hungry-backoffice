@@ -38,7 +38,7 @@
             </div>
             <div class="mb-3 was-validated">
                 <label for="class">Nome classe stile <span class="fs-7 text-warning-emphasis">*</span></label>
-                <input type="text" class="form-control @error('class') is-invalid @enderror" name="class" id="class" required>
+                <input type="file" class="form-control @error('class') is-invalid @enderror" name="class" id="class" required>
                 @error('class')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -48,6 +48,13 @@
                         Per favore, inserisci la classe della categoria
                     </div>
                 @enderror
+            </div>
+            <div class="d-flex">
+            </div>
+            <div class="media ms-4">
+                <img id="uploadPreview" class="rounded" width="150"
+                    src="https://via.placeholder.com/300x200">
+            </div>
             </div>
             <div class="mb-3 was-validated">
                 <label for="image">Immagine categoria <span class="fs-7 text-warning-emphasis">*</span></label>
@@ -61,7 +68,7 @@
                         Per favore, inserisci l'immagine
                     </div>
                 @enderror
-            </div>
+
             <button type="submit" class="btn btn-success">Save</button>
             <button type="reset" class="btn btn-primary">Reset</button>
         </form>
