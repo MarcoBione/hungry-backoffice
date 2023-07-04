@@ -4,37 +4,62 @@
     <div class="container mt-3">
         <form action="{{ route('admin.categories.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="mb-3">
-                <label for="name">Nome Categoria</label>
+            <h2 class="d-flex flex-column align-items-between flex-wrap mb-4">
+                <span class="fs-3">Creazione di una nuova categoria</span>
+                <span class="fs-7 text-warning-emphasis">I campi contrassegnati con * sono obbligatori</span>
+            </h2>
+            <div class="mb-3 was-validated">
+                <label for="name">Nome Categoria <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
                     required maxlength="100" minlength="3">
                 @error('name')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @else
+                    <div class="invalid-feedback" role="alert">
+                        Per favore, inserisci il nome della categoria
+                    </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="mb-3 was-validated">
                 <label for="description">Descrizione</label>
                 <textarea type="text" class="form-control @error('description') is-invalid @enderror" name="description"
                     id="description"></textarea>
-
                 @error('description')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @else
+                    <div class="invalid-feedback" role="alert">
+                        Per favore, inserisci la descrizione della categoria
+                    </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="class">Nome classe stile</label>
-                <input type="text" class="form-control @error('class') is-invalid @enderror" name="class"
-                    id="class">
+            <div class="mb-3 was-validated">
+                <label for="class">Nome classe stile <span class="fs-7 text-warning-emphasis">*</span></label>
+                <input type="text" class="form-control @error('class') is-invalid @enderror" name="class" id="class" required>
                 @error('class')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @else
+                    <div class="invalid-feedback" role="alert">
+                        Per favore, inserisci la classe della categoria
+                    </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="image">Immagine categoria</label>
-                <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
-                    id="image">
+            <div class="mb-3 was-validated">
+                <label for="image">Immagine categoria <span class="fs-7 text-warning-emphasis">*</span></label>
+                <input type="text" class="form-control @error('image') is-invalid @enderror" name="image" id="image" required>
                 @error('image')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @else
+                    <div class="invalid-feedback" role="alert">
+                        Per favore, inserisci l'immagine
+                    </div>
                 @enderror
             </div>
             <button type="submit" class="btn btn-success">Save</button>
