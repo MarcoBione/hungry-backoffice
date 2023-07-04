@@ -2,56 +2,70 @@
 
 @section('content')
     <div class="container mt-3">
-        <div class="p-5 d-flex justify-content-end">
-            <a href="{{ route('admin.categories.index') }}" class="btn btn-success">Torna a categorie</a>
-        </div>
         <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            @if(Auth::user()->is_admin)
-            <div class="mb-3">
-                <label for="caterer_id">Scegli il caterer</label>
-                <select class="form-select mb-3" name="caterer_id" id="caterer_id">
-                    <option value="">Seleziona il caterer</option>
-                    @foreach ($caterers as $caterer)
-                    <option value="{{$caterer->id}}">{{$caterer->name}}</option>
-                    @endforeach
-                </select>
-            </div>
-            @endif
-            <div class="mb-3">
-                <label for="name">Nome Categoria</label>
+
+            <h2 class="d-flex flex-column align-items-between flex-wrap mb-4">
+                <span class="fs-3">Modifica categoria <strong>{{$category->name}}</strong></span>
+                <span class="fs-7 text-warning-emphasis">I campi contrassegnati con * sono obbligatori</span>
+            </h2>
+            <div class="mb-3 was-validated">
+                <label for="name">Nome Categoria <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
                     required maxlength="100" minlength="3" value="{{ old('name', $category->name) }}">
                 @error('name')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @else
+                    <div class="invalid-feedback" role="alert">
+                        Per favore, inserisci il nome della categoria
+                    </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="mb-3 was-validated">
                 <label for="description">Descrizione</label>
                 <textarea type="text" class="form-control @error('description') is-invalid @enderror" name="description" id="description">
                     {{ old('description', $category->description) }}
                 </textarea>
-
                 @error('description')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @else
+                    <div class="invalid-feedback" role="alert">
+                        Per favore, inserisci la descrizione della categoria
+                    </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="class">Nome classe stile</label>
+            <div class="mb-3 was-validated">
+                <label for="class">Nome classe stile <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('class') is-invalid @enderror" name="class"
                     id="class" value="{{ old('class', $category->class) }}">
-                @error('class')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                    @error('class')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @else
+                        <div class="invalid-feedback" role="alert">
+                            Per favore, inserisci la classe della categoria
+                        </div>
+                    @enderror
             </div>
-            <div class="mb-3">
-                <label for="image">Immagine categoria</label>
+            <div class="mb-3 was-validated">
+                <label for="image">Immagine categoria <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
                     id="image" value="{{ old('image', $category->image) }}">
-                @error('image')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                    @error('image')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @else
+                        <div class="invalid-feedback" role="alert">
+                            Per favore, inserisci l'immagine
+                        </div>
+                    @enderror
             </div>
             <button type="submit" class="btn btn-success">Conferma</button>
             <button type="reset" class="btn btn-primary">Reset</button>
