@@ -32,7 +32,7 @@
         <div class="my-2">
             <a href="{{ route('admin.dishes.create') }}" class="btn btn-success text-capitalize">aggiungi piatto</a>
             @if (count($dishes) > 0)
-                    <h3 class="my-5"><i class="fa-solid fa-utensils me-2"></i>Piatti</h3>
+                    <h3 class="my-5"><i class="fa-solid fa-utensils me-2"></i>Menù alla carta</h3>
                     @foreach ($dishes as $key => $dish)
                         <div class="accordion" id="tipologiesAccordion">
                             @if(str_contains($key, ';'))
