@@ -10,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -49,5 +50,18 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }
+
+    public function testAjax(Request $request)
+    {
+        // this will automatically return a 422 error response when request is invalid
+        $this->validate($request, ['name' => 'required|min:3']);
+
+        // below is executed when request is valid
+        $name = $request->name;
+
+        return response()->json([
+            'message' => "Welcome $name"
+        ]);
     }
 }
