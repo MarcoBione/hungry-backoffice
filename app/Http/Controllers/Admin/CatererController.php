@@ -127,6 +127,9 @@ class CatererController extends Controller
      */
     public function destroy(Caterer $caterer)
     {
+        if(!Auth::user()->is_admin && $caterer->user_id !== Auth::id()){
+            abort(403);
+        }
         $caterer->delete();
 
         return redirect()->route('admin.caterers.index')->with('message', "Il ristorante $caterer->name è stato eliminato con successo");

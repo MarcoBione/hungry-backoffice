@@ -140,6 +140,9 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
+        if(!Auth::user()->is_admin && $dish->caterer->user_id !== Auth::id()){
+            abort(403);
+        }
         $dish->delete();
         return redirect()->route('admin.dishes.index', $dish->slug)->with('message', "Il piatto $dish->name è stato eliminato");
     }
