@@ -123,7 +123,7 @@ return [
             'description' => "Fior di latte d'Agerola, guanciale, pecorino romano DOP, tuorlo d'uovo e pepe nero",
             'price' => 11.00,
             'visible' => true,
-            'image' => 'https://ordina.pizzium.com/assets/img/items/16838188643MlRecZbf5.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/1.jpg',
             'tipologies' => 'pizze classiche',
             'caterer_id' => 1
         ],
@@ -132,7 +132,7 @@ return [
             'description' => "Pomodori pelati, fior di latte d'Agerola e filetti di alici",
             'price' => 9.00,
             'visible' => true,
-            'image' => 'https://ordina.pizzium.com/assets/img/items/1602500013AbEO2QcWz6.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/2.jpg',
             'tipologies' => 'pizze classiche',
             'caterer_id' => 1
         ],
@@ -141,7 +141,7 @@ return [
             'description' => '',
             'price' => 8.00,
             'visible' => true,
-            'image' => 'https://ordina.pizzium.com/assets/img/items/1654869162PfJARJKlZl.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/3.jpg',
             'tipologies' => 'piatti semplici e buoni;panuozzum',
             'caterer_id' => 1
         ],
@@ -150,7 +150,7 @@ return [
             'description' => 'Misticanza, pollo croccante, datterini rossi freschi, scaglie di Grana Padano DOP e salsa Caesar',
             'price' => 10.00,
             'visible' => true,
-            'image' => 'https://ordina.pizzium.com/assets/img/items/1684140020nO3Zfvf6Ev.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/4.jpg',
             'tipologies' => 'insalate',
             'caterer_id' => 1
         ],
@@ -159,7 +159,7 @@ return [
             'description' => '',
             'price' => 6.00,
             'visible' => true,
-            'image' => 'https://ordina.pizzium.com/assets/img/items/1655109663BOXFQDGTwu.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/5.jpg',
             'tipologies' => 'dolci',
             'caterer_id' => 1
         ],
@@ -168,7 +168,7 @@ return [
             'description' => 'Carpaccio di Wagyu, olio evo, sale maldon, pepe dello Sichuan, servito su crema di senape e miele',
             'price' => 26.00,
             'visible' => true,
-            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/Akiko.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/6.jpg',
             'tipologies' => 'carpacci',
             'caterer_id' => 2
         ],
@@ -177,7 +177,7 @@ return [
             'description' => 'Tartare di tonno, con rucola e stracciatella di burrata, emulsione di pomodorino pachino, avocado, sale maldon e pepe',
             'price' => 22.00,
             'visible' => true,
-            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/Edentartare.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/7.jpg',
             'tipologies' => 'tartare',
             'caterer_id' => 2
         ],
@@ -186,7 +186,7 @@ return [
             'description' => 'Tonno scottato con granella di pistacchio, servito su rucola, stracciatella di burrata e pipetta con salsa Senape-Maio-Miele.',
             'price' => 20.00,
             'visible' => true,
-            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/TatakiPistacchio.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/8.jpg',
             'tipologies' => 'tataki',
             'caterer_id' => 2
         ],
@@ -195,7 +195,7 @@ return [
             'description' => 'Salmone, philadelphia, lime, menta, avocado e mandorle',
             'price' => 16.00,
             'visible' => true,
-            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/SalmonParadisev2-min.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/9.jpg',
             'tipologies' => 'uramaki',
             'caterer_id' => 2
         ],
@@ -204,7 +204,7 @@ return [
             'description' => 'Filetto di manzo ai cinque aromi e salsa teriyaki',
             'price' => 35.00,
             'visible' => true,
-            'image' => 'https://www.sushiyokohama.it/wp-content/uploads/2022/09/BbqLotusTartufo-min.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/10.jpg',
             'tipologies' => 'fusion food',
             'caterer_id' => 2
         ],
@@ -213,7 +213,7 @@ return [
             'description' => 'Steamed pork dumplings',
             'price' => 5.50,
             'visible' => true,
-            'image' => 'https://www.giallozafferano.it/images/230-23062/Ravioli-cinesi-al-vapore_650x433_wm.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/11.avif',
             'tipologies' => 'ravioli',
             'caterer_id' => 3
         ],
@@ -222,7 +222,7 @@ return [
             'description' => 'Soy noodles with shrimps and vegetables',
             'price' => 6.50,
             'visible' => true,
-            'image' => 'https://blog.giallozafferano.it/trasentieriefornelli/wp-content/uploads/2022/02/IMG_0028-960x640.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/12.jpg',
             'tipologies' => 'primi',
             'caterer_id' => 3
         ],
@@ -231,7 +231,7 @@ return [
             'description' => 'Chicken with almonds and bamboo shoots',
             'price' => 7.00,
             'visible' => true,
-            'image' => 'https://www.buttalapasta.it/wp-content/uploads/2008/02/petto-di-pollo-alle-mandorle.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/13.jpg',
             'tipologies' => 'carne',
             'caterer_id' => 3
         ],
@@ -240,7 +240,7 @@ return [
             'description' => 'Batter fried shrimps',
             'price' => 8.00,
             'visible' => true,
-            'image' => 'https://www.ricettasprint.it/wp-content/uploads/2021/02/Code-di-gamberi-fritti-ricettasprint.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/14.jpg',
             'tipologies' => 'pesce',
             'caterer_id' => 3
         ],
@@ -249,7 +249,7 @@ return [
             'description' => 'Pakchoi (available with additional garlic and chilli)',
             'price' => 6.00,
             'visible' => true,
-            'image' => 'https://www.buttalapasta.it/wp-content/uploads/2022/12/ricette-con-cavolo-cinese.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/15.jpg',
             'tipologies' => 'verdure',
             'caterer_id' => 3
         ],
@@ -258,7 +258,7 @@ return [
             'description' => '',
             'price' => 8.00,
             'visible' => true,
-            'image' => 'https://www.kettycucinooggi.com/wp-content/uploads/2020/07/FRISELLE-INTEGRALI-ALLA-MEDITERRANEA-4-scaled.jpeg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/16.jpg',
             'tipologies' => 'antipasti',
             'caterer_id' => 4
         ],
@@ -267,7 +267,7 @@ return [
             'description' => '',
             'price' => 14.00,
             'visible' => true,
-            'image' => 'https://www.cucchiaio.it/content/dam/cucchiaio/it/ricette/2009/11/ricetta-tagliatelle-bolognese/tagliatelle-alla-bolognese-ante.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/17.avif',
             'tipologies' => 'primi',
             'caterer_id' => 4
         ],
@@ -276,7 +276,7 @@ return [
             'description' => '',
             'price' => 22.00,
             'visible' => true,
-            'image' => 'https://www.animaincucina.it/wp-content/uploads/2022/09/IMG_4416-320x427.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/18.jpg',
             'tipologies' => 'primi',
             'caterer_id' => 4
         ],
@@ -285,7 +285,7 @@ return [
             'description' => '',
             'price' => 24.00,
             'visible' => true,
-            'image' => 'https://www.giallozafferano.it/images/184-18454/Filetto-al-pepe-verde_650x433_wm.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/19.avif',
             'tipologies' => 'secondi',
             'caterer_id' => 4
         ],
@@ -294,7 +294,7 @@ return [
             'description' => '',
             'price' => 10.00,
             'visible' => true,
-            'image' => 'https://blog.giallozafferano.it/incucinaconmara/wp-content/uploads/2018/03/Insalata.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/20.jpg',
             'tipologies' => 'insalate',
             'caterer_id' => 4
         ],
@@ -303,7 +303,7 @@ return [
             'description' => 'Sfoglia ripiena di patate e piselli accompagnata da masala',
             'price' => 5.00,
             'visible' => true,
-            'image' => 'https://cdn.ilclubdellericette.it/wp-content/uploads/2021/02/samosa-1280x720.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/21.jpg',
             'tipologies' => 'antipasti',
             'caterer_id' => 5
         ],
@@ -312,7 +312,7 @@ return [
             'description' => 'Tandori mix, Cheese naan, Chikken tikka masala, Riso basmati e dolce a scelta',
             'price' => 25.00,
             'visible' => true,
-            'image' => 'https://mangiarebene.s3.amazonaws.com/uploads/blog_item/image/1285/mb_asset.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/22.jpg',
             'tipologies' => 'menù fisso',
             'caterer_id' => 5
         ],
@@ -321,7 +321,7 @@ return [
             'description' => 'Bocconcini di pollo cucinati con coriandolo e menta freschi con salsa tipiaca nepalese',
             'price' => 13.00,
             'visible' => true,
-            'image' => 'https://live.staticflickr.com/2886/11915592956_48ffeb3255_b.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/23.jpg',
             'tipologies' => 'tipico nepalese',
             'caterer_id' => 5
         ],
@@ -330,7 +330,7 @@ return [
             'description' => 'Bocconcini di pollo marinati in spinaci e menta cotti nel forno Tandoori',
             'price' => 12.00,
             'visible' => true,
-            'image' => 'https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2017/10-oct/Hariyali_Chicken_Tikka_Recipe-9373.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/24.jpg',
             'tipologies' => 'tandoori',
             'caterer_id' => 5
         ],
@@ -339,7 +339,7 @@ return [
             'description' => 'Bocconcini di pollo in pomodoro, semi di mostarda e foglie di curry',
             'price' => 12.00,
             'visible' => true,
-            'image' => 'https://www.kitchensanctuary.com/wp-content/uploads/2020/02/Chicken-Madras-square-FS-35.jpg',
+            'image' => 'http://127.0.0.1:8000/images/dishes/25.jpg',
             'tipologies' => 'curry pollo',
             'caterer_id' => 5
         ]
