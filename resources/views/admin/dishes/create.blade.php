@@ -65,7 +65,7 @@
                 <textarea name="description" id="description" rows="10" class="form-control"></textarea>
             </div>
             <div class="mb-3 was-validated">
-                <label for="tipologies">Tipologie</label>
+                <label for="tipologies">Tipologie <span class="fs-7 text-warning-emphasis">*</span></label>
                 <textarea name="tipologies" id="tipologies" rows="10"
                     class="form-control @error('tipologies') is-invalid @enderror" required></textarea>
                 @error('tipologies')
