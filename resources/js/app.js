@@ -29,12 +29,15 @@ deleteSubmitButtons.forEach((button) => {
         });
     });
 });
+
 // image preview
-    const previewImage = document.getElementById('image');
+const previewImage = document.getElementById('image');
+if(previewImage){
     previewImage.addEventListener('change', (event) => {
         var oFReader = new FileReader();
         oFReader.readAsDataURL(previewImage.files[0]);
         oFReader.onload = function (oFREvent) {
-    document.getElementById("uploadPreview").src = oFREvent.target.result;
-};
-});
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    });
+}
