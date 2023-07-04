@@ -74,7 +74,7 @@
             <div class="mb-3 was-validated">
                 <label for="tipologies">Tipologie <span class="fs-7 text-warning-emphasis">*</span></label>
                 <textarea name="tipologies" id="tipologies" rows="10"
-                    class=" @error('tipologies') is-invalid @enderror" required></textarea>
+                    class="form-control @error('tipologies') is-invalid @enderror" required></textarea>
                 @error('tipologies')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
