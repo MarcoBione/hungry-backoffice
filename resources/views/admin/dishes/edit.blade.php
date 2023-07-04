@@ -33,19 +33,26 @@
                         </div>
                     @enderror
             </div>
-            <div class="mb-3 was-validated">
-                <label for="image">Immagine</label>
-                <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
-                    id="image" value="{{ old('image', $dish->image) }}">
-                    @error('image')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @else
-                        <div class="invalid-feedback" role="alert">
-                            Per favore, inserisci l'immagine del piatto
-                        </div>
-                    @enderror
+            <div class="d-flex">
+                <div class="mb-3 was-validated">
+                    <label for="image">Immagine</label>
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
+                        id="image" value="{{ old('image', $dish->image) }}">
+                        @error('image')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @else
+                            <div class="invalid-feedback" role="alert">
+                                Per favore, inserisci l'immagine del piatto
+                            </div>
+                        @enderror
+                </div>
+                <div class="media ms-4">
+                    <img id="uploadPreview" class="rounded" width="150"
+                        src="{{ $dish->image ? asset('storage/' . $dish->image) : 'https://via.placeholder.com/300x200' }}"
+                        alt="{{ $dish->name }}">
+                </div>
             </div>
             <div class="mb-3 was-validated">
                 <label for="price">Prezzo <span class="fs-7 text-warning-emphasis">*</span></label>
