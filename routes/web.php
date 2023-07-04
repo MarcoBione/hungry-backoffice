@@ -41,4 +41,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('/verifydata', 'RegisteredUserController@testAjax');
+
 require __DIR__.'/auth.php';
