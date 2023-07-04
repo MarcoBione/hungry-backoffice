@@ -56,7 +56,7 @@
             <div class="mb-3 was-validated">
                 <label for="price">Prezzo <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" required
-                    id="price" min="0" step="any">
+                    id="price" min="0.1" step="0.1" max="9999.99">
                 @error('price')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -74,7 +74,7 @@
             <div class="mb-3 was-validated">
                 <label for="tipologies">Tipologie <span class="fs-7 text-warning-emphasis">*</span></label>
                 <textarea name="tipologies" id="tipologies" rows="10"
-                    class=" @error('tipologies') is-invalid @enderror" required></textarea>
+                    class="form-control @error('tipologies') is-invalid @enderror" required></textarea>
                 @error('tipologies')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
