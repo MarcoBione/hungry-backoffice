@@ -70,6 +70,9 @@ class CatererController extends Controller
      */
     public function show(Caterer $caterer)
     {
+        if(!Auth::user()->is_admin && $caterer->user_id !== Auth::id()){
+            abort(403);
+        }
         $dishes = Dish::all()->where('caterer_id', $caterer->id)->groupBy('tipologies');
         return view('admin.caterers.show', compact('caterer', 'dishes'));
     }
@@ -81,6 +84,9 @@ class CatererController extends Controller
      */
     public function edit(Caterer $caterer)
     {
+        if(!Auth::user()->is_admin && $caterer->user_id !== Auth::id()){
+            abort(403);
+        }
         $categories = Category::all();
         return view('admin.caterers.edit', compact('categories', 'caterer'));
     }

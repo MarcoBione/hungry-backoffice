@@ -6,33 +6,33 @@
             @csrf
             @method('PUT')
             <div class="mb-3">
-                <label for="name">Nome Ristorante</label>
+                <label for="name">Nome Ristorante *</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
-                    required maxlength="150" minlength="3" value="{{ old('name', $caterer->name) }}">
+                    required maxlength="150" minlength="3" value="{{ old('name', $caterer->name) }}" required>
                 @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="address">Indirizzo</label>
+                <label for="address">Indirizzo *</label>
                 <input type="text" class="form-control @error('address') is-invalid @enderror" name="address"
-                    id="address" value="{{ old('name', $caterer->address) }}">
+                    id="address" value="{{ old('name', $caterer->address) }}" required>
                 @error('address')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="image">Immagine</label>
+                <label for="image">Immagine *</label>
                 <input type="text" class="form-control @error('image') is-invalid @enderror" name="image"
-                    id="image" value="{{ old('name', $caterer->image) }}">
+                    id="image" value="{{ old('name', $caterer->image) }}" required>
                 @error('image')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="phone_number">Numero Telefonico</label>
+                <label for="phone_number">Numero Telefonico *</label>
                 <input type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
-                    id="phone_number" value="{{ old('name', $caterer->phone_number) }}">
+                    id="phone_number" value="{{ old('name', $caterer->phone_number) }}" required>
                 @error('speed')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
