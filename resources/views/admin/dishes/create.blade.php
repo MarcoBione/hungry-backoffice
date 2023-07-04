@@ -1,7 +1,7 @@
 @extends('layouts.app');
 @section('content')
     <div class="container mt-3">
-        <form action="{{ route('admin.dishes.store') }}" method="POST" enctype="multipart/form-data>
+        <form action="{{ route('admin.dishes.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <h2 class="d-flex flex-column align-items-between flex-wrap mb-4">
                 <span class="fs-3">Creazione di un nuovo piatto</span>
