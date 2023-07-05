@@ -13,8 +13,7 @@ class CategoryController extends Controller
     {
         $data = Category::paginate(6);
         return response()->json([
-            'status' => 'success',
-            'message' => 'Ok',
+            'success' => false,
             'results' => $data
         ], 200);
     }

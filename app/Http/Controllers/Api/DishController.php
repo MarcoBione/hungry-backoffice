@@ -11,8 +11,7 @@ class DishController extends Controller
     public function index(){
         $data = Dish::with('caterer')->paginate(10);
         return response()->json([
-            'status' => 'success',
-            'message' => 'ok',
+            'success' => false,
             'results' => $data
         ]);
     }
@@ -20,14 +19,13 @@ class DishController extends Controller
         $data = Dish::with('caterer')->where('slug', $slug)->first();
         if($data){
             return response()->json([
-                'status' => 'success',
-                'message' => 'ok',
+                'success' => false,
                 'results' => $data
             ]);
         } else {
             return response()->json([
-                'status' => 'error',
-                'message' => 'Error',
+                'success' => false,
+                'results' => 'Il piatto specificato non esiste',
             ], 404);
         }
     }

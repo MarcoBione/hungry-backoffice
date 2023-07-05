@@ -14,8 +14,7 @@ class CatererController extends Controller
     {
         $data = Caterer::paginate(10);
         return response()->json([
-            'status' => 'success',
-            'message' => 'Ok',
+            'success' => false,
             'results' => $data
         ], 200);
     }
@@ -24,8 +23,7 @@ class CatererController extends Controller
         $data =  Caterer::with('dishes', 'categories')->where('slug', $slug)->first();
         if($data){
             return response()->json([
-                'status' => 'success',
-                'message' => 'Ok',
+                'success' => false,
                 'results' => $data
             ]);
         } else {
