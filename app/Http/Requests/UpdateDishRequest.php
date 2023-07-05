@@ -28,7 +28,7 @@ class UpdateDishRequest extends FormRequest
             'description' => 'nullable',
             'price' => 'required|decimal:2',
             'visible' => 'required|boolean',
-            'image' => 'nullable|image',
+            'image' => 'nullable',
             'tipologies' => 'required'
         ];
     }
