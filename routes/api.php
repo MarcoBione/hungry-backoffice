@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\CaterersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,8 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
 Route::get('/categories', [CategoryController::class, 'index']);
+Route::get("/caterers", [CaterersController::class, 'index']);
+Route::get("/caterers/{id}", [CaterersController::class, 'indexByCategory']);
+Route::get("/caterers/{slug}", [CaterersController::class, 'show']);
