@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController;
-use App\Http\Controllers\Api\CaterersController;
+use App\Http\Controllers\Api\CatererController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +21,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/categories', [CategoryController::class, 'index']);
-Route::get("/caterers", [CaterersController::class, 'index']);
-Route::get("/caterers/{id}", [CaterersController::class, 'indexByCategory']);
-Route::get("/caterers/{slug}", [CaterersController::class, 'show']);
+Route::get("/caterers", [CatererController::class, 'index']);
+Route::get("/caterers/{id}", [CatererController::class, 'indexByCategory']);
+Route::get("/caterers/{slug}", [CatererController::class, 'show']);
