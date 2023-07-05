@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $data = Category::paginate(3);
+        $data = Category::paginate(6);
         return response()->json([
             'status' => 'success',
             'message' => 'Ok',
