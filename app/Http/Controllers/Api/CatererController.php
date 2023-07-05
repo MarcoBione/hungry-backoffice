@@ -10,12 +10,27 @@ class CatererController extends Controller
 {
     public function index()
     {
-        $data = Caterer::paginate(10);
+        $data = Caterer::paginate(10)->with();
         return response()->json([
             'status' => 'success',
             'message' => 'Ok',
             'results' => $data
         ], 200);
     }
-    public function show()
+
+    public function show($slug){
+        $data = Caterer::with('dishes', 'categories')->where('slug', $slug)->first();
+        if($data){
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Ok',
+                'results' => $data
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Error',
+            ], 404);
+        }
+    }
 }
