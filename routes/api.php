@@ -22,5 +22,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get("/caterers", [CatererController::class, 'index']);
-Route::get("/caterers/{id}", [CatererController::class, 'indexByCategory']);
 Route::get("/caterers/{slug}", [CatererController::class, 'show']);
+Route::get("/caterers/{id}", [CatererController::class, 'indexByCategory']);

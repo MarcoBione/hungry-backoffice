@@ -18,7 +18,7 @@ class CatererController extends Controller
         ], 200);
     }
     public function show($slug){
-        $data = Caterer::with('dishes', 'categories')->where('slug', $slug)->first();
+        $data =  Caterer::with('dishes', 'categories')->where('slug', $slug)->first();
         if($data){
             return response()->json([
                 'status' => 'success',
