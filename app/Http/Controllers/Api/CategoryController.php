@@ -18,5 +18,21 @@ class CategoryController extends Controller
             'results' => $data
         ], 200);
     }
+
+    public function show($id){
+        $category = Category::with('caterers')->where("id",$id)->first();
+        if($category){
+            return response()->json([
+                "success" => true,
+                "results" => $category
+            ]);
+        }else{
+            return response()->json([
+                'success' => false,
+                'results' => 'La categoria specificata non esiste',
+            ], 404);
+        }
+
+    }
 }
 
