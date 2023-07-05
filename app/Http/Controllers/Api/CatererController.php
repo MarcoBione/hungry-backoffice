@@ -30,32 +30,9 @@ class CatererController extends Controller
             ]);
         } else {
             return response()->json([
-                'status' => 'error',
-                'message' => 'Error',
+                'success' => false,
+                'results' => 'Il ristorante specificato non esiste',
             ], 404);
-        }
-    }
-
-    public function indexByCategory($id){
-        $category = Category::where("id",$id)->first();
-        if($category){
-            $caterers = $category->caterers;
-            if($caterers){
-                return response()->json([
-                    "success" => true,
-                    "results" => $caterers
-                ]);
-            }else{
-                return response()->json([
-                    "success" => false,
-                    "results" => "Ristoranti non trovati!"
-                ]);
-            }
-        }else{
-            return response()->json([
-                "success" => false,
-                "results" => "Categoria non trovata!"
-            ]);
         }
     }
 }
