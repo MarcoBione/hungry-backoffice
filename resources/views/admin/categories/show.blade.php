@@ -15,21 +15,12 @@
         </div>
         <div class="container border border-secondary rounded-4 d-flex">
             <div class="container">
-                <h3 class="m-4"> <span class="text-warning text-uppercase">{{ $category->name }}</span>
-                </h3>
+                <h3 class="m-4 text-uppercase">{{ $category->name }}</h3>
                 <div class="container-text">
-                    <h2 class="fs-5">
+                    <span class="fs-5">
                         {!! $category->description !!}
-                    </h2>
-                </div>
-                <h2 class="m-4">
-                    Classe stile
-                    <span class="text-info">
-                        {{ $category->class }}
                     </span>
-
-                </h2>
-
+                </div>
             </div>
             <div class="d-flex justify-content-end">
                 <div>
