@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Caterer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CatererController extends Controller
 {
@@ -26,7 +27,7 @@ class CatererController extends Controller
     public function indexByCategory($id){
         $category = Category::where("id",$id)->first();
         if($category){
-            $caterers = Caterer::with("categories")->where("category_id",$id);
+            $caterers = $category->caterers;
             if($caterers){
                 return response()->json([
                     "success" => true,
