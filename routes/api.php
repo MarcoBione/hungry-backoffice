@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CatererController;
+use App\Http\Controllers\Api\DishController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,5 @@ Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{id}', [CategoryController::class, 'show']);
 Route::get("/caterers", [CatererController::class, 'index']);
 Route::get("/caterers/{slug}", [CatererController::class, 'show']);
+Route::get('/dishes', [DishController::class, 'index']);
+Route::get('/dishes/{slug}', [DishController::class, 'show']);
