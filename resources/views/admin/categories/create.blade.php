@@ -38,14 +38,23 @@
             </div>
             <div class="mb-3 was-validated">
                 <label for="class">Nome classe stile <span class="fs-7 text-warning-emphasis">*</span></label>
-                <input type="text" class="form-control @error('class') is-invalid @enderror" name="class" id="class" required>
+                <select name="class" id="class" class="form-control @error('class') is-invalid @enderror" required>
+                    <option value="text-bg-primary" {{ (old("class") == "text-bg-primary" ? "selected":"") }}>Blu</option>
+                    <option value="text-bg-secondary" {{ (old("class") == "text-bg-secondary" ? "selected":"") }}>Grigio</option>
+                    <option value="text-bg-success" {{ (old("class") == "text-bg-success" ? "selected":"") }}>Verde</option>
+                    <option value="text-bg-danger" {{ (old("class") == "text-bg-danger" ? "selected":"") }}>Rosso</option>
+                    <option value="text-bg-warning" {{ (old("class") == "text-bg-warning" ? "selected":"") }}>Giallo</option>
+                    <option value="text-bg-info" {{ (old("class") == "text-bg-info" ? "selected":"") }}>Azzurro</option>
+                    <option value="text-bg-light" {{ (old("class") == "text-bg-light" ? "selected":"") }}>Bianco</option>
+                    <option value="text-bg-dark" {{ (old("class") == "text-bg-dark" ? "selected":"") }}>Nero</option>
+                </select>
                 @error('class')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @else
                     <div class="invalid-feedback" role="alert">
-                        Per favore, inserisci la classe della categoria
+                        Per favore, seleziona la classe della categoria
                     </div>
                 @enderror
             </div>
