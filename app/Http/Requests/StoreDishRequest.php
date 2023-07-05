@@ -28,7 +28,7 @@ class StoreDishRequest extends FormRequest
             'description' => 'nullable',
             'price' => 'required|decimal:2',
             'visible' => 'required|boolean',
-            'image' => 'nullable',
+            'image' => 'nullable|image',
             'tipologies' => 'required'
         ];
     }

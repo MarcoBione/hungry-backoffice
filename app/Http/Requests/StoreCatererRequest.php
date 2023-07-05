@@ -26,7 +26,7 @@ class StoreCatererRequest extends FormRequest
         return [
             'name' => 'required',
             'address' => 'required',
-            'image' => 'required',
+            'image' => 'required|image',
             'phone_number' => 'required'
         ];
     }
