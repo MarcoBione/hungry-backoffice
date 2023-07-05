@@ -21,12 +21,16 @@ class CatererController extends Controller
     }
 
     public function show($slug){
-        $caterer_id = Caterer::where('slug', $slug)->value('id');
+        $caterer_id = Caterer::where('slug', $slug)->value("id");
+        $caterer = Caterer::with("categories")->where('slug', $slug)->first();
         $data = Dish::all()->where('caterer_id', $caterer_id)->groupBy('tipologies');
-        if($data){
+        if($caterer && $data){
             return response()->json([
                 'success' => false,
-                'results' => $data
+                'results' => [
+                    "caterer" => $caterer,
+                    "dishesByTipologies" => $data
+                ]
             ]);
         } else {
             return response()->json([
