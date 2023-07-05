@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Caterer;
+use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,7 +21,8 @@ class CatererController extends Controller
     }
 
     public function show($slug){
-        $data =  Caterer::with('dishes', 'categories')->where('slug', $slug)->first();
+        $caterer_id = Caterer::where('slug', $slug)->value('id');
+        $data = Dish::all()->where('caterer_id', $caterer_id)->groupBy('tipologies');
         if($data){
             return response()->json([
                 'success' => false,
