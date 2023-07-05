@@ -13,21 +13,19 @@
                 <tr class="text-capitalize">
                     <th scope="col">nome categoria</th>
                     <th scope="col">descrizione</th>
-                    <th scope="col">stile</th>
                     <th scope="col">img</th>
                     <th scope="col">azioni</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($categories as $category)
-                    <tr class="align-middle fw-bold">
+                    <tr class="align-middle">
                         <td>{{ $category->name }}</td>
                         <td>
                             <div class="container-text">
                                 {!! $category->description !!}
                             </div>
                         </td>
-                        <td><span class="text-info">{{ $category->class }}</span></td>
                         <td class="w-25"><img class="img-fluid img-thumbnail" src="{{ asset('storage/' . $category->image) }}" alt="{{$category->name}}">
                         </td>
                         <td>
