@@ -8,13 +8,14 @@ use Illuminate\Http\Request;
 
 class CatererController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $data = Caterer::paginate(3);
+        $data = Caterer::paginate(10);
         return response()->json([
             'status' => 'success',
             'message' => 'Ok',
             'results' => $data
         ], 200);
     }
+    public function show()
 }
