@@ -17,5 +17,12 @@ class CatererController extends Controller
             'results' => $data
         ], 200);
     }
-    public function show()
+
+    public function show($slug){
+
+    }
+
+    public function indexByCategory($id){
+
+    }
 }
