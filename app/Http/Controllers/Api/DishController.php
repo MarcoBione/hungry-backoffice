@@ -11,7 +11,7 @@ class DishController extends Controller
     public function index(){
         $data = Dish::with('caterer')->paginate(10);
         return response()->json([
-            'success' => false,
+            'success' => true,
             'results' => $data
         ]);
     }
@@ -19,7 +19,7 @@ class DishController extends Controller
         $data = Dish::with('caterer')->where('slug', $slug)->first();
         if($data){
             return response()->json([
-                'success' => false,
+                'success' => true,
                 'results' => $data
             ]);
         } else {

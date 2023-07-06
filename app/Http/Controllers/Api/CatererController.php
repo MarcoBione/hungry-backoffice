@@ -15,7 +15,7 @@ class CatererController extends Controller
     {
         $data = Caterer::all();
         return response()->json([
-            'success' => false,
+            'success' => true,
             'results' => $data
         ], 200);
     }
@@ -26,7 +26,7 @@ class CatererController extends Controller
         $data = Dish::all()->where('caterer_id', $caterer_id)->groupBy('tipologies');
         if($caterer && $data){
             return response()->json([
-                'success' => false,
+                'success' => true,
                 'results' => [
                     "caterer" => $caterer,
                     "dishesByTipologies" => $data

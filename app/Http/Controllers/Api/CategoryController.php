@@ -13,7 +13,7 @@ class CategoryController extends Controller
     {
         $data = Category::with('caterers')->get();
         return response()->json([
-            'success' => false,
+            'success' => true,
             'results' => $data
         ], 200);
     }
