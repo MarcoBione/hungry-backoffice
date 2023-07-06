@@ -27,7 +27,7 @@ class UpdateCategoryRequest extends FormRequest
             'name' => 'required|max:100|min:3',
             'description' => 'nullable',
             'class' => 'required|max:100',
-            'image' => 'sometimes|required|max:255|image',
+            'image' => 'sometimes|required|image',
         ];
     }
 }
