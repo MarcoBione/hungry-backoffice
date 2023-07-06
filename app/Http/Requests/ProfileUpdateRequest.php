@@ -28,7 +28,9 @@ class ProfileUpdateRequest extends FormRequest
             'name.string' => 'Il nome deve essere una stringa di caratteri',
             'name.max' => 'Il nome può avere massimo 255 caratteri',
             'email.email' => "L'email deve essere in un formato valido. Es: nome.cognome@gmail.com",
-            'email.max' => "L'email può avere massimo 255 caratteri"
+            'email.max' => "L'email può avere massimo 255 caratteri",
+            'vat_number.string' => 'La partita iva deve essere una stringa di caratteri',
+            'vat_number.max' => 'La partita iva può avere massimo 255 caratteri'
         ];
     }
 }
