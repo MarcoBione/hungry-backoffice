@@ -23,13 +23,24 @@ class CatererController extends Controller
     public function show($slug){
         $caterer_id = Caterer::where('slug', $slug)->value("id");
         $caterer = Caterer::with("categories")->where('slug', $slug)->first();
-        $data = Dish::all()->where('caterer_id', $caterer_id)->groupBy('tipologies');
-        if($caterer && $data){
+        $tipologies = Dish::all()->where('caterer_id', $caterer_id)->unique("tipologies")->pluck("tipologies");
+        //If i have the caterer data and the tipologies data
+        if($caterer && $tipologies){
+            $dishesByTipologies = [];
+            //for each tipology create an object in the dishesByTipologies array.
+            //each object has the tipologies key with the name of the tipology and the dishes key with the dishes of the related tipology
+            foreach($tipologies as $tipology){
+                $elem = [];
+                $elem["tipologies"] = $tipology;
+                $elem["dishes"] = Dish::all()->where('caterer_id', $caterer_id)->where("tipologies",$tipology);
+                $dishesByTipologies[] = $elem;
+            }
+            //In the response json send the caterer and the dishesByTipology array
             return response()->json([
                 'success' => true,
                 'results' => [
                     "caterer" => $caterer,
-                    "dishesByTipologies" => $data
+                    "dishesByTipologies" => $dishesByTipologies
                 ]
             ]);
         } else {
