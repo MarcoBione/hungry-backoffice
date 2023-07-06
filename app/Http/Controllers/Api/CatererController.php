@@ -13,7 +13,7 @@ class CatererController extends Controller
 {
     public function index()
     {
-        $data = Caterer::all();
+        $data = Caterer::with("categories")->get();
         return response()->json([
             'success' => true,
             'results' => $data
