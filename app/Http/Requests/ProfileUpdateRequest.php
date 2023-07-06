@@ -21,4 +21,14 @@ class ProfileUpdateRequest extends FormRequest
             'vat_number' => ['string', 'max:11' ],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.string' => 'Il nome deve essere una stringa di caratteri',
+            'name.max' => 'Il nome può avere massimo 255 caratteri',
+            'email.email' => "L'email deve essere in un formato valido. Es: nome.cognome@gmail.com",
+            'email.max' => "L'email può avere massimo 255 caratteri"
+        ];
+    }
 }
