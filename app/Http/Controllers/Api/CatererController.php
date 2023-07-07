@@ -15,6 +15,8 @@ class CatererController extends Controller
     {
         $categories_id = [];
 
+        dd($categories_id);
+
         if ($request){
             $categories_id = $request->all()['id'];
             dd($categories_id);
