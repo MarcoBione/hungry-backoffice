@@ -19,7 +19,7 @@ class CategoryController extends Controller
     }
 
     public function show($id){
-        $category = Category::with('caterers')->where("id",$id)->first();
+        $category = Category::where("id",$id)->first();
         if($category){
             $caterers = [];
             foreach($category->caterers as $caterer){
