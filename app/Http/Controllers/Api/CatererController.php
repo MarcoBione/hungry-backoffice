@@ -13,8 +13,13 @@ class CatererController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request)
-        $categories_id = $request->all()['id'];
+        $categories_id = [];
+
+        if ($request){
+            $categories_id = $request->all()['id'];
+            dd($categories_id);
+        }
+
         if(!$categories_id)
             $caterers = Caterer::all();
         else{
