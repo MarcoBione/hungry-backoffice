@@ -13,20 +13,20 @@ class CatererController extends Controller
 {
     public function index(Request $request)
     {
-        if (!empty($request->query('id'))) {
-            // dd($request->query('id'));
-            $category_id = $request->query('id');
-            // $data = 'ciao';
-            $data = DB::table("categories")->
-            join("category_caterer","category_caterer.category_id","=","categories.id")->
-            join("caterers","caterers.id","=","category_caterer.caterer_id")->
-            where('category_caterer.category_id', $category_id)->get();
-            // $data = Caterer::with("categories")->get();
-        // dd($data);
-        }
-        else{
-            $data = Caterer::with("categories")->get();
-        }
+        // if (!empty($request->all()['id'])) {
+             $data=($request->all()['id']);
+        //     $category_id = $request->query('id');
+        //     // $data = 'ciao';
+        //     $data = DB::table("categories")->
+        //     join("category_caterer","category_caterer.category_id","=","categories.id")->
+        //     join("caterers","caterers.id","=","category_caterer.caterer_id")->
+        //     where('category_caterer.category_id', $category_id)->get();
+        //     // $data = Caterer::with("categories")->get();
+        // // dd($data);
+        // }
+        // else{
+        //     $data = Caterer::with("categories")->get();
+        // }
         // $data = Caterer::with("categories")->get();
         return response()->json([
             'success' => true,
