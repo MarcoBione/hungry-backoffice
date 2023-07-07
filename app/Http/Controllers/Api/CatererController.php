@@ -13,36 +13,28 @@ use PhpParser\Node\Expr\Cast\Object_;
 
 class CatererController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $array = [1, 2, 3];
-        $catererArr = DB::table("category_caterer")->whereIn('category_caterer.category_id', $array)->select("caterer_id")->groupBy('caterer_id')->get();
-        $categoryArr = DB::table("category_caterer")->whereIn('category_caterer.category_id', $array)->get();
-        $categoryIds= [];
-        $selectedCat = collect([]);
-            foreach($catererArr as $caterer){
-                $selectedCat->push(
-                    ['caterer_id' => $caterer->caterer_id,
-                    'category_id[]' => $categoryIds
-                    ]
-                );
-            }
-            $data[] = $selectedCat;
-            foreach($selectedCat as $cat){
-                $catS = [];
-                    foreach($categoryArr as $category){
-                    if($category->caterer_id === $cat['caterer_id']){
-                        if(!in_array($category->category_id, $cat['category_id[]']))
-                            $catS[] = $category->category_id;
-                    }
-                    }
-               $cat['category_id[]']= $catS;
-               $selectedCat->put('category_id[]', $catS);
-            //    dd($cat['category_id[]']);
-             }
-            return response()->json([
-            'success' => true,
-            'results' => $data
+        if (!empty($request->all()['id'])) {
+        $array = $request->all()['id'];
+        $catererIds= [];
+        foreach($array as $a){
+            $catererIds[] = DB::table("category_caterer")->select('caterer_id')->where('category_id', $a)->get();
+        }
+        foreach($catererIds as $cat){
+        foreach($cat as $cc){
+            $el[] = $cc->caterer_id;
+        }
+        }
+        $countEl = array_count_values($el);
+        $catererArr = array_keys($countEl, count($array));
+        $data = Caterer::with('categories')->whereIn('id', $catererArr)->get();
+        }else{
+            $data = Caterer::with("categories")->get();
+        }
+        return response()->json([
+        'success' => true,
+        'results' => $data
         ], 200);
     }
     public function show($slug){
