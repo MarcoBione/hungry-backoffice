@@ -13,9 +13,8 @@ class CatererController extends Controller
 {
     public function index(Request $request)
     {
-
+        if ($request)
         $categories_id = $request->all()['id'];
-
         if(!$categories_id)
             $caterers = Caterer::all();
         else{
@@ -25,7 +24,6 @@ class CatererController extends Controller
                 join("caterers","caterers.id","=","category_caterer.caterer_id")->
                 where('category_caterer.category_id', $categories_id[0])->get();
         }
-
 
         // if (!empty($request->all()['id'])) {
         //     $data=($request->all()['id']);
