@@ -13,8 +13,22 @@ class CatererController extends Controller
 {
     public function index(Request $request)
     {
+
+        $categories_id = $request->all()['id'];
+
+        if(!$categories_id)
+            $caterers = Caterer::all();
+        else{
+            if(count($categories_id)==1)
+                $caterers = DB::table("categories")->
+                join("category_caterer","category_caterer.category_id","=","categories.id")->
+                join("caterers","caterers.id","=","category_caterer.caterer_id")->
+                where('category_caterer.category_id', $categories_id[0])->get();
+        }
+
+
         // if (!empty($request->all()['id'])) {
-             $data=($request->all()['id']);
+        //     $data=($request->all()['id']);
         //     $category_id = $request->query('id');
         //     // $data = 'ciao';
         //     $data = DB::table("categories")->
@@ -30,7 +44,7 @@ class CatererController extends Controller
         // $data = Caterer::with("categories")->get();
         return response()->json([
             'success' => true,
-            'results' => $data
+            'results' => $caterers
         ], 200);
     }
 
