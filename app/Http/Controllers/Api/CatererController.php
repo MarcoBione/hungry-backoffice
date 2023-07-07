@@ -8,51 +8,43 @@ use App\Models\Caterer;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class CatererController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $categories_id = [];
-
-        dd($categories_id);
-
-        if ($request){
-            $categories_id = $request->all()['id'];
-            dd($categories_id);
-        }
-
-        if(!$categories_id)
-            $caterers = Caterer::all();
-        else{
-            if(count($categories_id)==1)
-                $caterers = DB::table("categories")->
-                join("category_caterer","category_caterer.category_id","=","categories.id")->
-                join("caterers","caterers.id","=","category_caterer.caterer_id")->
-                where('category_caterer.category_id', $categories_id[0])->get();
-        }
-
-        // if (!empty($request->all()['id'])) {
-        //     $data=($request->all()['id']);
-        //     $category_id = $request->query('id');
-        //     // $data = 'ciao';
-        //     $data = DB::table("categories")->
-        //     join("category_caterer","category_caterer.category_id","=","categories.id")->
-        //     join("caterers","caterers.id","=","category_caterer.caterer_id")->
-        //     where('category_caterer.category_id', $category_id)->get();
-        //     // $data = Caterer::with("categories")->get();
-        // // dd($data);
-        // }
-        // else{
-        //     $data = Caterer::with("categories")->get();
-        // }
-        // $data = Caterer::with("categories")->get();
-        return response()->json([
+        $array = [1, 2, 3];
+        $catererArr = DB::table("category_caterer")->whereIn('category_caterer.category_id', $array)->select("caterer_id")->groupBy('caterer_id')->get();
+        $categoryArr = DB::table("category_caterer")->whereIn('category_caterer.category_id', $array)->get();
+        $categoryIds= [];
+        $selectedCat = collect([]);
+            foreach($catererArr as $caterer){
+                $selectedCat->push(
+                    ['caterer_id' => $caterer->caterer_id,
+                    'category_id[]' => $categoryIds
+                    ]
+                );
+            }
+            $data[] = $selectedCat;
+            foreach($selectedCat as $cat){
+                $catS = [];
+                    foreach($categoryArr as $category){
+                    if($category->caterer_id === $cat['caterer_id']){
+                        if(!in_array($category->category_id, $cat['category_id[]']))
+                            $catS[] = $category->category_id;
+                    }
+                    }
+               $cat['category_id[]']= $catS;
+               $selectedCat->put('category_id[]', $catS);
+            //    dd($cat['category_id[]']);
+             }
+            return response()->json([
             'success' => true,
-            'results' => $caterers
+            'results' => $data
         ], 200);
     }
-
     public function show($slug){
         $caterer_id = Caterer::where('slug', $slug)->value("id");
         $caterer = Caterer::with("categories")->where('slug', $slug)->first();
