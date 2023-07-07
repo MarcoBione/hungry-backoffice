@@ -19,11 +19,18 @@ class CategoryController extends Controller
     }
 
     public function show($id){
-        $category = Category::with('caterers')->where("id",$id)->first();
+        $category = Category::where("id",$id)->first();
         if($category){
+            $caterers = [];
+            foreach($category->caterers as $caterer){
+                $caterers[] = Caterer::with("categories")->where("id",$caterer->id)->first();
+            }
             return response()->json([
                 "success" => true,
-                "results" => $category
+                "results" => [
+                    "category" => $category,
+                    "caterers" => $caterers
+                ]
             ]);
         }else{
             return response()->json([
