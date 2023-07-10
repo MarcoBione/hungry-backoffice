@@ -34,10 +34,10 @@ class UpdateCatererRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Il campo è obbligatorio',
-            'address.required' => 'Il campo è obbligatorio',
-            'image.required' => 'Il campo è obbligatorio',
-            'phone_number' => 'Il campo è obbligatorio'
+            'name.required' => 'Il nome non può essere vuoto',
+            'address.required' => "L'indirizzo non può essere vuoto",
+            'image.required' => "L'immagine deve essere selezionata",
+            'phone_number' => 'Il numero di telefono non può essere vuoto'
         ];
     }
 }
