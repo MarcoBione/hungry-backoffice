@@ -142,7 +142,7 @@ return [
             'price' => 8.00,
             'visible' => true,
             'image' => 'http://127.0.0.1:8000/images/dishes/3.jpg',
-            'tipologies' => 'piatti semplici e buoni;panuozzum',
+            'tipologies' => 'panuozzum',
             'caterer_id' => 1
         ],
         [

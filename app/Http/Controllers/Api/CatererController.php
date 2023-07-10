@@ -8,18 +8,42 @@ use App\Models\Caterer;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class CatererController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = Caterer::with("categories")->get();
-        return response()->json([
+        if (!empty($request->all()['id'])) {
+            $array = $request->all()['id'];
+            $catererIds= [];
+            foreach($array as $a){
+                $catererIds[] = DB::table("category_caterer")->select('caterer_id')->where('category_id', $a)->get();
+            }
+            foreach($catererIds as $cat){
+            foreach($cat as $cc){
+                $el[] = $cc->caterer_id;
+            }
+            }
+            $countEl = array_count_values($el);
+            $catererArr = array_keys($countEl, count($array));
+            $data = Caterer::with('categories')->whereIn('id', $catererArr)->get();
+            }else{
+                $data = Caterer::with("categories")->get();
+            }
+        if(count($data) > 0){
+            return response()->json([
             'success' => true,
             'results' => $data
-        ], 200);
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'results' => 'Il ristorante specificato non esiste',
+            ]);
+        }
     }
-
     public function show($slug){
         $caterer_id = Caterer::where('slug', $slug)->value("id");
         $caterer = Caterer::with("categories")->where('slug', $slug)->first();
