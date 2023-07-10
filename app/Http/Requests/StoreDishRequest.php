@@ -35,15 +35,15 @@ class StoreDishRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Il campo è obbligatorio',
-            'name.string' => 'Il campo deve essere una stringa',
-            'name.max' => 'Il campo può avere massimo 255 caratteri',
-            'name.min' => 'Il campo può avere minimo 3 caratteri',
-            'price.required' => 'Il campo è obbligatorio',
-            'price.decimal' => 'Il campo deve avere 2 decimali',
-            'visible.required' => 'Il campo è obbligatorio',
-            'tipologies.required' => 'Il campo è obbligatorio',
-            'visible.boolean' => 'Il campo deve essere booleano',
+            'name.required' => 'Il nome non può essere uoto',
+            'name.string' => 'Il nome deve essere una stringa',
+            'name.max' => 'Il nome può avere massimo 255 caratteri',
+            'name.min' => 'Il nome può avere minimo 3 caratteri',
+            'price.required' => 'Il prezzo non può essere vuoto',
+            'price.decimal' => 'Il prezzo deve avere 2 numeri dopo la virgola',
+            'visible.required' => 'La visibilità deve essere selezionata',
+            'tipologies.required' => 'La tipologia non può essere vuota, altrimenti il ristorante non potrebbe appartenere a nessuna sezione del menù',
+            'visible.boolean' => 'La visibilità deve essere un campo booleano',
         ];
     }
 
