@@ -26,7 +26,7 @@ class UpdateDishRequest extends FormRequest
         return [
             'name' => 'required|string|max:255|min:3',
             'description' => 'nullable',
-            'price' => 'required|decimal:2',
+            'price' => 'required|decimal:2|min:0.10|max:9999.99',
             'visible' => 'required|boolean',
             'image' => 'nullable|image',
             'tipologies' => 'required'
@@ -41,6 +41,8 @@ class UpdateDishRequest extends FormRequest
             'name.min' => 'Il nome può avere minimo 3 caratteri',
             'price.required' => 'Il prezzo non può essere vuoto',
             'price.decimal' => 'Il prezzo deve avere 2 numeri dopo la virgola',
+            'price.min' => "Il prezzo deve valere almeno 0.10 euro",
+            'price.max' => "Il prezzo non può superare i 9999.99 euro",
             'visible.required' => 'La visibilità deve essere selezionata',
             'tipologies.required' => 'La tipologia non può essere vuota, altrimenti il ristorante non potrebbe appartenere a nessuna sezione del menù',
             'visible.boolean' => 'La visibilità deve essere un campo booleano',
