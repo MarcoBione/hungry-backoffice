@@ -27,7 +27,21 @@ class UpdateCategoryRequest extends FormRequest
             'name' => 'required|max:100|min:3',
             'description' => 'nullable',
             'class' => 'required|max:100',
-            'image' => 'sometimes|required|image',
+            'image' => 'sometimes|required|image|max:255',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Il nome non può essere vuoto',
+            'name.max' => 'Il nome può avere massimo 100 caratteri',
+            'name.min' => 'Il nome può avere minimo 3 caratteri',
+            'class.required' => 'La classe non può essere vuota',
+            'class.max' => 'La classe può avere massimo 100 caratteri',
+            'image.required' => "L'immagine non può essere vuota",
+            'image.max' => "L'immagine può avere massimo 255 caratteri",
+            'image.image' => "L'immagine deve essere un'immagine"
         ];
     }
 }
