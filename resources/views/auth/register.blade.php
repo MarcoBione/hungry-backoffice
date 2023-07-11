@@ -11,10 +11,10 @@
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register') }}" class="needs-validation" novalidate>
                             @csrf
 
-                            <div class="mb-4 row was-validated">
+                            <div class="mb-4 row ">
                                 <label for="name"
                                     class="col-md-4 col-form-label text-md-right">Nome e cognome <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row was-validated">
+                            <div class="mb-4 row ">
                                 <label for="email"
                                     class="col-md-4 col-form-label text-md-right">E-mail <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
@@ -54,7 +54,7 @@
                             </div>
 
                             {{-- aggiungo campo per vat_number --}}
-                            <div class="mb-4 row was-validated">
+                            <div class="mb-4 row ">
                                 <label for="vat_number"
                                     class="col-md-4 col-form-label text-md-right">Partita Iva <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
@@ -74,7 +74,7 @@
                             </div>
                             {{-- end campo vat_number --}}
 
-                            <div class="mb-4 row was-validated">
+                            <div class="mb-4 row ">
                                 <label for="password"
                                     class="col-md-4 col-form-label text-md-right">Password <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row was-validated">
+                            <div class="mb-4 row ">
                                 <label for="password-confirm"
                                     class="col-md-4 col-form-label text-md-right">Conferma password <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
