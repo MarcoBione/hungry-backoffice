@@ -19,7 +19,7 @@
                                     class="col-md-4 col-form-label text-md-right">Nome e cognome <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
                                     <input id="name" type="text"
-                                        class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Dante Alighieri"
+                                        class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Nome Cognome"
                                         value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                         @error('name')
@@ -39,7 +39,7 @@
                                     class="col-md-4 col-form-label text-md-right">E-mail <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
                                     <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email" placeholder="dantealighieri@gmail.com"
+                                        class="form-control @error('email') is-invalid @enderror" name="email" placeholder="mail@gmail.com"
                                         value="{{ old('email') }}" required autocomplete="email">
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -59,8 +59,8 @@
                                     class="col-md-4 col-form-label text-md-right">Partita Iva <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
                                     <input id="vat_number" type="text"
-                                        class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" placeholder="12345678912"
-                                        value="{{ old('vat_number') }}" required autocomplete="vat_number">
+                                        class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" placeholder="Partita Iva"
+                                        value="{{ old('vat_number') }}" required autocomplete="vat_number" minlength="11" maxlength="11">
                                     @error('vat_number')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -79,7 +79,7 @@
                                     class="col-md-4 col-form-label text-md-right">Password <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
                                     <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password" placeholder="beatriceforever"
+                                        class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password"
                                         required autocomplete="new-password" minlength="8">
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -87,7 +87,7 @@
                                         </span>
                                     @else
                                         <div class="invalid-feedback" role="alert">
-                                            Per favore, inserisci la tua password
+                                            Per favore, inserisci la tua password di almeno 8 caratteri
                                         </div>
                                     @enderror
                                 </div>
@@ -97,7 +97,7 @@
                                 <label for="password-confirm"
                                     class="col-md-4 col-form-label text-md-right">Conferma password <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" placeholder="beatriceforever"
+                                    <input id="password-confirm" type="password" class="form-control" placeholder="Password"
                                         name="password-confirm" required autocomplete="new-password" minlength="8">
                                     <div class="invalid-feedback" role="alert">
                                         Per favore, inserisci di nuovo la tua password, per conferma
