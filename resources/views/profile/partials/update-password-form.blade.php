@@ -42,11 +42,11 @@
         </div>
 
         <div class="mb-2">
-            <label for="password-confirm">Conferma la nuova password <span class="fs-7 text-warning-emphasis">*</span></label>
-            <input class="mt-2 form-control" type="password" name="password-confirm" id="password-confirm" autocomplete="new-password" minlength="8" required>
-            @error('password-confirm')
+            <label for="password_confirmation">Conferma la nuova password <span class="fs-7 text-warning-emphasis">*</span></label>
+            <input class="mt-2 form-control" type="password" name="password_confirmation" id="password_confirmation" autocomplete="new-password" minlength="8" required>
+            @error('password_confirmation')
                 <span class="invalid-feedback mt-2" role="alert">
-                    <strong>{{ $errors->updatePassword->get('password-confirm')}}</strong>
+                    <strong>{{ $errors->updatePassword->get('password_confirmation')}}</strong>
                 </span>
             @else
                 <div class="invalid-feedback mt-2" role="alert">

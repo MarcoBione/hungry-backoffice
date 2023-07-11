@@ -47,9 +47,9 @@ const forms = document.querySelectorAll('.needs-validation');
 Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
          //  confirmPsw();
-        if(form.querySelector("[name=password-confirm]")){
+        if(form.querySelector("[name=password_confirmation]")){
             const password = form.querySelector("[name=password]").value;
-            const passwordConfirm = form.querySelector("[name=password-confirm]");
+            const passwordConfirm = form.querySelector("[name=password_confirmation]");
             if(password === passwordConfirm.value){
                 passwordConfirm.setCustomValidity("");
             }else{
