@@ -44,22 +44,31 @@ if(previewImage){
 //Confirm Password
 function confirmPsw(){
     //prendo le password
-    const password = document.getElementById("password").value;
-    const passwordConfirm = document.getElementById("password-confirm");
+    const password = form.querySelector("[name=password]").value;
+    const passwordConfirm = form.querySelector("[name=password-confirm]");
     //le confronto
     if(password === passwordConfirm.value){
         passwordConfirm.setCustomValidity("");
     }else{
         passwordConfirm.setCustomValidity("Per favore, inserisci la stessa password del campo precedente");
     }
-}
-//se sono uguali allora aggiungo la classe... valido?? invalid event?
+}//da togliere
 //Form Validation
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
 const forms = document.querySelectorAll('.needs-validation');
 Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
-          confirmPsw();
+         //  confirmPsw();
+          const password = form.querySelector("[name=password]").value;
+          const passwordConfirm = form.querySelector("[name=password-confirm]");
+          if(password === passwordConfirm.value){
+            passwordConfirm.setCustomValidity("");
+        }else{
+            passwordConfirm.setCustomValidity("Per favore, inserisci la stessa password del campo precedente");
+        }
+          const prova =form.querySelector("[name=password]");
+        console.log(prova);
+        console.log(passwordConfirm.value);
         // console.log(confirmPsw);
       if (!form.checkValidity()) {
         event.preventDefault()
