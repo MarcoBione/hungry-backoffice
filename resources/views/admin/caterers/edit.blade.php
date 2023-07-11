@@ -19,7 +19,7 @@
                         </span>
                     @else
                         <div class="invalid-feedback" role="alert">
-                            Per favore, inserisci il nome del ristorante
+                            Per favore, inserisci il nome del ristorante (almeno 3 caratteri)
                         </div>
                     @enderror
             </div>

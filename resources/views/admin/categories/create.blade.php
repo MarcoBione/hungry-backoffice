@@ -18,7 +18,7 @@
                     </span>
                 @else
                     <div class="invalid-feedback" role="alert">
-                        Per favore, inserisci il nome della categoria
+                        Per favore, inserisci il nome della categoria (almeno 3 caratteri)
                     </div>
                 @enderror
             </div>

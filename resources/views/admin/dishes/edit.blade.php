@@ -29,7 +29,7 @@
                         </span>
                     @else
                         <div class="invalid-feedback" role="alert">
-                            Per favore, inserisci il nome del piatto
+                            Per favore, inserisci il nome del piatto (almeno 3 caratteri)
                         </div>
                     @enderror
             </div>
