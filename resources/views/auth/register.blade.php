@@ -80,7 +80,7 @@
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password" placeholder="beatriceforever"
-                                        required autocomplete="new-password">
+                                        required autocomplete="new-password" minlength="8">
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -98,7 +98,7 @@
                                     class="col-md-4 col-form-label text-md-right">Conferma password <span class="fs-7 text-warning-emphasis">*</span></label>
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control" placeholder="beatriceforever"
-                                        name="password_confirmation" required autocomplete="new-password">
+                                        name="password_confirmation" required autocomplete="new-password" minlength="8">
                                     <div class="invalid-feedback" role="alert">
                                         Per favore, inserisci di nuovo la tua password, per conferma
                                     </div>
