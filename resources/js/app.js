@@ -41,19 +41,33 @@ if(previewImage){
         };
     });
 }
-
+//Confirm Password
+function confirmPsw(){
+    //prendo le password
+    const password = document.getElementById("password").value;
+    const passwordConfirm = document.getElementById("password-confirm");
+    //le confronto
+    if(password === passwordConfirm.value){
+        passwordConfirm.setCustomValidity("");
+    }else{
+        passwordConfirm.setCustomValidity("Per favore, inserisci la stessa password del campo precedente");
+    }
+}
+//se sono uguali allora aggiungo la classe... valido?? invalid event?
 //Form Validation
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
 const forms = document.querySelectorAll('.needs-validation');
 Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
+          confirmPsw();
+        // console.log(confirmPsw);
       if (!form.checkValidity()) {
         event.preventDefault()
         event.stopPropagation()
       }
 
-       form.classList.remove('needs-validation');
-      form.classList.add('was-validated');
+        // form.classList.remove('needs-validation');
+        form.classList.add('was-validated');
     }, false)
   })
 
