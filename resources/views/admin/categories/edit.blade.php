@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-3">
-        <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
             @csrf
             @method('PUT')
 
@@ -10,7 +10,7 @@
                 <span class="fs-3">Modifica categoria <strong>{{$category->name}}</strong></span>
                 <span class="fs-7 text-warning-emphasis">I campi contrassegnati con * sono obbligatori</span>
             </h2>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="name">Nome Categoria <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
                     required maxlength="100" minlength="3" value="{{ old('name', $category->name) }}">
@@ -24,7 +24,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="description">Descrizione</label>
                 <textarea type="text" class="form-control @error('description') is-invalid @enderror" name="description" id="description">
                     {{ old('description', $category->description) }}
@@ -39,7 +39,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="class">Nome classe stile <span class="fs-7 text-warning-emphasis">*</span></label>
                 <select name="class" id="class" class="form-control @error('class') is-invalid @enderror" required>
                     <option value="text-bg-primary" {{ (old("class",$category->class) == "text-bg-primary" ? "selected":"") }}>Blu</option>
@@ -62,7 +62,7 @@
                     @enderror
             </div>
             <div class="d-flex">
-                <div class="mb-3 was-validated">
+                <div class="mb-3">
                     <label for="image">Immagine categoria <span class="fs-7 text-warning-emphasis">*</span></label>
                     <input type="file" class="form-control input-edit @error('image') is-invalid @enderror" name="image"
                         id="image" value="{{ old('image', $category->image) }}">

@@ -1,14 +1,14 @@
 @extends('layouts.app');
 @section('content')
     <div class="container mt-3">
-        <form action="{{ route('admin.dishes.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.dishes.store') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
             @csrf
             <h2 class="d-flex flex-column align-items-between flex-wrap mb-4">
                 <span class="fs-3">Creazione di un nuovo piatto</span>
                 <span class="fs-7 text-warning-emphasis">I campi contrassegnati con * sono obbligatori</span>
             </h2>
             @if (Auth::user()->is_admin)
-                <div class="mb-3 was-validated">
+                <div class="mb-3">
                     <label for="caterer_id">Scegli il ristorante nel quale associare il piatto <span
                             class="fs-7 text-warning-emphasis">*</span></label>
                     <select class="form-select mb-3" name="caterer_id" id="caterer_id">
@@ -19,7 +19,7 @@
                     </select>
                 </div>
             @endif
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="name">Nome Piatto <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
                     required maxlength="255" minlength="3">
@@ -34,7 +34,7 @@
                 @enderror
             </div>
             <div class="d-flex">
-                <div class="mb-3 was-validated">
+                <div class="mb-3">
                     <label for="image">Immagine</label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
                         id="image">
@@ -53,7 +53,7 @@
                         src="https://via.placeholder.com/300x200">
                 </div>
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="price">Prezzo <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" required
                     id="price" min="0.10" step="0.01" max="9999.99">
@@ -67,11 +67,11 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="description">Descrizione</label>
                 <textarea name="description" id="description" rows="10" class="form-control"></textarea>
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="tipologies">Tipologie <span class="fs-7 text-warning-emphasis">*</span></label>
                 <textarea name="tipologies" id="tipologies" rows="10" class="form-control @error('tipologies') is-invalid @enderror" required></textarea>
                 @error('tipologies')
@@ -84,14 +84,14 @@
                     </div>
                 @enderror
             </div>
-            <div class="form-check was-validated">
+            <div class="form-check">
                 <p>Visibile sul sito?</p>
                 <input class="form-check-input" type="radio" name="visible" id="true" value="true">
                 <label class="form-check-label" for="true">
                     Sì
                 </label>
             </div>
-            <div class="form-check was-validated">
+            <div class="form-check">
                 <input class="form-check-input" type="radio" name="visible" id="false" value="false" checked>
                 <label class="form-check-label" for="false">
                     No

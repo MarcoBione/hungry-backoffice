@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="container mt-3">
-        <form action="{{ route('admin.caterers.update', $caterer->slug) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.caterers.update', $caterer->slug) }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
             @csrf
             @method('PUT')
             <h2 class="d-flex flex-column align-items-between flex-wrap mb-4">
                 <span class="fs-3">Modifica ristorante <strong>{{ $caterer->name }}</strong></span>
                 <span class="fs-7 text-warning-emphasis">I campi contrassegnati con * sono obbligatori</span>
             </h2>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="name">Nome <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
                     required maxlength="150" minlength="3" value="{{ old('name', $caterer->name) }}" required>
@@ -23,7 +23,7 @@
                         </div>
                     @enderror
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="address">Indirizzo <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('address') is-invalid @enderror" name="address"
                     id="address" value="{{ old('name', $caterer->address) }}" required>
@@ -38,7 +38,7 @@
                     @enderror
             </div>
             <div class="d-flex">
-                <div class="mb-3 was-validated">
+                <div class="mb-3">
                     <label for="image">Immagine <span class="fs-7 text-warning-emphasis">*</span></label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
                         id="image" value="{{ old('image', $caterer->image) }}" >
@@ -58,7 +58,7 @@
                         alt="{{ $caterer->name }}">
                 </div>
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="phone_number">Numero di telefono <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
                     id="phone_number" value="{{ old('name', $caterer->phone_number) }}" required>
@@ -72,7 +72,7 @@
                         </div>
                     @enderror
             </div>
-            <div class="col form-group mb-3 was-validated">
+            <div class="col form-group mb-3">
                 <p>Seleziona una o più Categorie</p>
                 @foreach ($categories as $category)
                     <div>

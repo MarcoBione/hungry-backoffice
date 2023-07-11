@@ -1,7 +1,7 @@
 @extends('layouts.app');
 @section('content')
     <div class="container mt-3">
-        <form action="{{ route('admin.dishes.update', $dish->slug) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.dishes.update', $dish->slug) }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
             @csrf
             @method('PUT')
             <h2 class="d-flex flex-column align-items-between flex-wrap mb-4">
@@ -9,7 +9,7 @@
                 <span class="fs-7 text-warning-emphasis">I campi contrassegnati con * sono obbligatori</span>
             </h2>
             @if(Auth::user()->is_admin)
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="caterer_id">Scegli il caterer <span class="fs-7 text-warning-emphasis">*</span></label>
                 <select class="form-select mb-3" name="caterer_id" id="caterer_id">
                     <option value="">Seleziona il caterer</option>
@@ -19,7 +19,7 @@
                 </select>
             </div>
             @endif
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="name">Nome Piatto <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
                     required maxlength="255" minlength="3" value="{{ old('name', $dish->name) }}">
@@ -34,7 +34,7 @@
                     @enderror
             </div>
             <div class="d-flex">
-                <div class="mb-3 was-validated">
+                <div class="mb-3">
                     <label for="image">Immagine</label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
                         id="image" value="{{ old('image', $dish->image) }}">
@@ -54,7 +54,7 @@
                         alt="{{ $dish->name }}">
                 </div>
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="price">Prezzo <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" id="price" step="any" value="{{ old('price', $dish->price) }}" min="0.10" step="0.01" max="9999.99" required >
                 @error('price')
@@ -67,13 +67,13 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="description">Descrizione</label>
                 <textarea name="description" id="description" rows="10" class="form-control">
                     {{ old('description', $dish->description) }}
                 </textarea>
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="tipologies">Tipologie <span class="fs-7 text-warning-emphasis">*</span></label>
                 <textarea required name="tipologies" id="tipologies" rows="10"
                     class="form-control @error('tipologies') is-invalid @enderror" required>{{ old('tipologies', $dish->tipologies) }}</textarea>
@@ -87,7 +87,7 @@
                         </div>
                     @enderror
             </div>
-            <div class="form-check was-validated">
+            <div class="form-check">
                 <p>Visibile sul sito?</p>
                 <input class="form-check-input" type="radio" name="visible" id="true" value="true"
                     {{ $dish->visible === 1 ? 'checked' : '' }}>

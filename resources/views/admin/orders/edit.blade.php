@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ route('admin.orders.update', $order->id) }}" method="POST" enctype="multipart/form-data" class="pb-4">
+        <form action="{{ route('admin.orders.update', $order->id) }}" method="POST" enctype="multipart/form-data" class="pb-4 needs-validation" novalidate>
             @csrf
             @method('PUT')
             <h2 class="mt-3 mb-3">Modifica <strong>ordine {{ $order->id }}</strong> creato da <strong>{{ $order->receiver }}</strong> il <strong>{{ $order->created_at }}</strong></h2>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="status" class="form-label fs-5">Stato dell'ordine <span class="fs-7 text-warning-emphasis">*</span></label>
                 <select name="status" id="status" class="form-control @error('status') is-invalid @enderror" required>
                     <option value="In attesa di conferma" {{ (old("status", $order->status) == "In attesa di conferma" ? "selected":"") }}>In attesa di conferma</option>
@@ -27,7 +27,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="address" class="form-label fs-5">Indirizzo di consegna <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('address') is-invalid @enderror" name="address"
                     id="address" value="{{ old('address', $order->address) }}" required>
@@ -41,7 +41,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="total_price" class="form-label fs-5">Prezzo totale (&euro;) <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="number" step="0.01" value="{{ old('total_price', $order->total_price) }}" class="form-control @error('total_price') is-invalid @enderror" id="total_price" name="total_price" min="0.10" step="0.10" max="9999.99" required>
                 @error('total_price')
@@ -63,7 +63,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- Laravel Javascript Validation -->
-    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 
-    {!! JsValidator::formRequest('App\Http\Requests\UpdateOrderRequest') !!}
+    {!! JsValidator::formRequest('App\Http\Requests\UpdateOrderRequest') !!} --}}
 @endsection

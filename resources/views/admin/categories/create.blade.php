@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="container mt-3">
-        <form action="{{ route('admin.categories.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.categories.store') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
             @csrf
             <h2 class="d-flex flex-column align-items-between flex-wrap mb-4">
                 <span class="fs-3">Creazione di una nuova categoria</span>
                 <span class="fs-7 text-warning-emphasis">I campi contrassegnati con * sono obbligatori</span>
             </h2>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="name">Nome Categoria <span class="fs-7 text-warning-emphasis">*</span></label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
                     required maxlength="100" minlength="3">
@@ -22,7 +22,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="description">Descrizione</label>
                 <textarea type="text" class="form-control @error('description') is-invalid @enderror" name="description"
                     id="description"></textarea>
@@ -36,7 +36,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 was-validated">
+            <div class="mb-3">
                 <label for="class">Nome classe stile <span class="fs-7 text-warning-emphasis">*</span></label>
                 <select name="class" id="class" class="form-control @error('class') is-invalid @enderror" required>
                     <option value="text-bg-primary" {{ (old("class") == "text-bg-primary" ? "selected":"") }}>Blu</option>
@@ -59,7 +59,7 @@
                 @enderror
             </div>
             <div class="d-flex">
-                <div class="mb-3 was-validated">
+                <div class="mb-3">
                     <label for="image">Immagine categoria <span class="fs-7 text-warning-emphasis">*</span></label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="image" required>
                     @error('image')
@@ -91,7 +91,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- Laravel Javascript Validation -->
-    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script> --}}
 
-    {!! JsValidator::formRequest('App\Http\Requests\StoreCategoryRequest') !!}
+    {{-- {!! JsValidator::formRequest('App\Http\Requests\StoreCategoryRequest') !!} --}}
 @endsection
