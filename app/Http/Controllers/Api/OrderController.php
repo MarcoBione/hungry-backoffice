@@ -19,20 +19,23 @@ class LeadController extends Controller
         $order->receiver = $dataFromFront->receiver;
         $order->phone_number = $dataFromFront->phoneNumber;
         $order->notes = $dataFromFront->notes;
+        $order->email = $dataFromFront->email;
+        $order->total_price = $dataFromFront->total_price;
+        $order->status = 'Pagato';
         //mail
         $order->save();
-        //Create relations con i dishes
+        //Create relations con i dishes ?!?!?
 
-        $userMail = DB::table("orders")->
+        $catererMail = DB::table("orders")->
             join("dish_order","dish_order.order_id","=","orders.id")->
             join("dishes","dishes.id","=","dish_order.dish_id")->
             join("caterer", "caterers.id", "=", "dishes.caterer_id")->
             join("users", "user.id", "=", "caterers.user_id")->
             where("orders.id", $order->id)->value('users.email');
-        $userName = User::where('users.mail', $userMail)->value('name');
+        $catererName = User::where('users.mail', $catererMail)->value('name');
 
         //send mail to the caterer
-         Mail::to($catererMail)->send(new NewOrder($order));
+         Mail::to($catererMail)->send(new NewOrder($order, $catererName));
         //send mail to the receiver
          Mail::to($order->email)->send(new OrderComplete($order));
 
