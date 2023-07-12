@@ -29,7 +29,8 @@ class StoreOrderRequest extends FormRequest
             'status' => 'required|max:150|min:3',
             'notes' => 'min:3',
             'total_price' => 'required|min:0.1',
-            'address' => 'required|min:3'
+            'address' => 'required|min:3',
+            'email' => 'required|email'
         ];
     }
 
@@ -54,7 +55,9 @@ class StoreOrderRequest extends FormRequest
             "total_price.required" => "Il prezzo totale dell'ordine è obbligatorio",
             "total_price.min" => "Il prezzo totale dell'ordine deve essere maggiore di 0.1 euro",
             "address.required" => "L'indirizzo di consegna dell'ordine è obbligatorio",
-            "address.min" => "L'indirizzo di consegna dell'ordine deve essere lungo almeno 3 caratteri"
+            "address.min" => "L'indirizzo di consegna dell'ordine deve essere lungo almeno 3 caratteri",
+            "email.required" => "L'email è obbligatoria",
+            "email.email" => "Inserisci una email valida",
         ];
     }
 }
