@@ -24,7 +24,8 @@ class LeadController extends Controller
         $order->status = 'Pagato';
         //mail
         $order->save();
-        //Create relations con i dishes ?!?!?
+        //Create relations con i dishes
+        $order->dishes()->attach($dataFromFront->dishes);
 
         $catererMail = DB::table("orders")->
             join("dish_order","dish_order.order_id","=","orders.id")->
