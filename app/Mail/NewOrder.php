@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Order;
 
 class NewOrder extends Mailable
 {
@@ -18,10 +19,10 @@ class NewOrder extends Mailable
      *
      * @return void
      */
-    public $lead;
-    public function __construct($_lead)
+    public $order;
+    public function __construct(Order $order)
     {
-        $this->lead = $_lead;
+        $this->order = $order;
     }
 
     /**
