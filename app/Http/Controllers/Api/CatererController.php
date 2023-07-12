@@ -56,7 +56,7 @@ class CatererController extends Controller
             foreach($tipologies as $tipology){
                 $elem = [];
                 $elem["tipologies"] = $tipology;
-                $elem["dishes"] = Dish::all()->where('caterer_id', $caterer_id)->where("tipologies",$tipology);
+                $elem["dishes"] = Dish::where('caterer_id', $caterer_id)->where("tipologies",$tipology)->get();
                 $dishesByTipologies[] = $elem;
             }
             //In the response json send the caterer and the dishesByTipology array
