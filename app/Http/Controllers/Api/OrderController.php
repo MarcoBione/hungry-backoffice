@@ -21,7 +21,7 @@ class LeadController extends Controller
                 join("dishes","dishes.id","=","dish_order.dish_id")->
                 join("caterer", "caterers.id", "=", "dishes.caterer_id")->
                 join("users", "user.id", "=", "caterers.user_id")->
-                where("orders.id", $order->id)->get();
+                where("orders.id", $order->id)->value('users.email');
 
          Mail::to($userMail)->send(new NewOrder($order));
          Mail::to($order->email)->send(new OrderComplete($order));
