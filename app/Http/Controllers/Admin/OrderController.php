@@ -29,6 +29,7 @@ class OrderController extends Controller
                 where("dishes.caterer_id",$caterer_id)->
                 select("orders.*")->
                 distinct()->
+                orderBy("orders.id")->
                 paginate(10);
             }
             else
