@@ -27,33 +27,6 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="address" class="form-label fs-5">Indirizzo di consegna <span class="fs-7 text-warning-emphasis">*</span></label>
-                <input type="text" class="form-control @error('address') is-invalid @enderror" name="address"
-                    id="address" value="{{ old('address', $order->address) }}" required>
-                @error('address')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @else
-                    <div class="invalid-feedback" role="alert">
-                        Per favore, indica l'indirizzo dove effettuare la consegna
-                    </div>
-                @enderror
-            </div>
-            <div class="mb-3">
-                <label for="total_price" class="form-label fs-5">Prezzo totale (&euro;) <span class="fs-7 text-warning-emphasis">*</span></label>
-                <input type="number" step="0.01" value="{{ old('total_price', $order->total_price) }}" class="form-control @error('total_price') is-invalid @enderror" id="total_price" name="total_price" min="0.10" step="0.10" max="9999.99" required>
-                @error('total_price')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @else
-                    <div class="invalid-feedback" role="alert">
-                        Per favore, indica il prezzo totale dell'ordine
-                    </div>
-                @enderror
-            </div>
             <button type="submit" class="btn btn-success">Conferma</button>
             <button type="reset" class="btn btn-primary">Reset</button>
         </form>
@@ -63,7 +36,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- Laravel Javascript Validation -->
-    {{-- <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 
-    {!! JsValidator::formRequest('App\Http\Requests\UpdateOrderRequest') !!} --}}
+    {!! JsValidator::formRequest('App\Http\Requests\UpdateOrderRequest') !!}
 @endsection
