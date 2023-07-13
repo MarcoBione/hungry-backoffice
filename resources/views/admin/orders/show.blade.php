@@ -88,7 +88,7 @@
                     <hr>
                     {{-- Container with the total price --}}
                     <div class="d-flex justify-content-between align-items-center gap-4 fs-5 fw-bold">
-                        <span>Totale pagato con PayPal</span>
+                        <span>Totale pagato</span>
                         <span>{{ $order->total_price }}&euro;</span>
                     </div>
                 </div>
