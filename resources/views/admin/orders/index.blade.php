@@ -51,10 +51,10 @@
                             {{ $order->address }}
                         </td>
                         <td>
-                            {{ $order->created_at }}
+                            {{ \Carbon\Carbon::parse($order->created_at)->format('d/m/Y H:i') }}
                         </td>
                         <td>
-                            {{ $order->updated_at }}
+                            {{ \Carbon\Carbon::parse($order->updated_at)->format('d/m/Y H:i') }}
                         </td>
                         <td>
                             <div class="d-flex justify-content-between align-items-center gap-2">

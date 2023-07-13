@@ -31,11 +31,11 @@
         <div class="d-flex gap-4 bg-dark text-light p-4 rounded-4 text-center align-items-start">
             <div class="d-flex flex-column align-items-center">
                 <p class="fw-bold fs-5">Creazione</p>
-                <p>{{ $order->created_at }}</p>
+                <p>{{ \Carbon\Carbon::parse($order->created_at)->format('d/m/Y H:i') }}</p>
             </div>
             <div class="d-flex flex-column align-items-center">
                 <p class="fw-bold fs-5">Ultimo aggiornamento</p>
-                <p>{{ $order->updated_at }}</p>
+                <p>{{ \Carbon\Carbon::parse($order->updated_at)->format('d/m/Y H:i') }}</p>
             </div>
             <div class="d-flex flex-column align-items-center">
                 <p class="fw-bold fs-5">Stato</p>
