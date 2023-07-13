@@ -34,6 +34,19 @@ class OrderController extends Controller
                     "notes" => ''
                 ]);
 
+            // $catererMail = DB::table("orders")->
+            // join("dish_order","dish_order.order_id","=","orders.id")->
+            // join("dishes","dishes.id","=","dish_order.dish_id")->
+            // join("caterer", "caterers.id", "=", "dishes.caterer_id")->
+            // join("users", "user.id", "=", "caterers.user_id")->
+            // where("orders.id", $order->id)->value('users.email');
+            // $catererName = User::where('users.mail', $catererMail)->value('name');
+
+            // //send mail to the caterer
+            //  Mail::to($catererMail)->send(new NewOrder($order, $catererName));
+            // //send mail to the receiver
+            //  Mail::to($order->email)->send(new OrderComplete($order));
+
             return response()->json([
                 'success' => true,
                 'message' => 'Richiesta eseguita con successo'
@@ -44,27 +57,5 @@ class OrderController extends Controller
                 'message' => 'Richiesta in errore: nessun campo è stato passato'
             ]);
         }
-
-
-        // var_dump($dataFromFront);
-
-
-
-        // $catererMail = DB::table("orders")->
-        //     join("dish_order","dish_order.order_id","=","orders.id")->
-        //     join("dishes","dishes.id","=","dish_order.dish_id")->
-        //     join("caterer", "caterers.id", "=", "dishes.caterer_id")->
-        //     join("users", "user.id", "=", "caterers.user_id")->
-        //     where("orders.id", $order->id)->value('users.email');
-        // $catererName = User::where('users.mail', $catererMail)->value('name');
-
-        // //send mail to the caterer
-        //  Mail::to($catererMail)->send(new NewOrder($order, $catererName));
-        // //send mail to the receiver
-        //  Mail::to($order->email)->send(new OrderComplete($order));
-
-         return response()->json([
-            'success' => true,
-        ]);
     }
 }
