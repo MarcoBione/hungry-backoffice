@@ -25,8 +25,6 @@ class UpdateOrderRequest extends FormRequest
     {
         return [
             'status' => 'required|max:150|min:3',
-            'total_price' => 'required|min:0.1',
-            'address' => 'required|min:3'
         ];
     }
 
@@ -41,10 +39,6 @@ class UpdateOrderRequest extends FormRequest
             "status.required" => "Lo stato dell'ordine è obbligatorio",
             "status.max" => "Lo stato dell'ordine non deve superare i 150 caratteri",
             "status.min" => "Lo stato dell'ordine deve essere lungo almeno 3 caratteri",
-            "total_price.required" => "Il prezzo totale dell'ordine è obbligatorio",
-            "total_price.min" => "Il prezzo totale dell'ordine deve essere maggiore di 0.1 euro",
-            "address.required" => "L'indirizzo di consegna dell'ordine è obbligatorio",
-            "address.min" => "L'indirizzo di consegna dell'ordine deve essere lungo almeno 3 caratteri"
         ];
     }
 }
