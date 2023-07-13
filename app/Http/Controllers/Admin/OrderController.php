@@ -29,13 +29,13 @@ class OrderController extends Controller
                 where("dishes.caterer_id",$caterer_id)->
                 select("orders.*")->
                 distinct()->
-                orderBy("orders.id")->
+                orderByDesc("orders.id")->
                 paginate(10);
             }
             else
-                $orders = Order::where("id",-1)->paginate(10);
+                $orders = Order::where("id",-1)->orderByDesc("orders.id")->paginate(10);
         }else
-            $orders = Order::paginate(10);
+            $orders = Order::orderByDesc("orders.id")->paginate(10);
 
         return view('admin.orders.index', compact('orders'));
     }
