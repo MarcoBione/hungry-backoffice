@@ -45,7 +45,7 @@ class OrderController extends Controller
             // //send mail to the caterer
             //  Mail::to($catererMail)->send(new NewOrder($order, $catererName));
             // //send mail to the receiver
-            //  Mail::to($order->email)->send(new OrderComplete($order));
+            //  Mail::to($array["email"])->send(new OrderComplete($order));
 
             return response()->json([
                 'success' => true,
