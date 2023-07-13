@@ -51,7 +51,7 @@
                     {{-- Container with the data about the restaurant --}}
                     <div class="d-flex gap-4">
                         @if (count($order->dishes)>0)
-                            <img src="{{ $order->dishes[0]->caterer->image }}" alt="{{ $order->dishes[0]->caterer->name }}" class="img-thumbnail col-3">
+                            <img src="{{ asset('storage/' . $order->dishes[0]->caterer->image) }}" alt="{{ $order->dishes[0]->caterer->name }}" class="img-thumbnail col-3">
                             <div class="d-flex flex-column align-items-start justify-content-start">
                                 <span class="fs-5 fw-bold mb-2">{{ $order->dishes[0]->caterer->name }}</span>
                                 <div class="d-flex flex-column align-items-start">

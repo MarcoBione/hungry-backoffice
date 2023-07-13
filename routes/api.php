@@ -28,6 +28,4 @@ Route::get("/caterers", [CatererController::class, 'index']);
 Route::get("/caterers/{slug}", [CatererController::class, 'show']);
 Route::get('/dishes', [DishController::class, 'index']);
 Route::get('/dishes/{slug}', [DishController::class, 'show']);
-
-
-Route::post('/orders', [OrderController::class, 'store']);
+Route::get('/orders', [OrderController::class, 'store']);
