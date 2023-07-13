@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CatererController;
 use App\Http\Controllers\Api\DishController;
+use App\Http\Controllers\Api\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,4 @@ Route::get("/caterers", [CatererController::class, 'index']);
 Route::get("/caterers/{slug}", [CatererController::class, 'show']);
 Route::get('/dishes', [DishController::class, 'index']);
 Route::get('/dishes/{slug}', [DishController::class, 'show']);
+Route::get('/orders', [OrderController::class, 'store']);
