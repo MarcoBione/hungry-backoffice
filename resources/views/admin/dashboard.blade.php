@@ -35,7 +35,7 @@
                         {{-- codee.. --}}
                         <h3>Le vendite dell'ultimo anno</h3>
                         {{-- <div > --}}
-                            <div class="chart-container" style="position: relative; height:80%; width:100%"><canvas id="acquisitions"></canvas></div>
+                            <div class="chart-container" style="position: relative; height:50vh; width:100%"><canvas id="acquisitions"></canvas></div>
                         {{-- </div> --}}
                     </div>
                     {{-- il contenuto della pagina andrebbe qua! --}}
