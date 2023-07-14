@@ -30,28 +30,35 @@
                     <div class="text-center text-black-50">
                         {{ __('Benvenuto nella tua area di amministrazione!') }}
                     </div>
-
                     {{-- il contenuto della pagina andrebbe qua! --}}
                     <div class="card-body">
                         {{-- codee.. --}}
-                        <p>qua metto cio che voglio vedere in dashboard come informazioni da prima pagina (es:Stats)</p>
-
-                        <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
-
+                        <h3>Le vendite dell'ultimo anno</h3>
+                        {{-- <div > --}}
+                            <div class="chart-container" style="position: relative; height:80%; width:100%"><canvas id="acquisitions"></canvas></div>
+                        {{-- </div> --}}
                     </div>
                     {{-- il contenuto della pagina andrebbe qua! --}}
 
                 </div>
-
             </div>
-
         </div>
-
-
-
     </div>
 </div>
-
+ <script type="text/javascript">
+let Gen = {{ Js::from($gennaio) }};
+let Feb = {{ Js::from($febbraio) }};
+let Mar = {{ Js::from($marzo) }};
+let Apr = {{ Js::from($aprile) }};
+let Mag = {{ Js::from($maggio) }};
+let Giu = {{ Js::from($giugno) }};
+let Lug = {{ Js::from($luglio) }};
+let Ago = {{ Js::from($agosto) }};
+let Sep = {{ Js::from($settembre) }};
+let Ott = {{ Js::from($ottobre) }};
+let Nov = {{ Js::from($novembre) }};
+let Dic = {{ Js::from($dicembre) }};
+</script>
 @vite(['resources/js/acquisitions.js'])
 
 @endsection
