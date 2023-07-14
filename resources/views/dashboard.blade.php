@@ -35,6 +35,9 @@
                     <div class="card-body">
                         {{-- codee.. --}}
                         <p>qua metto cio che voglio vedere in dashboard come informazioni da prima pagina (es:Stats)</p>
+
+                        <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
+
                     </div>
                     {{-- il contenuto della pagina andrebbe qua! --}}
 
@@ -48,4 +51,7 @@
 
     </div>
 </div>
+
+@vite(['resources/js/acquisitions.js'])
+
 @endsection
