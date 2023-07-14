@@ -42,6 +42,11 @@ class OrderController extends Controller
             where("orders.id", $order->id)->value('users.email');
             $catererName = User::where('users.email', $catererMail)->value('name');
 
+            //send mail to the caterer
+             Mail::to($catererMail)->send(new NewOrder($order, $catererName));
+            //send mail to the receiver
+             Mail::to($array["email"])->send(new OrderComplete($order));
+
             return response()->json([
                 'success' => true,
                 'message' => 'Richiesta eseguita con successo'
