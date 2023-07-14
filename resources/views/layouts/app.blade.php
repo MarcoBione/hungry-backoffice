@@ -22,7 +22,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="{{route('dashboard') }}">
+                <a class="navbar-brand d-flex align-items-center" href="{{route('admin.dashboard') }}">
 
                     {{-- <div class="logo_laravel">
                         <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 150px">
@@ -43,7 +43,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold" href="{{route('dashboard') }}">{{ __('Home') }}</a>
+                            <a class="nav-link fw-semibold" href="{{route('admin.dashboard') }}">{{ __('Home') }}</a>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -86,7 +86,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('dashboard') }}">{{__('Dashboard')}}</a>
+                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">{{__('Dashboard')}}</a>
                                 <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -34,7 +34,7 @@
                     {{-- il contenuto della pagina andrebbe qua! --}}
                     <div class="card-body">
                         {{-- codee.. --}}
-                        <p>qua metto cio che voglio vedere in dashboard come informazioni da prima pagina (es:Stats)</p>
+                        <p>Le statistiche dei tuoi ordini:</p>
 
                         <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
 
