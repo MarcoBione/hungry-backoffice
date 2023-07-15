@@ -13,21 +13,16 @@
                     categorie</a>
             </div>
         </div>
-        <div class="container border border-secondary rounded-4 d-flex">
+        <div class="container border border-secondary rounded-4 d-flex d-sm-column flex-wrap flex-lg-nowrap">
             <div class="container">
                 <h3 class="m-4 text-uppercase">{{ $category->name }}</h3>
-                <div class="container-text">
-                    <span class="fs-5">
-                        {!! $category->description !!}
-                    </span>
+                <div class="fs-5">
+                    {!! $category->description !!}
                 </div>
             </div>
             <div class="d-flex justify-content-end">
-                <div>
-                    <img class="img-fluid p-3" src="{{ asset('storage/' . $category->image) }}" alt="{{$category->name}}">
-                </div>
+                <img class="img-fluid p-3" src="{{ asset('storage/' . $category->image) }}" alt="{{$category->name}}">
             </div>
-
         </div>
     </div>
 @endsection

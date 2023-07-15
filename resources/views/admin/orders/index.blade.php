@@ -16,13 +16,13 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Destinatario</th>
-                    <th scope="col">Numero di telefono</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Numero di telefono</th>
                     <th scope="col">Stato</th>
-                    <th scope="col">Note</th>
-                    <th scope="col">Prezzo totale</th>
-                    <th scope="col">Indirizzo</th>
-                    <th scope="col">Creazione</th>
-                    <th scope="col">Ultima modifica</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Note</th>
+                    <th scope="col" class="d-none d-md-table-cell">Prezzo totale</th>
+                    <th scope="col" class="d-none d-md-table-cell">Indirizzo</th>
+                    <th scope="col" class="d-none d-md-table-cell">Creazione</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Ultima modifica</th>
                     <th scope="col">Azioni</th>
                 </tr>
             </thead>
@@ -35,25 +35,25 @@
                         <td>
                             {{ $order->receiver }}
                         </td>
-                        <td>
+                        <td class="d-none d-lg-table-cell">
                             {{ $order->phone_number }}
                         </td>
                         <td>
                             {{ $order->status }}
                         </td>
-                        <td>
+                        <td class="d-none d-lg-table-cell">
                             {{ $order->notes }}
                         </td>
-                        <td>
+                        <td class="d-none d-md-table-cell">
                             {{ $order->total_price }}
                         </td>
-                        <td>
+                        <td class="d-none d-md-table-cell">
                             {{ $order->address }}
                         </td>
-                        <td>
+                        <td class="d-none d-md-table-cell">
                             {{ \Carbon\Carbon::parse($order->created_at)->format('d/m/Y H:i') }}
                         </td>
-                        <td>
+                        <td class="d-none d-lg-table-cell">
                             {{ \Carbon\Carbon::parse($order->updated_at)->format('d/m/Y H:i') }}
                         </td>
                         <td>

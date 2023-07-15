@@ -14,19 +14,20 @@
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
-                    <th class="d-md-none" scope="col">Descrizione</th>
+                    <th class="d-none d-md-table-cell" scope="col">Descrizione</th>
                     <th scope="col">Tipologie</th>
-                    <th scope="col">Visibilità</th>
+                    <th scope="col" class="d-none d-md-table-cell">Visibilità</th>
                     <th scope="col">Prezzo</th>
+                    <th scope="col">Azioni</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($dishes as $dish)
                     <tr>
                         <td>{{ $dish->name }}</td>
-                        <td class="d-md-none">{{ $dish->description }}</td>
+                        <td class="d-none d-md-table-cell">{{ $dish->description }}</td>
                         <td>{{ $dish->tipologies }}</td>
-                        <td>{{ $dish->visible == 1 ? 'sì' : 'no' }}</td>
+                        <td class="d-none d-md-table-cell">{{ $dish->visible == 1 ? 'sì' : 'no' }}</td>
                         <td>{{ $dish->price }} &euro;</td>
                         <td>
                             <div class="d-flex justify-content-between align-items-center">

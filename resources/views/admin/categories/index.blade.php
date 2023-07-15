@@ -12,7 +12,7 @@
             <thead>
                 <tr class="text-capitalize">
                     <th scope="col">nome categoria</th>
-                    <th scope="col">descrizione</th>
+                    <th scope="col" class="d-none d-lg-table-cell">descrizione</th>
                     <th scope="col">img</th>
                     <th scope="col">azioni</th>
                 </tr>
@@ -21,7 +21,7 @@
                 @foreach ($categories as $category)
                     <tr class="align-middle">
                         <td>{{ $category->name }}</td>
-                        <td>
+                        <td class="d-none d-lg-table-cell">
                             <div class="container-text">
                                 {!! $category->description !!}
                             </div>
