@@ -5,12 +5,12 @@
         <form action="{{ route('admin.orders.update', $order->id) }}" method="POST" enctype="multipart/form-data" class="pb-4 needs-validation" novalidate>
             @csrf
             @method('PUT')
-            <h2 class="mt-3 mb-3">Modifica <strong>ordine {{ $order->id }}</strong> creato da <strong>{{ $order->receiver }}</strong> il <strong>{{ $order->created_at }}</strong></h2>
+            <h2 class="mt-3 mb-3">Modifica <strong>ordine {{ $order->id }}</strong> creato da <strong>{{ $order->receiver }}</strong> il <strong>{{ \Carbon\Carbon::parse($order->created_at)->format('d/m/Y') }}</strong></h2>
             <div class="mb-3">
                 <label for="status" class="form-label fs-5">Stato dell'ordine <span class="fs-7 text-warning-emphasis">*</span></label>
                 <select name="status" id="status" class="form-control @error('status') is-invalid @enderror" required>
-                    <option value="In attesa di conferma" {{ (old("status", $order->status) == "In attesa di conferma" ? "selected":"") }}>In attesa di conferma</option>
-                    <option value="Ordine confermato" {{ (old("status", $order->status) == "Ordine confermato" ? "selected":"") }}>Ordine confermato</option>
+                    {{-- <option value="In attesa di conferma" {{ (old("status", $order->status) == "In attesa di conferma" ? "selected":"") }}>In attesa di conferma</option> --}}
+                    {{-- <option value="Ordine confermato" {{ (old("status", $order->status) == "Ordine confermato" ? "selected":"") }}>Ordine confermato</option> --}}
                     <option value="Pagato" {{ (old("status", $order->status) == "Pagato" ? "selected":"") }}>Pagato</option>
                     <option value="In preparazione" {{ (old("status", $order->status) == "In preparazione" ? "selected":"") }}>In preparazione</option>
                     <option value="In consegna" {{ (old("status", $order->status) == "In consegna" ? "selected":"") }}>In consegna</option>
